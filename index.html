@@ -254,8 +254,8 @@ body::after{
 }
 .btn-g:hover{border-color:var(--accent);color:var(--accent);background:rgba(232,164,90,.04)}
 
-.btn-accent{background:var(--grad);color:var(--bg);border:none;box-shadow:0 0 24px rgba(232,164,90,.2)}
-.btn-accent:hover{box-shadow:0 0 40px rgba(232,164,90,.35)}
+.btn-accent{background:var(--accent);color:#fff;border:none}
+.btn-accent:hover{background:var(--accent2);box-shadow:0 4px 20px rgba(255,107,44,.15)}
 
 /* ===== SECTIONS ===== */
 .sec{padding:var(--pad) 20px;position:relative}
@@ -340,14 +340,10 @@ body::after{
 .mist-c p{font-size:13px;color:var(--t2);line-height:1.55}
 .mist-exp{font-size:15px;color:var(--t2);line-height:1.75;margin-bottom:20px;max-width:600px}
 .mist-hl{
-  padding:36px;border-radius:var(--r);text-align:center;margin-top:24px;
-  background:var(--grad);position:relative;overflow:hidden;
+  padding:24px 0;text-align:left;margin-top:20px;
+  border-top:1px solid var(--brd);
 }
-.mist-hl::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(255,255,255,.15),transparent);
-}
-.mist-hl p{font-family:var(--ff-display);font-size:clamp(20px,3vw,28px);font-weight:800;color:var(--bg);letter-spacing:-.02em;position:relative}
+.mist-hl p{font-size:clamp(16px,2vw,20px);font-weight:700;color:var(--accent);letter-spacing:-.01em}
 .mist-cta{margin-top:28px}
 
 /* ===== APPROACH (2-col) ===== */
