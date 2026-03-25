@@ -57,8 +57,10 @@ body{font-family:var(--ff);background:var(--bg);color:var(--t1);overflow-x:hidde
 @media(prefers-reduced-motion:reduce){.sr{opacity:1!important;transform:none!important;transition:none!important}}
 
 /* ===== NAV ===== */
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px max(5vw,20px);display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:border-color .3s,padding .3s}
-.nav.scrolled{border-bottom-color:var(--brd);padding:12px max(5vw,20px)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav-inner{max-width:var(--cont);margin:0 auto;padding:16px 0;display:flex;align-items:center;justify-content:space-between;width:100%}
+.nav.scrolled{border-bottom-color:var(--brd)}
+.nav.scrolled .nav-inner{padding:12px 0}
 .nav-logo{font-weight:800;font-size:16px;color:var(--t1);text-decoration:none;letter-spacing:-.03em}
 .nav-logo span{color:var(--accent)}
 .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
@@ -79,7 +81,7 @@ body{font-family:var(--ff);background:var(--bg);color:var(--t1);overflow-x:hidde
 @media(max-width:860px){.nav-links{display:none}.burger{display:flex}}
 
 /* ===== HERO ===== */
-.hero{padding:140px max(5vw,20px) 80px;overflow:hidden}
+.hero{padding:140px 20px 80px;overflow:hidden}
 .hero-grid{max-width:var(--cont);margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:center}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;background:var(--accent-bg);border:1px solid var(--accent-brd);border-radius:var(--r-pill);font-size:13px;font-weight:600;color:var(--accent);margin-bottom:24px}
 .hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
@@ -113,7 +115,7 @@ body{font-family:var(--ff);background:var(--bg);color:var(--t1);overflow-x:hidde
 .btn-accent:hover{background:var(--accent2);box-shadow:0 8px 24px rgba(255,107,44,.2)}
 
 /* ===== SECTIONS ===== */
-.sec{padding:var(--pad) max(5vw,20px)}
+.sec{padding:var(--pad) 20px}
 .sec-c{max-width:var(--cont);margin:0 auto}
 .sec-alt{background:var(--bg2)}
 .sec-tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
@@ -296,7 +298,7 @@ summary:hover{background:var(--bg2)}
 .contact-privacy{font-size:11px;color:var(--t3);line-height:1.5;max-width:380px;margin:0 auto}
 
 /* ===== FOOTER ===== */
-.footer{padding:28px max(5vw,20px);border-top:1px solid var(--brd);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:calc(var(--cont) + 10vw);margin:0 auto}
+.footer{padding:28px 20px;border-top:1px solid var(--brd);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:var(--cont);margin:0 auto}
 .footer-left{display:flex;flex-direction:column;gap:4px}
 .footer-brand{font-weight:800;font-size:14px;color:var(--t1)}
 .footer-copy{font-size:12px;color:var(--t3)}.footer-copy a{color:var(--t3);text-decoration:none}
@@ -320,7 +322,8 @@ summary:hover{background:var(--bg2)}
 <a href="#main" class="skip" data-ru="Перейти к содержимому" data-en="Skip to content">Перейти к содержимому</a>
 
 <header role="banner">
-<nav class="nav" id="nav" role="navigation" aria-label="Основная навигация">
+<nav class="nav" id="nav" role="navigation" aria-label="Основная навигация" style="padding-left:max(calc((100% - var(--cont))/2),20px);padding-right:max(calc((100% - var(--cont))/2),20px)">
+  <div class="nav-inner">
   <a href="#" class="nav-logo">ДМИТРИЙ <span>ВИШНЕВСКИЙ</span></a>
   <ul class="nav-links">
     <li><a href="#problems" data-ru="Ситуации" data-en="Pain Points">Ситуации</a></li>
@@ -334,6 +337,7 @@ summary:hover{background:var(--bg2)}
     <a href="#contact" class="nav-cta" data-ru-html="Обсудить проект <svg viewBox='0 0 24 24' width='14' height='14' fill='none' stroke='currentColor' stroke-width='2.5'><path d='M5 12h14M12 5l7 7-7 7'/></svg>" data-en-html="Discuss Project <svg viewBox='0 0 24 24' width='14' height='14' fill='none' stroke='currentColor' stroke-width='2.5'><path d='M5 12h14M12 5l7 7-7 7'/></svg>">Обсудить проект <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
   </div>
   <button class="burger" id="burger" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+  </div>
 </nav>
 </header>
 
