@@ -32,7 +32,7 @@
   "name": "Дмитрий Вишневский",
   "jobTitle": "Специалист по контекстной рекламе",
   "url": "https://vish-leads.com",
-  "image": "https://static.tildacdn.biz/tild3334-3765-4133-a331-653161336537/___4_.png",
+  "image": "photo.png",
   "email": "visjb3t3t@gmail.com",
   "sameAs": [
     "https://t.me/vishnevsky",
@@ -170,7 +170,12 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 .hero-shapes .s3{top:28%;right:35%;width:50px;height:50px;border-color:var(--cyan);transform:rotate(45deg);animation:fl 14s ease-in-out infinite}
 .hero-shapes .s4{bottom:18%;left:6%;width:90px;height:90px;border-color:var(--hot);border-radius:18px;transform:rotate(-20deg);animation:fl 11s ease-in-out infinite reverse}
 @keyframes fl{0%,100%{transform:translateY(0) rotate(15deg)}50%{transform:translateY(-25px) rotate(25deg)}}
-.hero-c{position:relative;z-index:2;max-width:780px}
+.hero-inner{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:48px;max-width:var(--cont);margin:0 auto;width:100%}
+.hero-c{max-width:640px}
+.hero-photo{flex-shrink:0;position:relative}
+.hero-photo img{width:280px;height:280px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,107,44,.3);box-shadow:0 0 60px rgba(255,107,44,.15),0 0 120px rgba(139,92,246,.1)}
+.hero-photo::after{content:'';position:absolute;inset:-12px;border-radius:50%;border:1px solid rgba(255,107,44,.12);animation:avPulse 4s ease-in-out infinite}
+@media(max-width:900px){.hero-inner{flex-direction:column-reverse;text-align:center}.hero-photo img{width:200px;height:200px}.hero-actions{justify-content:center}.hero-badges{justify-content:center}.hero-stats{justify-content:center}}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(255,107,44,.08);border:1px solid rgba(255,107,44,.15);border-radius:100px;font-size:13px;font-weight:500;color:var(--orange);margin-bottom:28px;letter-spacing:.02em}
 .hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--orange);animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
@@ -472,6 +477,7 @@ summary:hover{background:var(--card-h)}
 <section class="hero" id="hero" aria-label="Главный экран">
   <div class="hero-mesh"></div>
   <div class="hero-shapes"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span></div>
+  <div class="hero-inner">
   <div class="hero-c">
     <div class="hero-tag sr" data-ru="Google Ads · Яндекс Директ · Реклама под ключ" data-en="Google Ads · Yandex Direct · Turnkey Advertising">Google Ads · Яндекс Директ · Реклама под ключ</div>
     <h1 class="sr sr-d1" data-ru-html="Помогаю бизнесу получать <em>клиентов через рекламу</em> под ключ" data-en-html="I help businesses get <em>clients through advertising</em> turnkey">Помогаю бизнесу получать <em>клиентов через рекламу</em> под ключ</h1>
@@ -490,6 +496,10 @@ summary:hover{background:var(--card-h)}
       <a href="#contact" class="btn-p magnetic" data-ru-html="Обсудить ваш проект <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12h14M12 5l7 7-7 7'/></svg>" data-en-html="Discuss Your Project <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12h14M12 5l7 7-7 7'/></svg>">Обсудить ваш проект <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <button class="btn-g" onclick="openQuiz()" data-ru="Пройти разбор проекта" data-en="Take a Project Assessment">Пройти разбор проекта</button>
     </div>
+  </div>
+  <div class="hero-photo sr sr-d3">
+    <img src="photo.png" alt="Дмитрий Вишневский" width="280" height="280">
+  </div>
   </div>
   <div class="hero-scroll"><div class="ln"></div></div>
 </section>
@@ -683,8 +693,13 @@ summary:hover{background:var(--card-h)}
       <div class="wm-c sr sr-d2"><h3 data-ru="Глубокое понимание бизнеса" data-en="Deep business understanding">Глубокое понимание бизнеса</h3></div>
       <div class="wm-c sr sr-d3"><h3 data-ru="Работаю лично в каждом проекте" data-en="I work personally on every project">Работаю лично в каждом проекте</h3></div>
     </div>
-    <p class="wm-bio sr" data-ru="Я занимаюсь рекламой с 2020 года и работал с проектами в разных нишах. Работаю напрямую с клиентами и не передаю проекты другим специалистам." data-en="I've been in advertising since 2020 and have worked on projects across various niches. I work directly with clients and never outsource projects.">Я занимаюсь рекламой с 2020 года и работал с проектами в разных нишах. Работаю напрямую с клиентами и не передаю проекты другим специалистам.</p>
-    <p class="wm-val sr" data-ru="Это позволяет глубже погружаться в задачи и быстрее принимать решения." data-en="This allows me to dive deeper into tasks and make decisions faster.">Это позволяет глубже погружаться в задачи и быстрее принимать решения.</p>
+    <div class="wm-bio-row sr" style="display:flex;align-items:center;gap:24px;margin-top:12px;flex-wrap:wrap">
+      <img src="photo.png" alt="Дмитрий Вишневский" width="80" height="80" style="border-radius:50%;border:2px solid rgba(255,107,44,.3);flex-shrink:0" loading="lazy">
+      <div>
+        <p class="wm-bio" style="margin-bottom:8px" data-ru="Я занимаюсь рекламой с 2020 года и работал с проектами в разных нишах. Работаю напрямую с клиентами и не передаю проекты другим специалистам." data-en="I've been in advertising since 2020 and have worked on projects across various niches. I work directly with clients and never outsource projects.">Я занимаюсь рекламой с 2020 года и работал с проектами в разных нишах. Работаю напрямую с клиентами и не передаю проекты другим специалистам.</p>
+        <p class="wm-val" data-ru="Это позволяет глубже погружаться в задачи и быстрее принимать решения." data-en="This allows me to dive deeper into tasks and make decisions faster.">Это позволяет глубже погружаться в задачи и быстрее принимать решения.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -734,7 +749,7 @@ summary:hover{background:var(--card-h)}
     <div class="about-lay">
       <div class="about-photo sr">
         <div class="about-img-wrap">
-          <img class="about-img" src="https://static.tildacdn.biz/tild3334-3765-4133-a331-653161336537/___4_.png" alt="Дмитрий Вишневский — специалист по контекстной рекламе" width="220" height="220" loading="lazy" decoding="async">
+          <img class="about-img" src="photo.png" alt="Дмитрий Вишневский — специалист по контекстной рекламе" width="220" height="220" loading="lazy" decoding="async">
         </div>
       </div>
       <div>
@@ -962,7 +977,7 @@ function renderQuiz(){
     quizBack.textContent='Back';
   }
 
-  let html=`<div class="quiz-author"><div class="quiz-avatar"><img src="https://static.tildacdn.biz/tild3334-3765-4133-a331-653161336537/___4_.png" alt="Дмитрий Вишневский" width="44" height="44"></div><span class="quiz-author-name">${currentLang==='ru'?'Дмитрий Вишневский':'Dmitry Vishnevsky'}</span></div>`;
+  let html=`<div class="quiz-author"><div class="quiz-avatar"><img src="photo.png" alt="Дмитрий Вишневский" width="44" height="44"></div><span class="quiz-author-name">${currentLang==='ru'?'Дмитрий Вишневский':'Dmitry Vishnevsky'}</span></div>`;
   html+=`<h3 class="quiz-q">${d.q}</h3><p class="quiz-context">${d.ctx}</p>`;
   if(d.type==='slider'){
     const val=quizAnswers[quizStep]||500;
@@ -1014,7 +1029,7 @@ function renderResult(){
     <p>${t.p2}</p>
     <p>${t.p3}</p>
     <div class="quiz-result-note">
-      <div class="quiz-avatar" style="flex-shrink:0"><img src="https://static.tildacdn.biz/tild3334-3765-4133-a331-653161336537/___4_.png" alt="" width="44" height="44"></div>
+      <div class="quiz-avatar" style="flex-shrink:0"><img src="photo.png" alt="" width="44" height="44"></div>
       <p>${t.note}<br><strong style="color:var(--t1)">— ${t.author}</strong></p>
     </div>
     <p style="font-size:14px;color:var(--t2);margin-bottom:16px">${t.choose}</p>
