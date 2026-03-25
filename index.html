@@ -108,6 +108,36 @@ body *{cursor:none}
 /* Hero photo — full-size with 3D tilt */
 .hero-photo-wrap{perspective:1000px;display:flex;align-items:flex-end;justify-content:center;position:relative}
 .hero-photo-wrap::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80%;height:40%;background:radial-gradient(ellipse,rgba(212,165,74,.08),transparent 70%);filter:blur(40px);pointer-events:none}
+
+/* 3D floating logos behind photo */
+.hero-logos{position:absolute;inset:0;pointer-events:none;z-index:0;perspective:600px}
+.hero-logo{
+  position:absolute;
+  width:56px;height:56px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:14px;
+  backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;
+  animation:logoFloat 6s ease-in-out infinite;
+  transform-style:preserve-3d;
+  box-shadow:0 8px 32px rgba(0,0,0,.2);
+}
+.hero-logo svg,.hero-logo img{width:28px;height:28px;opacity:.7}
+.hero-logo:nth-child(1){top:5%;left:8%;animation-delay:0s;animation-duration:7s}
+.hero-logo:nth-child(2){top:12%;right:5%;animation-delay:1.2s;animation-duration:8s}
+.hero-logo:nth-child(3){top:55%;left:2%;animation-delay:0.6s;animation-duration:6.5s}
+.hero-logo:nth-child(4){bottom:18%;right:8%;animation-delay:2s;animation-duration:7.5s}
+.hero-logo:nth-child(5){top:35%;right:0%;animation-delay:0.3s;animation-duration:9s}
+.hero-logo:nth-child(6){bottom:5%;left:15%;animation-delay:1.8s;animation-duration:6s}
+@keyframes logoFloat{
+  0%{transform:translateY(0) rotateX(0deg) rotateY(0deg)}
+  25%{transform:translateY(-12px) rotateX(8deg) rotateY(-6deg)}
+  50%{transform:translateY(-6px) rotateX(-4deg) rotateY(8deg)}
+  75%{transform:translateY(-16px) rotateX(6deg) rotateY(-4deg)}
+  100%{transform:translateY(0) rotateX(0deg) rotateY(0deg)}
+}
+@media(max-width:768px){.hero-logo{width:44px;height:44px;}.hero-logo svg,.hero-logo img{width:22px;height:22px}}
 .hero-photo-img{
   width:100%;max-width:480px;height:auto;display:block;
   transform-style:preserve-3d;transition:transform .5s var(--ease);
@@ -343,6 +373,21 @@ details[open] summary::after{transform:rotate(45deg)}
       </div>
     </div>
     <div class="hero-photo-wrap reveal reveal-d3">
+      <!-- 3D floating platform logos -->
+      <div class="hero-logos">
+        <!-- Google Ads -->
+        <div class="hero-logo"><svg viewBox="0 0 24 24" fill="none"><path d="M3.5 21h3l7-14.5L11 2 3.5 21z" fill="#4285F4"/><path d="M20.5 21h-3L11 6.5 13.5 2l7 19z" fill="#34A853"/><circle cx="6" cy="19.5" r="2.5" fill="#FBBC04"/></svg></div>
+        <!-- Яндекс Директ -->
+        <div class="hero-logo"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="#FC3F1D" opacity=".9"/><text x="8" y="17" font-size="13" font-weight="800" fill="#fff" font-family="Arial">Я</text></svg></div>
+        <!-- Google Analytics -->
+        <div class="hero-logo"><svg viewBox="0 0 24 24" fill="none"><path d="M20 4v16c0 1.1-.9 2-2 2s-2-.9-2-2V4c0-1.1.9-2 2-2s2 .9 2 2z" fill="#F9AB00"/><path d="M13 10v10c0 1.1-.9 2-2 2s-2-.9-2-2V10c0-1.1.9-2 2-2s2 .9 2 2z" fill="#E37400"/><circle cx="5" cy="20" r="2" fill="#E37400"/></svg></div>
+        <!-- Meta/Facebook Ads -->
+        <div class="hero-logo"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" fill="#1877F2"/></svg></div>
+        <!-- Яндекс Метрика -->
+        <div class="hero-logo"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" fill="#FFD60A" opacity=".85"/><path d="M7 17V10l4-4 3 5 3-3v9" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <!-- Tag Manager -->
+        <div class="hero-logo"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l10 5.5v9L12 22 2 16.5v-9L12 2z" fill="#4285F4" opacity=".85"/><path d="M12 8v8M8 12h8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+      </div>
       <div>
         <img src="hero-photo.png" alt="Дмитрий Вишневский — специалист по рекламе" class="hero-photo-img" id="heroCard" width="600" height="495">
         <div class="hero-stats">
