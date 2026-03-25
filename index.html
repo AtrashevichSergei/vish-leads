@@ -105,24 +105,21 @@ body *{cursor:none}
 .hero-sub{font-size:18px;color:var(--t2);line-height:1.618;max-width:480px;margin-bottom:40px}
 .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
 
-/* Hero photo — 3D perspective card */
-.hero-photo-wrap{perspective:800px;display:flex;justify-content:center}
-.hero-card{
-  background:var(--surface);border:1px solid var(--brd);border-radius:var(--r);
-  padding:32px;text-align:center;position:relative;
-  transform-style:preserve-3d;transition:transform .4s var(--ease);
-  backdrop-filter:blur(12px);
+/* Hero photo — full-size with 3D tilt */
+.hero-photo-wrap{perspective:1000px;display:flex;align-items:flex-end;justify-content:center;position:relative}
+.hero-photo-wrap::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80%;height:40%;background:radial-gradient(ellipse,rgba(212,165,74,.08),transparent 70%);filter:blur(40px);pointer-events:none}
+.hero-photo-img{
+  width:100%;max-width:480px;height:auto;display:block;
+  transform-style:preserve-3d;transition:transform .5s var(--ease);
+  filter:drop-shadow(0 20px 60px rgba(0,0,0,.4));
+  position:relative;z-index:1;
 }
-.hero-card::before{content:'';position:absolute;inset:-1px;border-radius:var(--r);background:linear-gradient(135deg,rgba(212,165,74,.15),transparent 40%,transparent 60%,rgba(168,82,120,.1));z-index:-1}
-.hero-card img{width:200px;height:200px;border-radius:50%;object-fit:cover;margin-bottom:20px;border:3px solid transparent;background:linear-gradient(var(--bg2),var(--bg2)),var(--grad);background-origin:border-box;background-clip:padding-box,border-box}
-.hero-card h3{font-family:var(--hd);font-size:18px;font-weight:600;margin-bottom:4px}
-.hero-card p{font-size:13px;color:var(--t3)}
-.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
-.hero-stat{background:var(--surface);border:1px solid var(--brd);border-radius:12px;padding:16px;text-align:center;transition:all .3s}
+.hero-stats{display:flex;gap:12px;margin-top:32px;justify-content:center}
+.hero-stat{background:var(--surface);border:1px solid var(--brd);border-radius:12px;padding:14px 24px;text-align:center;transition:all .3s;backdrop-filter:blur(8px)}
 .hero-stat:hover{border-color:rgba(212,165,74,.2);background:var(--surface-h)}
-.hero-stat strong{font-family:var(--hd);font-size:28px;font-weight:800;display:block;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-stat strong{font-family:var(--hd);font-size:24px;font-weight:800;display:block;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-stat span{font-size:11px;color:var(--t3);letter-spacing:.04em}
-@media(max-width:768px){.hero-inner{grid-template-columns:1fr;text-align:center}.hero-photo-wrap{order:-1}.hero-actions{justify-content:center}.hero-left{padding:120px 0 40px}}
+@media(max-width:768px){.hero-inner{grid-template-columns:1fr;text-align:center}.hero-photo-wrap{order:-1}.hero-actions{justify-content:center}.hero-left{padding:120px 0 40px}.hero-stats{justify-content:center}}
 
 /* ═══ BUTTONS ═══ */
 .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;border-radius:100px;font-family:var(--ff);font-size:15px;font-weight:600;text-decoration:none;transition:all .4s var(--ease);border:none;cursor:none;position:relative;overflow:hidden}
@@ -346,10 +343,8 @@ details[open] summary::after{transform:rotate(45deg)}
       </div>
     </div>
     <div class="hero-photo-wrap reveal reveal-d3">
-      <div class="hero-card" id="heroCard">
-        <img src="photo.png" alt="Дмитрий Вишневский" width="200" height="200">
-        <h3>Дмитрий Вишневский</h3>
-        <p data-ru="Специалист по рекламе" data-en="Advertising Specialist">Специалист по рекламе</p>
+      <div>
+        <img src="hero-photo.png" alt="Дмитрий Вишневский — специалист по рекламе" class="hero-photo-img" id="heroCard" width="600" height="495">
         <div class="hero-stats">
           <div class="hero-stat"><strong>4+</strong><span data-ru="лет опыта" data-en="years exp.">лет опыта</span></div>
           <div class="hero-stat"><strong>$100K+</strong><span data-ru="бюджетов" data-en="budgets">бюджетов</span></div>
@@ -588,9 +583,9 @@ function drawParticles(){ctx.clearRect(0,0,W,H);particles.forEach(p=>{p.x+=p.vx;
 particles.forEach((a,i)=>{for(let j=i+1;j<particles.length;j++){const b=particles[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<150){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(212,165,74,${.06*(1-d/150)})`;ctx.lineWidth=.5;ctx.stroke()}}});
 requestAnimationFrame(drawParticles)}drawParticles();
 
-/* ===== 3D CARD TILT ===== */
+/* ===== 3D PHOTO TILT ===== */
 const heroCard=document.getElementById('heroCard');
-if(heroCard){const hero=document.getElementById('hero');hero.addEventListener('mousemove',e=>{const r=heroCard.getBoundingClientRect();const x=(e.clientX-r.left-r.width/2)/r.width*12;const y=(e.clientY-r.top-r.height/2)/r.height*-12;heroCard.style.transform=`rotateY(${x}deg) rotateX(${y}deg)`});hero.addEventListener('mouseleave',()=>{heroCard.style.transform=''})}
+if(heroCard){const hero=document.getElementById('hero');hero.addEventListener('mousemove',e=>{const r=heroCard.getBoundingClientRect();const x=(e.clientX-r.left-r.width/2)/r.width*8;const y=(e.clientY-r.top-r.height/2)/r.height*-6;heroCard.style.transform=`perspective(1000px) rotateY(${x}deg) rotateX(${y}deg) scale(1.02)`});hero.addEventListener('mouseleave',()=>{heroCard.style.transform=''})}
 
 /* ===== NAV ===== */
 const nav=document.getElementById('nav');
