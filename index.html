@@ -148,24 +148,34 @@ body{font-family:var(--ff);background:var(--bg);color:var(--t1);overflow-x:hidde
 .mist-hl p{font-size:clamp(18px,2.5vw,24px);font-weight:800;color:#fff;letter-spacing:-.02em}
 .mist-cta{margin-top:28px}
 
-/* ===== APPROACH ===== */
-.appr-box{padding:40px;background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);position:relative}
+/* ===== APPROACH (2-col) ===== */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+@media(max-width:768px){.two-col{grid-template-columns:1fr;gap:32px}}
 .appr-intro{font-size:clamp(16px,1.8vw,20px);line-height:1.7;color:var(--t1);margin-bottom:28px}
 .appr-intro strong{color:var(--accent)}
 .appr-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:24px}
 .appr-list li{font-size:14px;color:var(--t2);line-height:1.5;display:flex;align-items:flex-start;gap:10px}
 .appr-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:7px;flex-shrink:0}
 .appr-pos{font-size:15px;color:var(--accent);font-weight:600;font-style:italic}
+.more-details{margin-top:16px}
+.more-details summary{font-size:13px;font-weight:600;color:var(--accent);cursor:pointer;display:inline-flex;align-items:center;gap:6px;list-style:none;text-decoration:underline;text-underline-offset:3px}
+.more-details summary::-webkit-details-marker{display:none}
+.more-details summary::after{content:'+';font-size:16px;font-weight:400;transition:transform .3s}
+.more-details[open] summary::after{transform:rotate(45deg)}
 
-/* ===== PROCESS ===== */
-.proc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.proc-card{text-align:center;padding:28px 16px}
-.proc-card .proc-num{width:48px;height:48px;border-radius:50%;background:var(--accent-bg);border:2px solid var(--accent-brd);display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:var(--accent);margin-bottom:16px}
-.proc-card h3{font-size:15px;font-weight:700;margin-bottom:6px;color:var(--t1)}
-.proc-card p{font-size:13px;color:var(--t2);line-height:1.5}
-.proc-note{margin-top:28px;font-size:14px;color:var(--t2);line-height:1.65;max-width:600px}
-@media(max-width:860px){.proc-grid{grid-template-columns:1fr 1fr}.proc-card:last-child{grid-column:span 2}}
-@media(max-width:500px){.proc-grid{grid-template-columns:1fr}.proc-card:last-child{grid-column:span 1}}
+/* ===== PROCESS (accordion) ===== */
+.proc-accordion{display:flex;flex-direction:column;gap:8px}
+
+/* ===== CTA BAR ===== */
+.cta-bar{padding:40px 20px;border-top:2px solid var(--t1);border-bottom:2px solid var(--t1)}
+.cta-bar .sec-c{display:flex;align-items:center;justify-content:space-between}
+.cta-bar-link{font-size:clamp(24px,4vw,42px);font-weight:800;color:var(--t1);text-decoration:none;letter-spacing:-.03em;transition:color .2s}
+.cta-bar-link:hover{color:var(--accent)}
+.cta-bar-arrow{font-size:clamp(28px,4vw,48px);color:var(--t1);text-decoration:none;transition:transform .3s var(--ease),color .2s}
+.cta-bar-arrow:hover{color:var(--accent);transform:translateX(8px)}
+
+/* ===== HERO QUOTE ===== */
+.hero-quote{font-size:14px;color:var(--t3);font-style:italic;margin-bottom:16px;letter-spacing:.01em}
 
 /* ===== RESULTS ===== */
 .res-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:28px}
@@ -313,7 +323,7 @@ summary:hover{background:var(--bg2)}
   .btn-p,.btn-g{width:100%;justify-content:center}
   .price-card{padding:28px 20px}
   .quiz-inner{padding:24px 16px}
-  .appr-box{padding:24px 20px}
+  .two-col{gap:24px}
 }
 </style>
 </head>
@@ -328,7 +338,7 @@ summary:hover{background:var(--bg2)}
   <ul class="nav-links">
     <li><a href="#problems" data-ru="Ситуации" data-en="Pain Points">Ситуации</a></li>
     <li><a href="#approach" data-ru="Подход" data-en="Approach">Подход</a></li>
-    <li><a href="#process" data-ru="Процесс" data-en="Process">Процесс</a></li>
+    <li><a href="#approach" data-ru="Процесс" data-en="Process">Процесс</a></li>
     <li><a href="#projects" data-ru="Проекты" data-en="Projects">Проекты</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
@@ -344,7 +354,7 @@ summary:hover{background:var(--bg2)}
 <div class="mob-menu" id="mobMenu">
   <a href="#problems" onclick="closeMob()" data-ru="Ситуации" data-en="Pain Points">Ситуации</a>
   <a href="#approach" onclick="closeMob()" data-ru="Подход" data-en="Approach">Подход</a>
-  <a href="#process" onclick="closeMob()" data-ru="Процесс" data-en="Process">Процесс</a>
+  <a href="#approach" onclick="closeMob()" data-ru="Процесс" data-en="Process">Процесс</a>
   <a href="#projects" onclick="closeMob()" data-ru="Проекты" data-en="Projects">Проекты</a>
   <a href="#faq" onclick="closeMob()">FAQ</a>
   <a href="#contact" class="nav-cta" onclick="closeMob()" data-ru="Обсудить проект" data-en="Discuss Project">Обсудить проект</a>
@@ -357,6 +367,7 @@ summary:hover{background:var(--bg2)}
   <div class="hero-grid">
     <div>
       <div class="hero-tag sr" data-ru="Google Ads · Яндекс Директ · Реклама под ключ" data-en="Google Ads · Yandex Direct · Turnkey Advertising">Google Ads · Яндекс Директ · Реклама под ключ</div>
+      <p class="hero-quote sr" data-ru="«Реклама начинает работать, когда выстроена правильная система»" data-en="«Advertising starts working when the right system is built»">«Реклама начинает работать, когда выстроена правильная система»</p>
       <h1 class="sr sr-d1" data-ru-html="Помогаю бизнесу получать <em>клиентов через рекламу</em> под ключ" data-en-html="I help businesses get <em>clients through advertising</em> turnkey">Помогаю бизнесу получать <em>клиентов через рекламу</em> под ключ</h1>
       <p class="hero-sub sr sr-d2" data-ru="Подключаюсь к проектам, где нужно запустить рекламу с нуля и выстроить понятную модель привлечения клиентов" data-en="I join projects that need to launch advertising from scratch and build a clear client acquisition model">Подключаюсь к проектам, где нужно запустить рекламу с нуля и выстроить понятную модель привлечения клиентов</p>
       <div class="hero-badges sr sr-d2">
@@ -432,40 +443,57 @@ summary:hover{background:var(--bg2)}
   </div>
 </section>
 
-<!-- APPROACH -->
-<section class="sec sec-alt" id="approach" aria-label="Подход к работе">
+<!-- APPROACH + PROCESS (merged 2-col) -->
+<section class="sec sec-alt" id="approach" aria-label="Подход и процесс работы">
   <div class="sec-c">
     <div class="sec-tag sr" data-ru="Мой подход" data-en="My Approach">Мой подход</div>
     <h2 class="sec-h sr" data-ru="Мой подход к работе" data-en="My approach to work">Мой подход к работе</h2>
-    <div class="appr-box sr">
-      <p class="appr-intro" data-ru-html="Я не занимаюсь просто настройкой рекламных кампаний. Моя задача — <strong>разобраться</strong> в бизнесе и <strong>выстроить</strong> понятную систему привлечения клиентов." data-en-html="I don't just set up ad campaigns. My task is to <strong>understand</strong> the business and <strong>build</strong> a clear client acquisition system.">Я не занимаюсь просто настройкой рекламных кампаний. Моя задача — <strong>разобраться</strong> в бизнесе и <strong>выстроить</strong> понятную систему привлечения клиентов.</p>
-      <p style="font-size:14px;color:var(--t2);margin-bottom:14px;font-weight:700" data-ru="Перед запуском мне важно понять:" data-en="Before launching, I need to understand:">Перед запуском мне важно понять:</p>
-      <ul class="appr-list">
-        <li data-ru="кто ваш клиент и как он принимает решение" data-en="who your client is and how they make decisions">кто ваш клиент и как он принимает решение</li>
-        <li data-ru="какие рекламные каналы могут работать" data-en="which ad channels could work">какие рекламные каналы могут работать</li>
-        <li data-ru="какая стоимость клиента допустима" data-en="what client acquisition cost is acceptable">какая стоимость клиента допустима</li>
-        <li data-ru="какой должна быть посадочная страница" data-en="what the landing page should look like">какой должна быть посадочная страница</li>
-      </ul>
-      <p class="appr-pos" data-ru="Сотрудничаю не как исполнитель, а как партнёр в проекте" data-en="I collaborate not as a contractor, but as a project partner">Сотрудничаю не как исполнитель, а как партнёр в проекте</p>
+    <p class="sec-sub sr" data-ru="Понятный подход и чёткий процесс — от анализа до результата" data-en="A clear approach and structured process — from analysis to results">Понятный подход и чёткий процесс — от анализа до результата</p>
+    <div class="two-col">
+      <!-- LEFT: Approach -->
+      <div class="sr">
+        <p class="appr-intro" data-ru-html="Я не занимаюсь просто настройкой рекламных кампаний. Моя задача — <strong>разобраться</strong> в бизнесе и <strong>выстроить</strong> понятную систему привлечения клиентов." data-en-html="I don't just set up ad campaigns. My task is to <strong>understand</strong> the business and <strong>build</strong> a clear client acquisition system.">Я не занимаюсь просто настройкой рекламных кампаний. Моя задача — <strong>разобраться</strong> в бизнесе и <strong>выстроить</strong> понятную систему привлечения клиентов.</p>
+        <p style="font-size:14px;color:var(--t2);margin-bottom:14px;font-weight:700" data-ru="Перед запуском мне важно понять:" data-en="Before launching, I need to understand:">Перед запуском мне важно понять:</p>
+        <ul class="appr-list">
+          <li data-ru="кто ваш клиент и как он принимает решение" data-en="who your client is and how they make decisions">кто ваш клиент и как он принимает решение</li>
+          <li data-ru="какие рекламные каналы могут работать" data-en="which ad channels could work">какие рекламные каналы могут работать</li>
+          <li data-ru="какая стоимость клиента допустима" data-en="what client acquisition cost is acceptable">какая стоимость клиента допустима</li>
+          <li data-ru="какой должна быть посадочная страница" data-en="what the landing page should look like">какой должна быть посадочная страница</li>
+        </ul>
+        <details class="more-details sr">
+          <summary data-ru="подробнее" data-en="more details">подробнее</summary>
+          <p style="font-size:14px;color:var(--t2);line-height:1.65;padding-top:12px" data-ru="Сотрудничаю не как исполнитель, а как партнёр в проекте. Мне важно не просто запустить рекламу, а разобраться в задаче бизнеса и довести её до результата." data-en="I collaborate not as a contractor, but as a project partner. It's important for me not just to launch ads, but to understand the business challenge and deliver results.">Сотрудничаю не как исполнитель, а как партнёр в проекте. Мне важно не просто запустить рекламу, а разобраться в задаче бизнеса и довести её до результата.</p>
+        </details>
+      </div>
+      <!-- RIGHT: Process accordion -->
+      <div class="sr">
+        <p style="font-size:13px;font-weight:700;color:var(--t2);margin-bottom:14px;text-transform:uppercase;letter-spacing:.08em" data-ru="Этапы работы" data-en="Stages of Work">Этапы работы</p>
+        <div class="proc-accordion">
+          <details class="sr" open>
+            <summary data-ru="01 — Анализ" data-en="01 — Analysis">01 — Анализ</summary>
+            <div class="faq-a" data-ru="Чтобы понять точку старта и возможности. Разбираюсь в нише, конкурентах и текущей ситуации проекта." data-en="To understand the starting point and opportunities. I analyze the niche, competitors, and current project situation.">Чтобы понять точку старта и возможности. Разбираюсь в нише, конкурентах и текущей ситуации проекта.</div>
+          </details>
+          <details class="sr sr-d1">
+            <summary data-ru="02 — Стратегия" data-en="02 — Strategy">02 — Стратегия</summary>
+            <div class="faq-a" data-ru="Чтобы определить, как именно привлекать клиентов. Выбираю каналы, формирую предложение и план запуска." data-en="To determine exactly how to attract clients. I choose channels, form the offer, and create a launch plan.">Чтобы определить, как именно привлекать клиентов. Выбираю каналы, формирую предложение и план запуска.</div>
+          </details>
+          <details class="sr sr-d2">
+            <summary data-ru="03 — Подготовка" data-en="03 — Preparation">03 — Подготовка</summary>
+            <div class="faq-a" data-ru="Чтобы всё было готово к запуску. Настраиваю аналитику, рекламные кабинеты и посадочные страницы." data-en="To make everything ready for launch. I set up analytics, ad accounts, and landing pages.">Чтобы всё было готово к запуску. Настраиваю аналитику, рекламные кабинеты и посадочные страницы.</div>
+          </details>
+          <details class="sr sr-d3">
+            <summary data-ru="04 — Запуск" data-en="04 — Launch">04 — Запуск</summary>
+            <div class="faq-a" data-ru="Запускается реклама и начинается тестирование. Отслеживаю первые результаты и корректирую настройки." data-en="Ads go live and testing begins. I track initial results and adjust settings.">Запускается реклама и начинается тестирование. Отслеживаю первые результаты и корректирую настройки.</div>
+          </details>
+          <details class="sr sr-d4">
+            <summary data-ru="05 — Оптимизация" data-en="05 — Optimization">05 — Оптимизация</summary>
+            <div class="faq-a" data-ru="На основе данных — оптимизация и масштабирование. Убираю неэффективное, усиливаю то, что работает." data-en="Based on data — optimization and scaling. I remove what's ineffective and strengthen what works.">На основе данных — оптимизация и масштабирование. Убираю неэффективное, усиливаю то, что работает.</div>
+          </details>
+        </div>
+        <p style="margin-top:20px;font-size:14px;color:var(--t2);line-height:1.65" data-ru="В каждом проекте есть свои нюансы, но логика работы обычно именно такая." data-en="Every project has its nuances, but the workflow is usually like this.">В каждом проекте есть свои нюансы, но логика работы обычно именно такая.</p>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section class="sec" id="process" aria-label="Процесс работы">
-  <div class="sec-c">
-    <div class="sec-tag sr" data-ru="Как проходит работа" data-en="How It Works">Как проходит работа</div>
-    <h2 class="sec-h sr" data-ru="Понятный процесс — от анализа до результата" data-en="A clear process — from analysis to results">Понятный процесс — от анализа до результата</h2>
-    <p class="sec-sub sr" data-ru="Всё выстраиваю по понятному процессу" data-en="Everything follows a clear process">Всё выстраиваю по понятному процессу</p>
-    <div class="proc-grid">
-      <div class="card proc-card sr"><div class="proc-num">01</div><h3 data-ru="Анализ" data-en="Analysis">Анализ</h3><p data-ru="Чтобы понять точку старта и возможности" data-en="To understand the starting point and opportunities">Чтобы понять точку старта и возможности</p></div>
-      <div class="card proc-card sr sr-d1"><div class="proc-num">02</div><h3 data-ru="Стратегия" data-en="Strategy">Стратегия</h3><p data-ru="Чтобы определить, как именно привлекать клиентов" data-en="To determine exactly how to attract clients">Чтобы определить, как именно привлекать клиентов</p></div>
-      <div class="card proc-card sr sr-d2"><div class="proc-num">03</div><h3 data-ru="Подготовка" data-en="Preparation">Подготовка</h3><p data-ru="Чтобы всё было готово к запуску" data-en="To make everything ready for launch">Чтобы всё было готово к запуску</p></div>
-      <div class="card proc-card sr sr-d3"><div class="proc-num">04</div><h3 data-ru="Запуск" data-en="Launch">Запуск</h3><p data-ru="Запускается реклама и начинается тестирование" data-en="Ads go live and testing begins">Запускается реклама и начинается тестирование</p></div>
-      <div class="card proc-card sr sr-d4"><div class="proc-num">05</div><h3 data-ru="Рост" data-en="Growth">Рост</h3><p data-ru="На основе данных — оптимизация и масштабирование" data-en="Based on data — optimization and scaling">На основе данных — оптимизация и масштабирование</p></div>
-    </div>
-    <p class="proc-note sr" data-ru="В каждом проекте есть свои нюансы, но логика работы обычно именно такая. Можно разобрать, как это будет у вас." data-en="Every project has its nuances, but the workflow is usually like this. We can discuss how it applies to yours.">В каждом проекте есть свои нюансы, но логика работы обычно именно такая. Можно разобрать, как это будет у вас.</p>
-    <div style="margin-top:24px" class="sr"><a href="#contact" class="btn-p" data-ru-html="Обсудить ваш проект &rarr;" data-en-html="Discuss Your Project &rarr;">Обсудить ваш проект &rarr;</a></div>
+    <div style="margin-top:32px" class="sr"><a href="#contact" class="btn-p" data-ru-html="Обсудить ваш проект &rarr;" data-en-html="Discuss Your Project &rarr;">Обсудить ваш проект &rarr;</a></div>
   </div>
 </section>
 
@@ -640,6 +668,17 @@ summary:hover{background:var(--bg2)}
           <a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
           <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         </div>
+        <div class="about-skills sr" style="margin-top:20px">
+          <p style="font-size:13px;font-weight:700;color:var(--t2);margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em" data-ru="Инструменты" data-en="Tools">Инструменты</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="fact-pill">Google Ads</span>
+            <span class="fact-pill" data-ru="Яндекс Директ" data-en="Yandex Direct">Яндекс Директ</span>
+            <span class="fact-pill">Google Analytics</span>
+            <span class="fact-pill" data-ru="Яндекс Метрика" data-en="Yandex Metrica">Яндекс Метрика</span>
+            <span class="fact-pill" data-ru="Аналитика" data-en="Analytics">Аналитика</span>
+            <span class="fact-pill" data-ru="A/B тесты" data-en="A/B Testing">A/B тесты</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -688,6 +727,13 @@ summary:hover{background:var(--bg2)}
 </section>
 
 </main>
+
+<section class="cta-bar" aria-label="CTA">
+  <div class="sec-c">
+    <a href="#contact" class="cta-bar-link" data-ru="ОБСУДИТЬ ВАШ ПРОЕКТ" data-en="DISCUSS YOUR PROJECT">ОБСУДИТЬ ВАШ ПРОЕКТ</a>
+    <a href="#contact" class="cta-bar-arrow">&rarr;</a>
+  </div>
+</section>
 
 <footer class="footer" role="contentinfo">
   <div class="footer-left">
