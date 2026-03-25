@@ -96,19 +96,19 @@ body *{cursor:none}
 
 /* ═══ CHAPTER SYSTEM ═══ */
 .ch{padding:clamp(80px,14vh,160px) clamp(20px,5vw,60px);position:relative;overflow:hidden}
-.ch-clip{clip-path:inset(6% 3%);transition:clip-path 1.2s var(--ease2);opacity:.3;transition-property:clip-path,opacity}
-.ch-clip.vis{clip-path:inset(0);opacity:1}
+.ch-clip{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.ch-clip.vis{opacity:1;transform:none}
 .ch-inner{max-width:var(--cont);margin:0 auto;position:relative;z-index:1}
 .ch-label{font-family:var(--hd);font-size:12px;font-weight:500;letter-spacing:.06em;color:var(--t3);margin-bottom:20px;display:flex;align-items:center;gap:0}
 .ch-label::before{content:'[';margin-right:8px;color:var(--blue);font-size:16px;font-weight:300}
 .ch-label::after{content:']';margin-left:8px;color:var(--blue);font-size:16px;font-weight:300}
 
 /* Split-text targets */
-.split-heading{font-family:var(--hd);font-size:clamp(32px,5.5vw,64px);font-weight:700;line-height:1.08;letter-spacing:-.04em;margin-bottom:20px}
-.split-heading em{font-style:normal;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.split-heading{font-family:var(--hd);font-size:clamp(32px,5.5vw,64px);font-weight:700;line-height:1.12;letter-spacing:-.04em;margin-bottom:20px}
+.split-heading em{font-style:normal;color:var(--blue)}
 /* After split-text runs: */
 .word{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:4px}
-.word-inner{display:inline-block;transform:translateY(110%);transition:transform .7s var(--ease);will-change:transform}
+.word-inner{display:inline-block;transform:translateY(105%);transition:transform .7s var(--ease);will-change:transform}
 .word-inner.vis{transform:none}
 .ch-desc{font-size:17px;color:var(--t2);line-height:1.618;max-width:520px;margin-bottom:40px;opacity:0;transform:translateY(24px);transition:all .8s var(--ease) .3s}
 .ch-desc.vis{opacity:1;transform:none}
@@ -123,7 +123,7 @@ body *{cursor:none}
 .hero-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--blue);animation:pulse 2.5s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(67,97,238,.3)}50%{opacity:.5;box-shadow:0 0 0 10px rgba(67,97,238,0)}}
 .hero h1{font-family:var(--hd);font-size:clamp(36px,6vw,68px);font-weight:800;line-height:1.05;letter-spacing:-.05em;margin-bottom:20px}
-.hero h1 em{font-style:normal;display:inline;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero h1 em{font-style:normal;color:var(--blue)}
 .hero-sub{font-size:17px;color:var(--t2);line-height:1.618;max-width:460px;margin-bottom:36px;opacity:0;transform:translateY(20px);transition:all .7s var(--ease) .5s}
 .hero-sub.vis{opacity:1;transform:none}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;opacity:0;transform:translateY(16px);transition:all .6s var(--ease) .7s}
@@ -174,8 +174,10 @@ body *{cursor:none}
 .prob:hover{transform:translateY(-6px) rotateX(2deg);border-color:var(--blue-border);box-shadow:0 12px 36px rgba(0,0,0,.06)}
 .prob::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--grad);transform:scaleX(0);transition:transform .5s var(--ease);transform-origin:left}
 .prob:hover::after{transform:scaleX(1)}
-.prob-icon{font-size:20px;margin-bottom:14px;display:block;opacity:.7}
-.prob h3{font-size:14px;font-weight:600;line-height:1.5}
+.prob-icon{font-size:20px;margin-bottom:14px;display:block;width:44px;height:44px;background:var(--blue-light);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--blue);font-weight:700}
+.prob h3{font-size:15px;font-weight:700;line-height:1.4;margin-bottom:8px}
+.prob-sub{font-size:13px;color:var(--t2);line-height:1.618;margin:0;opacity:0;max-height:0;overflow:hidden;transition:all .4s var(--ease)}
+.prob:hover .prob-sub{opacity:1;max-height:100px;margin-top:0}
 @media(max-width:768px){.prob-grid{grid-template-columns:1fr}}
 
 /* ═══ MISTAKES ═══ */
@@ -407,8 +409,8 @@ details[open] summary::after{transform:rotate(45deg)}
   <div class="hero-inner">
     <div class="hero-left">
       <div class="hero-badge" data-ru="Google Ads · Яндекс Директ" data-en="Google Ads · Yandex Direct">Google Ads · Яндекс Директ</div>
-      <h1 class="split-heading" data-ru-html="Выстраиваю систему <em>привлечения клиентов</em>" data-en-html="I build systems for <em>client acquisition</em>">Выстраиваю систему <em>привлечения клиентов</em></h1>
-      <p class="hero-sub" data-ru="Не просто запускаю рекламу — разбираюсь в вашем бизнесе и создаю предсказуемый поток заявок" data-en="I don't just launch ads — I understand your business and create a predictable lead flow">Не просто запускаю рекламу — разбираюсь в вашем бизнесе и создаю предсказуемый поток заявок</p>
+      <h1 class="split-heading" data-ru-html="Выстраиваю систему <em>привлечения клиентов</em> через рекламу" data-en-html="I build <em>client acquisition</em> systems through advertising">Выстраиваю систему <em>привлечения клиентов</em> через рекламу</h1>
+      <p class="hero-sub" data-ru="Анализирую рынок, выстраиваю стратегию, запускаю рекламные кампании и оптимизирую до предсказуемого потока заявок. Персонально. Под ключ." data-en="I analyze the market, build strategy, launch campaigns and optimize until leads flow predictably. Personally. Turnkey.">Анализирую рынок, выстраиваю стратегию, запускаю рекламные кампании и оптимизирую до предсказуемого потока заявок. Персонально. Под ключ.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-p magnetic"><span data-ru="Обсудить проект &rarr;" data-en="Discuss Project &rarr;">Обсудить проект &rarr;</span></a>
         <button class="btn btn-g magnetic" onclick="openQuiz()" data-ru="Разбор проекта" data-en="Assessment">Разбор проекта</button>
@@ -438,12 +440,12 @@ details[open] summary::after{transform:rotate(45deg)}
     <div class="ch-label" data-ru="01 — Знакомо?" data-en="01 — Sound familiar?">01 — Знакомо?</div>
     <h2 class="split-heading" data-ru-html="С чем обычно <em>приходят</em>" data-en-html="What clients usually <em>come with</em>">С чем обычно <em>приходят</em></h2>
     <div class="prob-grid">
-      <div class="prob"><span class="prob-icon">?</span><h3 data-ru="Нет понимания, какие каналы могут работать" data-en="No clarity on which channels could work">Нет понимания, какие каналы могут работать</h3></div>
-      <div class="prob"><span class="prob-icon">$</span><h3 data-ru="Бюджет уходит — клиентов нет" data-en="Budget drains — no clients">Бюджет уходит — клиентов нет</h3></div>
-      <div class="prob"><span class="prob-icon">&uarr;</span><h3 data-ru="Стоимость заявки слишком высокая" data-en="Cost per lead too high">Стоимость заявки слишком высокая</h3></div>
-      <div class="prob"><span class="prob-icon">0</span><h3 data-ru="Реклама есть — заявок нет" data-en="Ads run — no leads">Реклама есть — заявок нет</h3></div>
-      <div class="prob"><span class="prob-icon">!</span><h3 data-ru="Нет системы привлечения" data-en="No acquisition system">Нет системы привлечения</h3></div>
-      <div class="prob"><span class="prob-icon">&hellip;</span><h3 data-ru="Не знаю с чего начать" data-en="Don't know where to start">Не знаю с чего начать</h3></div>
+      <div class="prob"><span class="prob-icon">?</span><h3 data-ru="Неясно, какие каналы сработают" data-en="Unclear which channels will work">Неясно, какие каналы сработают</h3><p class="prob-sub" data-ru="Google, Яндекс, Meta — каждый канал требует своей стратегии. Без анализа это лотерея." data-en="Google, Yandex, Meta — each channel needs its own strategy. Without analysis, it's a lottery.">Google, Яндекс, Meta — каждый канал требует своей стратегии. Без анализа это лотерея.</p></div>
+      <div class="prob"><span class="prob-icon">$</span><h3 data-ru="Бюджет тратится впустую" data-en="Budget wasted">Бюджет тратится впустую</h3><p class="prob-sub" data-ru="Деньги уходят, а конверсии не растут. Причина — в неправильной настройке кампаний." data-en="Money spent, but conversions don't grow. Reason: misconfigured campaigns.">Деньги уходят, а конверсии не растут. Причина — в неправильной настройке кампаний.</p></div>
+      <div class="prob"><span class="prob-icon">&uarr;</span><h3 data-ru="Высокая стоимость лида" data-en="High cost per lead">Высокая стоимость лида</h3><p class="prob-sub" data-ru="CPA выше допустимого. Юнит-экономика не сходится — масштабирование невозможно." data-en="CPA above threshold. Unit economics don't work — scaling is impossible.">CPA выше допустимого. Юнит-экономика не сходится — масштабирование невозможно.</p></div>
+      <div class="prob"><span class="prob-icon">0</span><h3 data-ru="Реклама крутится — заявок нет" data-en="Ads running — zero leads">Реклама крутится — заявок нет</h3><p class="prob-sub" data-ru="Показы есть, клики есть, а заявок нет. Проблема в связке: оффер → страница → аудитория." data-en="Impressions, clicks, but no leads. Problem in the chain: offer → page → audience.">Показы есть, клики есть, а заявок нет. Проблема в связке: оффер → страница → аудитория.</p></div>
+      <div class="prob"><span class="prob-icon">!</span><h3 data-ru="Нет системы привлечения" data-en="No acquisition system">Нет системы привлечения</h3><p class="prob-sub" data-ru="Клиенты приходят хаотично. Нет воронки, нет аналитики, нет контроля над каналами." data-en="Clients come chaotically. No funnel, no analytics, no channel control.">Клиенты приходят хаотично. Нет воронки, нет аналитики, нет контроля над каналами.</p></div>
+      <div class="prob"><span class="prob-icon">&hellip;</span><h3 data-ru="Не знаю с чего начать" data-en="Don't know where to start">Не знаю с чего начать</h3><p class="prob-sub" data-ru="Рынок, конкуренты, бюджет — слишком много переменных. Нужна ясная стратегия входа." data-en="Market, competitors, budget — too many variables. Need a clear entry strategy.">Рынок, конкуренты, бюджет — слишком много переменных. Нужна ясная стратегия входа.</p></div>
     </div>
   </div>
 </section>
@@ -472,11 +474,11 @@ details[open] summary::after{transform:rotate(45deg)}
     <p class="ch-desc" data-ru="5 этапов. Логика одна — нюансы зависят от ниши." data-en="5 stages. Same logic — details depend on the niche.">5 этапов. Логика одна — нюансы зависят от ниши.</p>
     <div class="pipeline-wrap">
       <div class="pipeline">
-        <div class="pipe-step"><div class="pipe-num">01</div><div class="pipe-title" data-ru="Анализ" data-en="Analysis">Анализ</div><div class="pipe-desc" data-ru="Ниша, конкуренты, ситуация" data-en="Niche, competitors, situation">Ниша, конкуренты, ситуация</div></div>
-        <div class="pipe-step"><div class="pipe-num">02</div><div class="pipe-title" data-ru="Стратегия" data-en="Strategy">Стратегия</div><div class="pipe-desc" data-ru="Каналы, предложение, план" data-en="Channels, offer, plan">Каналы, предложение, план</div></div>
-        <div class="pipe-step"><div class="pipe-num">03</div><div class="pipe-title" data-ru="Подготовка" data-en="Setup">Подготовка</div><div class="pipe-desc" data-ru="Аналитика, кабинеты, страницы" data-en="Analytics, accounts, pages">Аналитика, кабинеты, страницы</div></div>
-        <div class="pipe-step"><div class="pipe-num">04</div><div class="pipe-title" data-ru="Запуск" data-en="Launch">Запуск</div><div class="pipe-desc" data-ru="Тестирование и первые данные" data-en="Testing and first data">Тестирование и первые данные</div></div>
-        <div class="pipe-step"><div class="pipe-num">05</div><div class="pipe-title" data-ru="Рост" data-en="Growth">Рост</div><div class="pipe-desc" data-ru="Оптимизация, масштаб" data-en="Optimization, scale">Оптимизация, масштаб</div></div>
+        <div class="pipe-step"><div class="pipe-num">01</div><div class="pipe-title" data-ru="Аудит и анализ" data-en="Audit & Analysis">Аудит и анализ</div><div class="pipe-desc" data-ru="Анализ ниши, конкурентов, семантического ядра. Определение целевых сегментов и точек входа." data-en="Niche analysis, competitors, semantic core. Identifying target segments and entry points.">Анализ ниши, конкурентов, семантического ядра. Определение целевых сегментов и точек входа.</div></div>
+        <div class="pipe-step"><div class="pipe-num">02</div><div class="pipe-title" data-ru="Стратегия" data-en="Strategy">Стратегия</div><div class="pipe-desc" data-ru="Медиаплан, выбор каналов, формирование УТП. Прогноз бюджета и CPA по каждому сегменту." data-en="Media plan, channel selection, USP formation. Budget and CPA forecast per segment.">Медиаплан, выбор каналов, формирование УТП. Прогноз бюджета и CPA по каждому сегменту.</div></div>
+        <div class="pipe-step"><div class="pipe-num">03</div><div class="pipe-title" data-ru="Инфраструктура" data-en="Infrastructure">Инфраструктура</div><div class="pipe-desc" data-ru="Настройка аналитики, пикселей, конверсий. Подготовка посадочных страниц и рекламных кабинетов." data-en="Analytics setup, pixels, conversions. Landing pages and ad accounts preparation.">Настройка аналитики, пикселей, конверсий. Подготовка посадочных страниц и рекламных кабинетов.</div></div>
+        <div class="pipe-step"><div class="pipe-num">04</div><div class="pipe-title" data-ru="Запуск и тест" data-en="Launch & Test">Запуск и тест</div><div class="pipe-desc" data-ru="A/B тестирование креативов и аудиторий. Сбор данных для принятия решений на основе метрик." data-en="A/B testing creatives and audiences. Data collection for metrics-driven decisions.">A/B тестирование креативов и аудиторий. Сбор данных для принятия решений на основе метрик.</div></div>
+        <div class="pipe-step"><div class="pipe-num">05</div><div class="pipe-title" data-ru="Масштабирование" data-en="Scaling">Масштабирование</div><div class="pipe-desc" data-ru="Отключение неэффективного, усиление рабочих связок. Снижение CPA, рост объёма заявок." data-en="Cut ineffective, amplify working combinations. Lower CPA, increase lead volume.">Отключение неэффективного, усиление рабочих связок. Снижение CPA, рост объёма заявок.</div></div>
       </div>
     </div>
   </div>
@@ -522,7 +524,7 @@ details[open] summary::after{transform:rotate(45deg)}
       </div>
       <div>
         <p class="about-role" data-ru="Специалист по контекстной рекламе" data-en="PPC Advertising Specialist">Специалист по контекстной рекламе</p>
-        <p class="about-bio" data-ru="Занимаюсь рекламой с 2020 года. Работаю напрямую — не передаю проекты. Важно не просто запустить, а разобраться в задаче и довести до результата." data-en="In advertising since 2020. Work directly — never outsource. Not just launch ads, but understand the challenge and deliver.">Занимаюсь рекламой с 2020 года. Работаю напрямую — не передаю проекты. Важно не просто запустить, а разобраться в задаче и довести до результата.</p>
+        <p class="about-bio" data-ru="Специализируюсь на performance-маркетинге с 2020 года. Работаю напрямую с каждым проектом — без делегирования и посредников. Погружаюсь в юнит-экономику бизнеса, чтобы реклама была не расходом, а инвестицией с измеримым ROI." data-en="Specializing in performance marketing since 2020. Work directly on every project — no delegation, no middlemen. I dive into business unit economics so advertising becomes an investment with measurable ROI.">Специализируюсь на performance-маркетинге с 2020 года. Работаю напрямую с каждым проектом — без делегирования и посредников. Погружаюсь в юнит-экономику бизнеса, чтобы реклама была не расходом, а инвестицией с измеримым ROI.</p>
         <div class="about-socials">
           <a href="https://t.me/vishnevsky" target="_blank" rel="noopener" aria-label="Telegram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
           <a href="https://www.youtube.com/@vishnevsky" target="_blank" rel="noopener" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
