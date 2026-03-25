@@ -7,7 +7,7 @@
 <meta name="description" content="Помогаю бизнесу получать клиентов через рекламу в Google и Яндекс. 4+ лет опыта, работаю лично, запуск под ключ. Обсудить проект — бесплатно.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://vish-leads.com/">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#08080c">
 <meta property="og:title" content="Дмитрий Вишневский — Реклама под ключ">
 <meta property="og:description" content="Помогаю бизнесу получать клиентов через рекламу в Google и Яндекс. 4+ лет опыта, 100+ тыс. $ управляемых бюджетов.">
 <meta property="og:image" content="https://vish-leads.com/og-image.jpg">
@@ -20,7 +20,7 @@
 <meta name="twitter:image" content="https://vish-leads.com/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Дмитрий Вишневский","jobTitle":"Специалист по контекстной рекламе","url":"https://vish-leads.com","image":"photo.png","email":"visjb3t3t@gmail.com","sameAs":["https://t.me/vishnevsky","https://www.youtube.com/@vishnevsky","https://www.linkedin.com/in/vishnevsky"],"knowsAbout":["Google Ads","Яндекс Директ","контекстная реклама","привлечение клиентов"]}
 </script>
@@ -30,135 +30,337 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Когда появляются первые заявки","acceptedAnswer":{"@type":"Answer","text":"В некоторых проектах заявки могут пойти уже в первые дни. Но прогнозируемый результат обычно появляется позже - когда после тестирования становится понятно, что именно работает."}},{"@type":"Question","name":"Сколько времени занимает запуск рекламы","acceptedAnswer":{"@type":"Answer","text":"Срок запуска зависит от проекта и текущей готовности. В среднем это от нескольких дней до нескольких недель - сначала анализ, потом стратегия и уже после этого запуск рекламы."}},{"@type":"Question","name":"Какой бюджет нужен на рекламу","acceptedAnswer":{"@type":"Answer","text":"Обычно тестовый бюджет начинается от 100$, но сильно зависит от ниши и стоимости заявки. В разных проектах цифры могут отличаться, поэтому точнее могу сказать уже после обсуждения вашего проекта."}},{"@type":"Question","name":"Работаете ли вы с бизнесами из других стран","acceptedAnswer":{"@type":"Answer","text":"Да, работаю с русскоязычными предпринимателями по всему миру. Если аудитория русскоязычная - география обычно не ограничение."}},{"@type":"Question","name":"Нужно ли мне разбираться в рекламе","acceptedAnswer":{"@type":"Answer","text":"Нет, в рекламе разбираться не обязательно. Я беру на себя запуск и управление рекламой, от вас - участие в обсуждении и работа с заявками."}},{"@type":"Question","name":"Есть ли гарантии результата","acceptedAnswer":{"@type":"Answer","text":"В рекламе нет гарантий - слишком много факторов влияет на результат. Но почти в каждом проекте можно выстроить систему и понять, какие подходы реально работают."}},{"@type":"Question","name":"Что если у меня ещё не было рекламы","acceptedAnswer":{"@type":"Answer","text":"Это нормально - во многих проектах реклама начинается с нуля. В этом случае сначала разбираемся в проекте и выстраиваем систему привлечения с самого начала."}},{"@type":"Question","name":"Как происходит отчётность и обратная связь","acceptedAnswer":{"@type":"Answer","text":"Я регулярно даю обратную связь и держу вас в курсе по проекту. Раз в неделю делаю отчёт, чтобы было понятно, что происходит с рекламой и какие результаты."}}]}
 </script>
+
+<!-- Grain SVG filter -->
+<svg style="position:absolute;width:0;height:0">
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feBlend in="SourceGraphic" mode="multiply" result="blend"/><feComponentTransfer><feFuncA type="linear" slope=".08"/></feComponentTransfer></filter>
+</svg>
+
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#fff;--bg2:#f7f7f8;--bg3:#f0f0f2;
-  --card:#fff;--card-h:#fafafa;
-  --t1:#111;--t2:#555;--t3:#999;
-  --accent:#FF6B2C;--accent2:#FF8F5C;--accent-bg:rgba(255,107,44,.06);--accent-brd:rgba(255,107,44,.15);
-  --brd:#e8e8ea;--brd-h:#d0d0d2;
-  --ff:'Plus Jakarta Sans',system-ui,sans-serif;
-  --ease:cubic-bezier(.16,1,.3,1);
-  --r:20px;--r-sm:14px;--r-pill:100px;
-  --shadow:0 1px 3px rgba(0,0,0,.04),0 4px 24px rgba(0,0,0,.04);
-  --shadow-h:0 8px 40px rgba(0,0,0,.08);
-  --cont:1140px;--pad:clamp(64px,10vw,120px);
-}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{font-family:var(--ff);background:var(--bg);color:var(--t1);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-.skip{position:absolute;top:-100%;left:16px;padding:10px 20px;background:var(--accent);color:#fff;border-radius:0 0 8px 8px;font-weight:600;z-index:10000;text-decoration:none;font-size:14px}.skip:focus{top:0}
 
-/* Scroll reveal */
-.sr{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+:root{
+  --bg:#08080c;--bg2:#0e0e14;--bg3:#14141c;
+  --card:rgba(255,255,255,.03);--card-h:rgba(255,255,255,.06);
+  --t1:#f0ede8;--t2:rgba(240,237,232,.55);--t3:rgba(240,237,232,.3);
+  --accent:#e8a45a;--accent2:#d4764e;--accent3:#c45c8a;
+  --glow:rgba(232,164,90,.15);--glow2:rgba(212,118,78,.1);
+  --brd:rgba(255,255,255,.06);--brd-h:rgba(255,255,255,.12);
+  --grad:linear-gradient(135deg,#e8a45a,#d4764e,#c45c8a);
+  --grad-text:linear-gradient(135deg,#f0c987,#e8a45a,#d4764e,#c45c8a);
+  --ff:'Plus Jakarta Sans',system-ui,sans-serif;
+  --ff-display:'Outfit',system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --ease-out:cubic-bezier(.22,1,.36,1);
+  --r:24px;--r-sm:16px;--r-pill:100px;
+  --shadow:0 4px 32px rgba(0,0,0,.4);
+  --shadow-h:0 12px 48px rgba(0,0,0,.6);
+  --cont:1180px;--pad:clamp(72px,12vw,140px);
+}
+
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+
+body{
+  font-family:var(--ff);background:var(--bg);color:var(--t1);
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Grain overlay on body */
+body::after{
+  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
+  filter:url(#grain);opacity:.4;
+  background:transparent;
+  mix-blend-mode:overlay;
+}
+
+/* Skip link */
+.skip{position:absolute;top:-100%;left:16px;padding:10px 20px;background:var(--accent);color:var(--bg);border-radius:0 0 8px 8px;font-weight:600;z-index:10000;text-decoration:none;font-size:14px}.skip:focus{top:0}
+
+/* ===== SCROLL REVEAL ===== */
+.sr{opacity:0;transform:translateY(36px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out)}
 .sr.vis{opacity:1;transform:none}
-.sr-d1{transition-delay:.06s}.sr-d2{transition-delay:.12s}.sr-d3{transition-delay:.18s}
-.sr-d4{transition-delay:.24s}.sr-d5{transition-delay:.3s}.sr-d6{transition-delay:.36s}
+.sr-d1{transition-delay:.08s}.sr-d2{transition-delay:.16s}.sr-d3{transition-delay:.24s}
+.sr-d4{transition-delay:.32s}.sr-d5{transition-delay:.4s}.sr-d6{transition-delay:.48s}
 @media(prefers-reduced-motion:reduce){.sr{opacity:1!important;transform:none!important;transition:none!important}}
 
+/* ===== NARRATIVE BRIDGES ===== */
+.narrative-bridge{text-align:center;padding:32px 20px;font-size:15px;color:var(--t3);font-style:italic;max-width:600px;margin:0 auto}
+
 /* ===== NAV ===== */
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:border-color .3s}
-.nav-inner{max-width:var(--cont);margin:0 auto;padding:16px 0;display:flex;align-items:center;justify-content:space-between;width:100%}
-.nav.scrolled{border-bottom-color:var(--brd)}
-.nav.scrolled .nav-inner{padding:12px 0}
-.nav-logo{font-weight:800;font-size:16px;color:var(--t1);text-decoration:none;letter-spacing:-.03em}
-.nav-logo span{color:var(--accent)}
-.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
-.nav-links a{font-size:14px;font-weight:500;color:var(--t2);text-decoration:none;transition:color .2s}
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(8,8,12,.6);
+  backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);
+  border-bottom:1px solid transparent;transition:all .4s var(--ease);
+}
+.nav-inner{max-width:var(--cont);margin:0 auto;padding:20px 0;display:flex;align-items:center;justify-content:space-between;width:100%}
+.nav.scrolled{border-bottom-color:var(--brd);background:rgba(8,8,12,.85)}
+.nav.scrolled .nav-inner{padding:14px 0}
+.nav-logo{font-family:var(--ff-display);font-weight:800;font-size:15px;color:var(--t1);text-decoration:none;letter-spacing:.08em;text-transform:uppercase}
+.nav-logo span{background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:var(--t3);text-decoration:none;transition:color .3s;letter-spacing:.02em;text-transform:uppercase}
 .nav-links a:hover{color:var(--t1)}
-.nav-right{display:flex;align-items:center;gap:12px}
-.lang-toggle{padding:6px 14px;background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r-pill);font-family:var(--ff);font-size:12px;font-weight:700;color:var(--t2);cursor:pointer;transition:all .2s;letter-spacing:.04em}
+.nav-right{display:flex;align-items:center;gap:14px}
+.lang-toggle{
+  padding:7px 16px;background:transparent;
+  border:1px solid var(--brd);border-radius:var(--r-pill);
+  font-family:var(--ff-display);font-size:11px;font-weight:700;color:var(--t3);
+  cursor:pointer;transition:all .3s;letter-spacing:.1em;
+}
 .lang-toggle:hover{border-color:var(--accent);color:var(--accent)}
-.nav-cta{padding:10px 24px;background:var(--t1);border:none;border-radius:var(--r-pill);font-family:var(--ff);font-size:13px;font-weight:600;color:#fff;cursor:pointer;text-decoration:none;transition:all .3s var(--ease);display:inline-flex;align-items:center;gap:6px}
-.nav-cta:hover{background:#333;transform:translateY(-1px);box-shadow:var(--shadow)}
+.nav-cta{
+  padding:11px 26px;
+  background:var(--grad);
+  border:none;border-radius:var(--r-pill);
+  font-family:var(--ff);font-size:13px;font-weight:600;color:var(--bg);
+  cursor:pointer;text-decoration:none;
+  transition:all .4s var(--ease);
+  display:inline-flex;align-items:center;gap:8px;
+  box-shadow:0 0 20px rgba(232,164,90,.2);
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 0 32px rgba(232,164,90,.35)}
 .nav-cta svg{width:14px;height:14px}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .burger span{width:22px;height:2px;background:var(--t1);border-radius:2px;transition:transform .3s,opacity .3s}
 .burger.on span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.burger.on span:nth-child(2){opacity:0}.burger.on span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-.mob-menu{display:none;position:fixed;inset:0;z-index:999;background:rgba(255,255,255,.97);backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;transition:opacity .3s}
+.mob-menu{display:none;position:fixed;inset:0;z-index:999;background:rgba(8,8,12,.97);backdrop-filter:blur(32px);flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;transition:opacity .3s}
 .mob-menu.open{display:flex;opacity:1}
-.mob-menu a{font-size:20px;font-weight:600;color:var(--t1);text-decoration:none}
+.mob-menu a{font-family:var(--ff-display);font-size:22px;font-weight:600;color:var(--t1);text-decoration:none;letter-spacing:-.01em}
 @media(max-width:860px){.nav-links{display:none}.burger{display:flex}}
 
 /* ===== HERO ===== */
-.hero{padding:140px 20px 80px;overflow:hidden}
-.hero-grid{max-width:var(--cont);margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:center}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;background:var(--accent-bg);border:1px solid var(--accent-brd);border-radius:var(--r-pill);font-size:13px;font-weight:600;color:var(--accent);margin-bottom:24px}
-.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
-.hero h1{font-size:clamp(32px,5vw,56px);font-weight:800;line-height:1.1;letter-spacing:-.04em;margin-bottom:20px;color:var(--t1)}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero-sub{font-size:clamp(15px,1.6vw,18px);line-height:1.65;color:var(--t2);max-width:520px;margin-bottom:32px}
-.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
-.hero-badge{padding:8px 16px;background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r-pill);font-size:12px;font-weight:600;color:var(--t2);text-transform:uppercase;letter-spacing:.02em}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+.hero{padding:160px 20px 100px;overflow:hidden;position:relative}
+.hero::before{
+  content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);
+  width:140vw;height:100%;
+  background:
+    radial-gradient(ellipse 60% 50% at 30% 20%,rgba(232,164,90,.08),transparent 60%),
+    radial-gradient(ellipse 50% 40% at 70% 30%,rgba(196,92,138,.06),transparent 50%),
+    radial-gradient(ellipse 40% 60% at 50% 60%,rgba(212,118,78,.04),transparent 50%);
+  pointer-events:none;animation:aurora 12s ease-in-out infinite alternate;
+}
+@keyframes aurora{
+  0%{opacity:.8;transform:translateX(-50%) scale(1)}
+  50%{opacity:1;transform:translateX(-48%) scale(1.05)}
+  100%{opacity:.7;transform:translateX(-52%) scale(.98)}
+}
+
+/* Mouse glow */
+.hero-glow{
+  position:absolute;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,164,90,.1) 0%,transparent 70%);
+  pointer-events:none;transition:transform .15s ease-out;z-index:0;
+  will-change:transform;
+}
+
+.hero-grid{max-width:var(--cont);margin:0 auto;display:grid;grid-template-columns:1fr 400px;gap:48px;align-items:center;position:relative;z-index:1}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:10px;padding:8px 20px;
+  background:rgba(232,164,90,.06);border:1px solid rgba(232,164,90,.12);
+  border-radius:var(--r-pill);font-size:12px;font-weight:600;
+  color:var(--accent);margin-bottom:28px;letter-spacing:.03em;
+}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+.hero h1{
+  font-family:var(--ff-display);
+  font-size:clamp(36px,5.5vw,68px);font-weight:800;line-height:1.05;
+  letter-spacing:-.05em;margin-bottom:24px;color:var(--t1);
+}
+.hero h1 em{
+  font-style:normal;
+  background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{font-size:clamp(15px,1.6vw,18px);line-height:1.7;color:var(--t2);max-width:520px;margin-bottom:36px}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.hero-badge{
+  padding:8px 18px;background:rgba(255,255,255,.04);
+  border:1px solid var(--brd);border-radius:var(--r-pill);
+  font-size:11px;font-weight:600;color:var(--t3);
+  text-transform:uppercase;letter-spacing:.06em;
+  transition:all .3s;
+}
+.hero-badge:hover{border-color:var(--accent);color:var(--accent);background:rgba(232,164,90,.05)}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
 .hero-right{display:flex;flex-direction:column;gap:16px}
-.hero-photo-card{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);padding:20px;text-align:center}
-.hero-photo-card img{width:200px;height:200px;border-radius:50%;object-fit:cover;margin-bottom:12px}
-.hero-photo-name{font-weight:700;font-size:16px;margin-bottom:2px}
+
+/* Photo card with glow ring */
+.hero-photo-card{
+  background:var(--card);
+  border:1px solid var(--brd);border-radius:var(--r);
+  padding:28px;text-align:center;
+  backdrop-filter:blur(12px);
+  position:relative;overflow:hidden;
+}
+.hero-photo-card::before{
+  content:'';position:absolute;inset:-1px;border-radius:var(--r);
+  background:linear-gradient(135deg,rgba(232,164,90,.2),transparent 40%,transparent 60%,rgba(196,92,138,.15));
+  z-index:-1;
+}
+.hero-photo-card img{
+  width:180px;height:180px;border-radius:50%;object-fit:cover;margin-bottom:16px;
+  border:3px solid transparent;
+  background-image:linear-gradient(var(--bg2),var(--bg2)),var(--grad);
+  background-origin:border-box;background-clip:padding-box,border-box;
+  box-shadow:0 0 40px rgba(232,164,90,.15);
+}
+.hero-photo-name{font-family:var(--ff-display);font-weight:700;font-size:17px;margin-bottom:4px;color:var(--t1)}
 .hero-photo-role{font-size:13px;color:var(--t3)}
 .hero-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.hero-stat-card{background:var(--card);border:1px solid var(--brd);border-radius:var(--r-sm);padding:16px;transition:all .3s}
-.hero-stat-card:hover{border-color:var(--brd-h);box-shadow:var(--shadow)}
-.hero-stat-num{font-size:28px;font-weight:800;letter-spacing:-.03em;color:var(--accent);line-height:1}
-.hero-stat-label{font-size:12px;color:var(--t3);margin-top:4px}
+.hero-stat-card{
+  background:var(--card);border:1px solid var(--brd);
+  border-radius:var(--r-sm);padding:20px;
+  transition:all .4s var(--ease);
+  backdrop-filter:blur(8px);
+}
+.hero-stat-card:hover{border-color:var(--brd-h);background:var(--card-h);transform:translateY(-2px)}
+.hero-stat-num{
+  font-family:var(--ff-display);font-size:32px;font-weight:800;letter-spacing:-.04em;
+  background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1;
+}
+.hero-stat-label{font-size:12px;color:var(--t3);margin-top:6px;letter-spacing:.02em}
 .hero-tools{display:flex;gap:8px;flex-wrap:wrap}
-.hero-tool{padding:6px 14px;background:var(--card);border:1px solid var(--brd);border-radius:var(--r-pill);font-size:12px;color:var(--t2);font-weight:500}
-@media(max-width:860px){.hero-grid{grid-template-columns:1fr;text-align:center}.hero-actions{justify-content:center}.hero-badges{justify-content:center}.hero-right{order:-1}.hero-tools{justify-content:center}.hero-stats-grid{max-width:300px;margin:0 auto}}
+.hero-tool{padding:6px 14px;background:var(--card);border:1px solid var(--brd);border-radius:var(--r-pill);font-size:11px;color:var(--t3);font-weight:500;letter-spacing:.02em}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr;text-align:center}.hero-actions{justify-content:center}.hero-badges{justify-content:center}.hero-right{order:-1}.hero-tools{justify-content:center}.hero-stats-grid{max-width:320px;margin:0 auto}.hero-sub{margin-left:auto;margin-right:auto}}
 
-/* Buttons */
-.btn-p{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:var(--t1);border:none;border-radius:var(--r-pill);font-family:var(--ff);font-size:15px;font-weight:600;color:#fff;cursor:pointer;text-decoration:none;transition:all .3s var(--ease)}
-.btn-p:hover{background:#333;transform:translateY(-2px);box-shadow:var(--shadow-h)}
+/* ===== BUTTONS ===== */
+.btn-p{
+  display:inline-flex;align-items:center;gap:10px;padding:16px 32px;
+  background:var(--grad);border:none;border-radius:var(--r-pill);
+  font-family:var(--ff);font-size:15px;font-weight:600;color:var(--bg);
+  cursor:pointer;text-decoration:none;
+  transition:all .4s var(--ease);
+  box-shadow:0 0 24px rgba(232,164,90,.2);
+  position:relative;overflow:hidden;
+}
+.btn-p::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.2),transparent);
+  opacity:0;transition:opacity .3s;
+}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 0 40px rgba(232,164,90,.35)}
+.btn-p:hover::before{opacity:1}
 .btn-p svg{width:16px;height:16px}
-.btn-g{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:transparent;border:1px solid var(--brd);border-radius:var(--r-pill);font-family:var(--ff);font-size:15px;font-weight:500;color:var(--t2);cursor:pointer;text-decoration:none;transition:all .2s}
-.btn-g:hover{border-color:var(--brd-h);color:var(--t1);background:var(--bg2)}
-.btn-accent{background:var(--accent);color:#fff;border:none}
-.btn-accent:hover{background:var(--accent2);box-shadow:0 8px 24px rgba(255,107,44,.2)}
+
+.btn-g{
+  display:inline-flex;align-items:center;gap:10px;padding:16px 32px;
+  background:transparent;border:1px solid var(--brd);border-radius:var(--r-pill);
+  font-family:var(--ff);font-size:15px;font-weight:500;color:var(--t2);
+  cursor:pointer;text-decoration:none;transition:all .3s;
+}
+.btn-g:hover{border-color:var(--accent);color:var(--accent);background:rgba(232,164,90,.04)}
+
+.btn-accent{background:var(--grad);color:var(--bg);border:none;box-shadow:0 0 24px rgba(232,164,90,.2)}
+.btn-accent:hover{box-shadow:0 0 40px rgba(232,164,90,.35)}
 
 /* ===== SECTIONS ===== */
-.sec{padding:var(--pad) 20px}
+.sec{padding:var(--pad) 20px;position:relative}
 .sec-c{max-width:var(--cont);margin:0 auto}
 .sec-alt{background:var(--bg2)}
-.sec-tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-.sec-tag::before{content:'';width:20px;height:2px;background:var(--accent);border-radius:1px}
-.sec-h{font-size:clamp(28px,4vw,44px);font-weight:800;line-height:1.15;letter-spacing:-.03em;margin-bottom:14px}
-.sec-sub{font-size:clamp(14px,1.4vw,17px);color:var(--t2);line-height:1.65;max-width:540px;margin-bottom:44px}
+.sec-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--ff-display);font-size:11px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;
+  background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:16px;
+}
+.sec-tag::before{content:'';width:24px;height:2px;background:var(--grad);border-radius:1px}
+.sec-h{
+  font-family:var(--ff-display);
+  font-size:clamp(30px,4.5vw,52px);font-weight:800;line-height:1.1;
+  letter-spacing:-.04em;margin-bottom:16px;color:var(--t1);
+}
+.sec-sub{font-size:clamp(14px,1.5vw,17px);color:var(--t2);line-height:1.7;max-width:560px;margin-bottom:48px}
 
-/* ===== CARDS ===== */
-.card{background:var(--card);border:1px solid var(--brd);border-radius:var(--r);padding:28px 24px;transition:all .35s var(--ease)}
-.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:var(--brd-h)}
+/* ===== GLASS CARDS ===== */
+.card{
+  background:var(--card);
+  border:1px solid var(--brd);border-radius:var(--r);
+  padding:28px 24px;
+  transition:all .45s var(--ease);
+  backdrop-filter:blur(8px);
+  position:relative;
+}
+.card:hover{
+  transform:translateY(-4px);
+  border-color:var(--brd-h);
+  background:var(--card-h);
+  box-shadow:0 16px 48px rgba(0,0,0,.3);
+}
 
-/* ===== PROBLEMS ===== */
-.prob-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+/* ===== PROBLEMS — Bento Grid ===== */
+.prob-g{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto auto auto;
+  gap:14px;
+}
+.prob-g .card:nth-child(1){grid-column:span 2}
+.prob-g .card:nth-child(4){grid-column:span 2}
 .prob-c{position:relative;overflow:hidden}
-.prob-c::after{content:'';position:absolute;bottom:0;left:24px;right:24px;height:2px;background:var(--accent);border-radius:1px;transform:scaleX(0);transition:transform .35s var(--ease);transform-origin:left}
+.prob-c::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--grad);
+  transform:scaleX(0);transition:transform .45s var(--ease);transform-origin:left;
+}
 .prob-c:hover::after{transform:scaleX(1)}
-.prob-i{width:44px;height:44px;border-radius:12px;background:var(--accent-bg);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:18px;font-weight:700;color:var(--accent)}
-.prob-c h3{font-size:15px;font-weight:600;line-height:1.45;color:var(--t1)}
-.prob-note{margin-top:28px;font-size:14px;color:var(--t2);line-height:1.65;font-style:italic;max-width:640px}
+.prob-i{
+  width:48px;height:48px;border-radius:14px;
+  background:rgba(232,164,90,.08);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:16px;font-size:18px;font-weight:700;
+  color:var(--accent);
+  border:1px solid rgba(232,164,90,.1);
+}
+.prob-c h3{font-size:15px;font-weight:600;line-height:1.5;color:var(--t1)}
+.prob-note{margin-top:32px;font-size:14px;color:var(--t2);line-height:1.7;font-style:italic;max-width:640px}
+
+@media(max-width:768px){.prob-g{grid-template-columns:1fr}.prob-g .card:nth-child(1),.prob-g .card:nth-child(4){grid-column:span 1}}
 
 /* ===== MISTAKES ===== */
 .mist-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-bottom:28px}
-.mist-c{display:flex;gap:14px;align-items:flex-start;padding:24px;background:var(--card);border:1px solid #fde8e8;border-radius:var(--r-sm);transition:all .3s}
-.mist-c:hover{border-color:#f5c4c4;background:#fffafa}
-.mist-i{width:32px;height:32px;border-radius:8px;background:#fde8e8;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#e53e3e;font-size:13px;font-weight:700}
-.mist-c h3{font-size:14px;font-weight:700;margin-bottom:3px;color:var(--t1)}
-.mist-c p{font-size:13px;color:var(--t2);line-height:1.5}
-.mist-exp{font-size:15px;color:var(--t2);line-height:1.7;margin-bottom:20px;max-width:600px}
-.mist-hl{padding:32px;background:var(--t1);border-radius:var(--r);text-align:center;margin-top:20px}
-.mist-hl p{font-size:clamp(18px,2.5vw,24px);font-weight:800;color:#fff;letter-spacing:-.02em}
+.mist-c{
+  display:flex;gap:16px;align-items:flex-start;padding:24px;
+  background:var(--card);border:1px solid rgba(220,80,80,.1);
+  border-radius:var(--r-sm);transition:all .3s;
+  backdrop-filter:blur(8px);
+}
+.mist-c:hover{border-color:rgba(220,80,80,.2);background:rgba(220,80,80,.03)}
+.mist-i{
+  width:36px;height:36px;border-radius:10px;
+  background:rgba(220,80,80,.08);border:1px solid rgba(220,80,80,.12);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;color:#e05555;font-size:14px;font-weight:700;
+}
+.mist-c h3{font-size:14px;font-weight:700;margin-bottom:4px;color:var(--t1)}
+.mist-c p{font-size:13px;color:var(--t2);line-height:1.55}
+.mist-exp{font-size:15px;color:var(--t2);line-height:1.75;margin-bottom:20px;max-width:600px}
+.mist-hl{
+  padding:36px;border-radius:var(--r);text-align:center;margin-top:24px;
+  background:var(--grad);position:relative;overflow:hidden;
+}
+.mist-hl::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.15),transparent);
+}
+.mist-hl p{font-family:var(--ff-display);font-size:clamp(20px,3vw,28px);font-weight:800;color:var(--bg);letter-spacing:-.02em;position:relative}
 .mist-cta{margin-top:28px}
 
 /* ===== APPROACH (2-col) ===== */
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-@media(max-width:768px){.two-col{grid-template-columns:1fr;gap:32px}}
-.appr-intro{font-size:clamp(16px,1.8vw,20px);line-height:1.7;color:var(--t1);margin-bottom:28px}
-.appr-intro strong{color:var(--accent)}
-.appr-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:24px}
-.appr-list li{font-size:14px;color:var(--t2);line-height:1.5;display:flex;align-items:flex-start;gap:10px}
-.appr-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:7px;flex-shrink:0}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+@media(max-width:768px){.two-col{grid-template-columns:1fr;gap:36px}}
+.appr-intro{font-size:clamp(16px,1.8vw,20px);line-height:1.75;color:var(--t1);margin-bottom:28px}
+.appr-intro strong{background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.appr-list{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
+.appr-list li{font-size:14px;color:var(--t2);line-height:1.6;display:flex;align-items:flex-start;gap:12px}
+.appr-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:8px;flex-shrink:0;box-shadow:0 0 6px var(--glow)}
 .appr-pos{font-size:15px;color:var(--accent);font-weight:600;font-style:italic}
 .more-details{margin-top:16px}
-.more-details summary{font-size:13px;font-weight:600;color:var(--accent);cursor:pointer;display:inline-flex;align-items:center;gap:6px;list-style:none;text-decoration:underline;text-underline-offset:3px}
+.more-details summary{font-size:13px;font-weight:600;color:var(--accent);cursor:pointer;display:inline-flex;align-items:center;gap:8px;list-style:none;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(232,164,90,.3)}
 .more-details summary::-webkit-details-marker{display:none}
 .more-details summary::after{content:'+';font-size:16px;font-weight:400;transition:transform .3s}
 .more-details[open] summary::after{transform:rotate(45deg)}
@@ -166,164 +368,263 @@ body{font-family:var(--ff);background:var(--bg);color:var(--t1);overflow-x:hidde
 /* ===== PROCESS (accordion) ===== */
 .proc-accordion{display:flex;flex-direction:column;gap:8px}
 
-/* ===== CTA BAR ===== */
-.cta-bar{padding:40px 20px;border-top:2px solid var(--t1);border-bottom:2px solid var(--t1)}
-.cta-bar .sec-c{display:flex;align-items:center;justify-content:space-between}
-.cta-bar-link{font-size:clamp(24px,4vw,42px);font-weight:800;color:var(--t1);text-decoration:none;letter-spacing:-.03em;transition:color .2s}
-.cta-bar-link:hover{color:var(--accent)}
-.cta-bar-arrow{font-size:clamp(28px,4vw,48px);color:var(--t1);text-decoration:none;transition:transform .3s var(--ease),color .2s}
-.cta-bar-arrow:hover{color:var(--accent);transform:translateX(8px)}
+/* ===== CTA MARQUEE ===== */
+.cta-bar{
+  padding:0;overflow:hidden;
+  border-top:1px solid var(--brd);border-bottom:1px solid var(--brd);
+  background:var(--bg2);
+}
+.marquee-track{
+  display:flex;animation:marquee 20s linear infinite;white-space:nowrap;
+}
+.marquee-track:hover{animation-play-state:paused}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee-item{
+  display:flex;align-items:center;gap:24px;padding:28px 48px;flex-shrink:0;
+}
+.marquee-item a{
+  font-family:var(--ff-display);
+  font-size:clamp(20px,3.5vw,36px);font-weight:800;
+  color:var(--t1);text-decoration:none;letter-spacing:-.03em;
+  transition:all .3s;white-space:nowrap;
+}
+.marquee-item a:hover{
+  background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.marquee-sep{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--accent);flex-shrink:0;
+  box-shadow:0 0 12px var(--glow);
+}
 
 /* ===== HERO QUOTE ===== */
-.hero-quote{font-size:14px;color:var(--t3);font-style:italic;margin-bottom:16px;letter-spacing:.01em}
+.hero-quote{font-size:14px;color:var(--t3);font-style:italic;margin-bottom:20px;letter-spacing:.02em}
 
 /* ===== RESULTS ===== */
 .res-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:28px}
-.res-card{text-align:center;padding:28px 20px}
-.res-card .res-icon{width:44px;height:44px;border-radius:12px;background:var(--accent-bg);display:inline-flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px}
-.res-card p{font-size:14px;font-weight:600;color:var(--t1);line-height:1.4}
-.res-note{font-size:15px;color:var(--t2);line-height:1.7;margin-bottom:24px;max-width:600px}
+.res-card{text-align:center;padding:32px 20px}
+.res-card .res-icon{
+  width:52px;height:52px;border-radius:14px;
+  background:rgba(232,164,90,.06);border:1px solid rgba(232,164,90,.1);
+  display:inline-flex;align-items:center;justify-content:center;
+  margin-bottom:14px;font-size:20px;color:var(--accent);
+}
+.res-card p{font-size:14px;font-weight:600;color:var(--t1);line-height:1.45}
+.res-note{font-size:15px;color:var(--t2);line-height:1.75;margin-bottom:24px;max-width:600px}
 
 /* ===== PROJECTS ===== */
-.proj-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-bottom:24px}
-.proj-c h3{font-size:16px;font-weight:700;margin-bottom:8px;color:var(--t1)}
-.proj-c p{font-size:13px;color:var(--t2);line-height:1.55}
-.proj-note{font-size:14px;color:var(--t2);line-height:1.6}
+.proj-g{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:24px}
+.proj-c h3{font-family:var(--ff-display);font-size:17px;font-weight:700;margin-bottom:10px;color:var(--t1)}
+.proj-c p{font-size:13px;color:var(--t2);line-height:1.6}
+.proj-note{font-size:14px;color:var(--t2);line-height:1.65}
+@media(max-width:600px){.proj-g{grid-template-columns:1fr}}
 
-/* ===== FACTORS ===== */
-.fact-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-.fact-pill{padding:10px 20px;background:var(--card);border:1px solid var(--brd);border-radius:var(--r-pill);font-size:13px;font-weight:500;color:var(--t1);transition:all .2s}
-.fact-pill:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}
-
-/* ===== FIT ===== */
-.fit-box{padding:32px;background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r)}
-.fit-box p{font-size:14px;color:var(--t2);line-height:1.7;margin-bottom:12px}.fit-box p:last-child{margin-bottom:0}
-.fit-box strong{color:var(--t1)}
+/* ===== PILL STYLE (reused from factors) ===== */
+.fact-pill{
+  padding:11px 22px;background:var(--card);
+  border:1px solid var(--brd);border-radius:var(--r-pill);
+  font-size:13px;font-weight:500;color:var(--t2);
+  transition:all .3s;cursor:default;
+}
+.fact-pill:hover{border-color:var(--accent);color:var(--accent);background:rgba(232,164,90,.04)}
 
 /* ===== QUIZ ===== */
-.quiz-entry{padding:48px;background:linear-gradient(135deg,var(--accent-bg),#fff5ee);border:1px solid var(--accent-brd);border-radius:24px;text-align:center}
-.quiz-entry h2{font-size:clamp(22px,3vw,34px);font-weight:800;margin-bottom:12px;letter-spacing:-.02em;color:var(--t1)}
-.quiz-entry p{font-size:15px;color:var(--t2);margin-bottom:24px}
+.quiz-entry{
+  padding:56px;
+  background:var(--card);border:1px solid var(--brd);
+  border-radius:var(--r);text-align:center;
+  backdrop-filter:blur(12px);
+  position:relative;overflow:hidden;
+}
+.quiz-entry::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 80% at 20% 20%,rgba(232,164,90,.06),transparent),
+    radial-gradient(ellipse 60% 80% at 80% 80%,rgba(196,92,138,.04),transparent);
+}
+.quiz-entry h2{font-family:var(--ff-display);font-size:clamp(24px,3.5vw,38px);font-weight:800;margin-bottom:14px;letter-spacing:-.03em;color:var(--t1);position:relative}
+.quiz-entry p{font-size:15px;color:var(--t2);margin-bottom:28px;position:relative}
+
 .quiz-overlay{display:none;position:fixed;inset:0;z-index:2000;background:var(--bg);overflow-y:auto}
 .quiz-overlay.active{display:block}
-.quiz-inner{max-width:600px;margin:0 auto;padding:40px 24px;min-height:100dvh;display:flex;flex-direction:column}
-.quiz-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:48px}
-.quiz-close{background:var(--bg2);border:1px solid var(--brd);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:var(--t2);font-size:18px;cursor:pointer;transition:all .2s}
+.quiz-inner{max-width:620px;margin:0 auto;padding:44px 28px;min-height:100dvh;display:flex;flex-direction:column}
+.quiz-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:52px}
+.quiz-close{background:var(--card);border:1px solid var(--brd);border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center;color:var(--t2);font-size:20px;cursor:pointer;transition:all .3s}
 .quiz-close:hover{border-color:var(--accent);color:var(--accent)}
-.quiz-progress{flex:1;margin:0 20px;height:4px;background:var(--bg2);border-radius:2px;overflow:hidden}
-.quiz-bar{height:100%;background:var(--accent);border-radius:2px;transition:width .5s var(--ease)}
-.quiz-step-num{font-size:13px;color:var(--t3);font-weight:700}
+.quiz-progress{flex:1;margin:0 24px;height:3px;background:var(--bg3);border-radius:2px;overflow:hidden}
+.quiz-bar{height:100%;background:var(--grad);border-radius:2px;transition:width .5s var(--ease)}
+.quiz-step-num{font-family:var(--ff-display);font-size:13px;color:var(--t3);font-weight:700;letter-spacing:.05em}
 .quiz-body{flex:1;display:flex;flex-direction:column;justify-content:center}
-.quiz-author{display:flex;align-items:center;gap:12px;margin-bottom:24px}
-.quiz-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid var(--brd);flex-shrink:0}
-.quiz-avatar img{width:100%;height:100%;object-fit:cover}
+.quiz-author{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+.quiz-avatar{
+  width:48px;height:48px;border-radius:50%;overflow:hidden;flex-shrink:0;
+  padding:2px;background:var(--grad);
+}
+.quiz-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
 .quiz-author-name{font-size:13px;font-weight:700;color:var(--t2)}
-.quiz-q{font-size:clamp(22px,3.5vw,30px);font-weight:800;letter-spacing:-.02em;margin-bottom:10px;color:var(--t1)}
-.quiz-context{font-size:14px;color:var(--t2);line-height:1.6;margin-bottom:28px}
+.quiz-q{font-family:var(--ff-display);font-size:clamp(24px,4vw,34px);font-weight:800;letter-spacing:-.03em;margin-bottom:12px;color:var(--t1)}
+.quiz-context{font-size:14px;color:var(--t2);line-height:1.65;margin-bottom:32px}
 .quiz-opts{display:flex;flex-direction:column;gap:10px}
-.quiz-opt{padding:16px 20px;background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r-sm);font-family:var(--ff);font-size:15px;color:var(--t1);cursor:pointer;transition:all .2s;text-align:left;width:100%}
-.quiz-opt:hover{border-color:var(--brd-h);background:var(--card)}
-.quiz-opt.sel{border-color:var(--accent);background:var(--accent-bg);color:var(--accent);font-weight:600}
-.quiz-slider{margin:20px 0}
-.quiz-slider input[type=range]{width:100%;-webkit-appearance:none;height:6px;background:var(--bg2);border-radius:3px;outline:none}
-.quiz-slider input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--accent);cursor:pointer;box-shadow:0 2px 8px rgba(255,107,44,.3)}
-.quiz-slider-labels{display:flex;justify-content:space-between;font-size:12px;color:var(--t3);margin-top:8px}
-.quiz-nav{display:flex;gap:12px;margin-top:36px}
-.quiz-back{padding:12px 24px;background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r-pill);font-family:var(--ff);font-size:14px;font-weight:500;color:var(--t2);cursor:pointer;transition:all .2s}
+.quiz-opt{
+  padding:18px 22px;background:var(--card);border:1px solid var(--brd);
+  border-radius:var(--r-sm);font-family:var(--ff);font-size:15px;
+  color:var(--t1);cursor:pointer;transition:all .3s;text-align:left;width:100%;
+}
+.quiz-opt:hover{border-color:var(--brd-h);background:var(--card-h)}
+.quiz-opt.sel{border-color:var(--accent);background:rgba(232,164,90,.06);color:var(--accent);font-weight:600}
+.quiz-slider{margin:24px 0}
+.quiz-slider input[type=range]{width:100%;-webkit-appearance:none;height:4px;background:var(--bg3);border-radius:2px;outline:none}
+.quiz-slider input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:var(--grad);cursor:pointer;box-shadow:0 0 16px rgba(232,164,90,.3);border:3px solid var(--bg)}
+.quiz-slider-labels{display:flex;justify-content:space-between;font-size:12px;color:var(--t3);margin-top:10px}
+.quiz-nav{display:flex;gap:14px;margin-top:40px}
+.quiz-back{padding:14px 26px;background:var(--card);border:1px solid var(--brd);border-radius:var(--r-pill);font-family:var(--ff);font-size:14px;font-weight:500;color:var(--t2);cursor:pointer;transition:all .3s}
 .quiz-back:hover{border-color:var(--brd-h);color:var(--t1)}
-.quiz-next{padding:12px 24px;background:var(--t1);border:none;border-radius:var(--r-pill);font-family:var(--ff);font-size:14px;font-weight:600;color:#fff;cursor:pointer;transition:all .3s;flex:1;max-width:200px}
-.quiz-next:hover{background:#333;transform:translateY(-1px)}
-.quiz-next:disabled{opacity:.35;pointer-events:none}
+.quiz-next{padding:14px 28px;background:var(--grad);border:none;border-radius:var(--r-pill);font-family:var(--ff);font-size:14px;font-weight:600;color:var(--bg);cursor:pointer;transition:all .4s;flex:1;max-width:220px;box-shadow:0 0 20px rgba(232,164,90,.15)}
+.quiz-next:hover{transform:translateY(-2px);box-shadow:0 0 32px rgba(232,164,90,.3)}
+.quiz-next:disabled{opacity:.3;pointer-events:none;box-shadow:none}
 .quiz-result{text-align:center}
-.quiz-result h3{font-size:clamp(22px,3vw,28px);font-weight:800;margin-bottom:16px;color:var(--t1)}
-.quiz-result p{font-size:15px;color:var(--t2);line-height:1.7;margin-bottom:14px}
-.quiz-result-note{display:flex;align-items:flex-start;gap:12px;padding:20px;background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r-sm);text-align:left;margin:20px 0}
+.quiz-result h3{font-family:var(--ff-display);font-size:clamp(24px,3.5vw,32px);font-weight:800;margin-bottom:18px;color:var(--t1)}
+.quiz-result p{font-size:15px;color:var(--t2);line-height:1.75;margin-bottom:16px}
+.quiz-result-note{display:flex;align-items:flex-start;gap:14px;padding:24px;background:var(--card);border:1px solid var(--brd);border-radius:var(--r-sm);text-align:left;margin:24px 0}
 .quiz-result-note p{margin-bottom:0;font-size:14px;font-style:italic}
 
 /* Contact selector */
-.contact-sel{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:16px}
-.contact-sel label{padding:10px 18px;background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r-pill);font-size:13px;font-weight:500;color:var(--t2);cursor:pointer;transition:all .2s}
-.contact-sel label:hover{border-color:var(--brd-h)}
+.contact-sel{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:18px}
+.contact-sel label{
+  padding:10px 20px;background:var(--card);border:1px solid var(--brd);
+  border-radius:var(--r-pill);font-size:13px;font-weight:500;color:var(--t3);
+  cursor:pointer;transition:all .3s;
+}
+.contact-sel label:hover{border-color:var(--brd-h);color:var(--t2)}
 .contact-sel input[type=radio]{display:none}
-.contact-sel input:checked+label{border-color:var(--accent);color:var(--accent);background:var(--accent-bg);font-weight:600}
-.contact-input{width:100%;max-width:380px;margin:0 auto 14px;padding:14px 18px;background:var(--bg2);border:1px solid var(--brd);border-radius:12px;font-family:var(--ff);font-size:15px;color:var(--t1);outline:none;transition:border-color .2s;display:block}
+.contact-sel input:checked+label{border-color:var(--accent);color:var(--accent);background:rgba(232,164,90,.06);font-weight:600}
+.contact-input{
+  width:100%;max-width:400px;margin:0 auto 16px;padding:16px 20px;
+  background:var(--card);border:1px solid var(--brd);border-radius:14px;
+  font-family:var(--ff);font-size:15px;color:var(--t1);outline:none;
+  transition:all .3s;display:block;
+}
 .contact-input::placeholder{color:var(--t3)}
-.contact-input:focus{border-color:var(--accent)}
+.contact-input:focus{border-color:var(--accent);box-shadow:0 0 20px rgba(232,164,90,.1)}
 
 /* ===== WHY ME ===== */
-.wm-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-bottom:28px}
+.wm-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-bottom:32px}
 .wm-c h3{font-size:14px;font-weight:700;color:var(--t1)}
-.wm-bio{font-size:15px;color:var(--t2);line-height:1.7}
+.wm-bio{font-size:15px;color:var(--t2);line-height:1.75}
 .wm-val{font-size:14px;color:var(--accent);font-weight:600;margin-top:8px}
 
-/* ===== FORMAT ===== */
-.fmt-steps{display:flex;flex-direction:column;gap:14px;margin-bottom:24px;counter-reset:fmt}
-.fmt-step{counter-increment:fmt;display:flex;align-items:center;gap:16px}
-.fmt-step::before{content:counter(fmt);width:40px;height:40px;border-radius:50%;background:var(--accent-bg);border:2px solid var(--accent-brd);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:var(--accent);flex-shrink:0}
-.fmt-step p{font-size:14px;color:var(--t1);line-height:1.5;font-weight:500}
-.fmt-note{font-size:14px;color:var(--accent);font-style:italic;margin-bottom:24px}
-
 /* ===== PRICING ===== */
-.price-card{padding:40px;background:var(--card);border:1px solid var(--brd);border-radius:24px;max-width:520px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
-.price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent)}
-.price-tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
-.price-desc{font-size:14px;color:var(--t2);line-height:1.7;margin-bottom:24px}
-.price-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
-.price-list li{font-size:14px;color:var(--t2);display:flex;align-items:flex-start;gap:10px;line-height:1.4}
-.price-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:7px;flex-shrink:0}
-.price-amount{font-size:clamp(36px,5vw,52px);font-weight:800;letter-spacing:-.04em;color:var(--accent);margin-bottom:4px}
-.price-note{font-size:13px;color:var(--t3);margin-bottom:20px}
+.price-card{
+  padding:44px;background:var(--card);
+  border:1px solid var(--brd);border-radius:var(--r);
+  max-width:540px;position:relative;overflow:hidden;
+  backdrop-filter:blur(8px);
+}
+.price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad)}
+.price-tag{font-family:var(--ff-display);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:24px}
+.price-desc{font-size:14px;color:var(--t2);line-height:1.75;margin-bottom:28px}
+.price-list{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:32px}
+.price-list li{font-size:14px;color:var(--t2);display:flex;align-items:flex-start;gap:12px;line-height:1.5}
+.price-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:8px;flex-shrink:0;box-shadow:0 0 6px var(--glow)}
+.price-amount{
+  font-family:var(--ff-display);font-size:clamp(40px,6vw,60px);font-weight:800;letter-spacing:-.05em;
+  background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:6px;
+}
+.price-note{font-size:13px;color:var(--t3);margin-bottom:24px}
 
 /* ===== ABOUT ===== */
-.about-lay{display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:center}
-.about-img-wrap{width:220px;height:220px;position:relative}
-.about-img{width:220px;height:220px;border-radius:var(--r);object-fit:cover}
-.about-text{font-size:15px;color:var(--t2);line-height:1.75;margin-bottom:16px}
-.about-role{font-size:14px;color:var(--accent);font-weight:600;margin-bottom:16px}
-.about-socials{display:flex;gap:10px;margin-top:16px}
-.about-socials a{width:42px;height:42px;border-radius:12px;background:var(--bg2);border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;color:var(--t2);text-decoration:none;transition:all .2s}
-.about-socials a:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}
-@media(max-width:768px){.about-lay{grid-template-columns:1fr;gap:28px;text-align:center}.about-photo{display:flex;justify-content:center}.about-socials{justify-content:center}}
+.about-img-wrap{width:240px;height:240px;position:relative}
+.about-img-wrap::before{
+  content:'';position:absolute;inset:-4px;border-radius:calc(var(--r) + 4px);
+  background:var(--grad);opacity:.3;
+  filter:blur(16px);
+}
+.about-img{width:240px;height:240px;border-radius:var(--r);object-fit:cover;position:relative}
+.about-text{font-size:15px;color:var(--t2);line-height:1.8;margin-bottom:16px}
+.about-role{font-size:14px;background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600;margin-bottom:16px}
+.about-socials{display:flex;gap:10px;margin-top:20px}
+.about-socials a{
+  width:44px;height:44px;border-radius:12px;
+  background:var(--card);border:1px solid var(--brd);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--t3);text-decoration:none;transition:all .3s;
+}
+.about-socials a:hover{border-color:var(--accent);color:var(--accent);background:rgba(232,164,90,.04)}
+@media(max-width:768px){.about-photo{display:flex;justify-content:center}.about-socials{justify-content:center}.about-img-wrap{margin:0 auto}}
 
 /* ===== FAQ ===== */
-.faq-list{max-width:680px;display:flex;flex-direction:column;gap:8px}
-details{border:1px solid var(--brd);border-radius:var(--r-sm);overflow:hidden;transition:border-color .2s,box-shadow .2s}
-details[open]{border-color:var(--accent-brd);box-shadow:0 2px 12px rgba(255,107,44,.06)}
-summary{padding:20px 22px;background:var(--card);font-family:var(--ff);font-size:15px;font-weight:600;color:var(--t1);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:background .2s;list-style:none}
+.faq-list{max-width:700px;display:flex;flex-direction:column;gap:8px}
+details{border:1px solid var(--brd);border-radius:var(--r-sm);overflow:hidden;transition:all .3s}
+details[open]{border-color:rgba(232,164,90,.15);box-shadow:0 4px 24px rgba(232,164,90,.04)}
+summary{
+  padding:22px 24px;background:var(--card);
+  font-family:var(--ff);font-size:15px;font-weight:600;color:var(--t1);
+  cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+  gap:16px;transition:background .2s;list-style:none;
+}
 summary::-webkit-details-marker{display:none}
-summary::after{content:'+';width:28px;height:28px;border-radius:50%;background:var(--accent-bg);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:18px;font-weight:400;flex-shrink:0;transition:transform .4s var(--ease)}
+summary::after{
+  content:'+';width:32px;height:32px;border-radius:50%;
+  background:rgba(232,164,90,.06);border:1px solid rgba(232,164,90,.1);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--accent);font-size:18px;font-weight:400;flex-shrink:0;
+  transition:transform .4s var(--ease);
+}
 details[open] summary::after{transform:rotate(45deg)}
-summary:hover{background:var(--bg2)}
-.faq-a{padding:0 22px 20px;font-size:14px;line-height:1.7;color:var(--t2)}
+summary:hover{background:var(--card-h)}
+.faq-a{padding:0 24px 22px;font-size:14px;line-height:1.75;color:var(--t2)}
 
 /* ===== CONTACT ===== */
-.contact-inner{max-width:520px;margin:0 auto;text-align:center}
-.contact-title{font-size:clamp(26px,3.8vw,40px);font-weight:800;letter-spacing:-.03em;margin-bottom:12px;color:var(--t1)}
-.contact-sub{font-size:15px;color:var(--t2);margin-bottom:8px}
-.contact-desc{font-size:14px;color:var(--t3);margin-bottom:28px}
+.contact-inner{max-width:540px;margin:0 auto;text-align:center}
+.contact-title{font-family:var(--ff-display);font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-.04em;margin-bottom:14px;color:var(--t1)}
+.contact-sub{font-size:15px;color:var(--t2);margin-bottom:10px}
+.contact-desc{font-size:14px;color:var(--t3);margin-bottom:32px}
 .contact-desc strong{color:var(--accent);font-weight:600}
-.contact-form{display:flex;flex-direction:column;gap:12px;margin-bottom:20px;align-items:center}
-.contact-submit{width:100%;max-width:380px;padding:16px;background:var(--t1);border:none;border-radius:var(--r-sm);font-family:var(--ff);font-size:15px;font-weight:700;color:#fff;cursor:pointer;transition:all .3s}
-.contact-submit:hover{background:#333;transform:translateY(-1px);box-shadow:var(--shadow)}
-.contact-privacy{font-size:11px;color:var(--t3);line-height:1.5;max-width:380px;margin:0 auto}
+.contact-form{display:flex;flex-direction:column;gap:14px;margin-bottom:24px;align-items:center}
+.contact-submit{
+  width:100%;max-width:400px;padding:18px;
+  background:var(--grad);border:none;border-radius:var(--r-sm);
+  font-family:var(--ff);font-size:15px;font-weight:700;color:var(--bg);
+  cursor:pointer;transition:all .4s;
+  box-shadow:0 0 24px rgba(232,164,90,.15);
+}
+.contact-submit:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(232,164,90,.3)}
+.contact-privacy{font-size:11px;color:var(--t3);line-height:1.5;max-width:400px;margin:0 auto}
 
 /* ===== FOOTER ===== */
-.footer{padding:28px 20px;border-top:1px solid var(--brd);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:var(--cont);margin:0 auto}
-.footer-left{display:flex;flex-direction:column;gap:4px}
-.footer-brand{font-weight:800;font-size:14px;color:var(--t1)}
+.footer{
+  padding:32px 20px;border-top:1px solid var(--brd);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:20px;max-width:var(--cont);margin:0 auto;
+}
+.footer-left{display:flex;flex-direction:column;gap:6px}
+.footer-brand{font-family:var(--ff-display);font-weight:800;font-size:14px;color:var(--t1);letter-spacing:.06em}
 .footer-copy{font-size:12px;color:var(--t3)}.footer-copy a{color:var(--t3);text-decoration:none}
-.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap}
 .footer-links a{font-size:12px;color:var(--t3);text-decoration:none;transition:color .2s}
-.footer-links a:hover{color:var(--t1)}
+.footer-links a:hover{color:var(--accent)}
 
 /* ===== MOBILE ===== */
 @media(max-width:500px){
   .hero-stats-grid{grid-template-columns:1fr}
-  .prob-g,.mist-g,.proj-g,.wm-g,.res-grid{grid-template-columns:1fr}
+  .mist-g,.wm-g,.res-grid{grid-template-columns:1fr}
   .btn-p,.btn-g{width:100%;justify-content:center}
   .price-card{padding:28px 20px}
   .quiz-inner{padding:24px 16px}
-  .two-col{gap:24px}
+  .two-col{gap:28px}
+  .quiz-entry{padding:32px 20px}
+  .marquee-item a{font-size:18px}
+  .marquee-item{padding:20px 32px}
+}
+
+/* ===== Animated section glow dividers ===== */
+.sec-glow{
+  position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:60%;max-width:600px;height:1px;
+  background:var(--grad);
+  mask-image:linear-gradient(90deg,transparent,#fff 30%,#fff 70%,transparent);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#fff 30%,#fff 70%,transparent);
 }
 </style>
 </head>
@@ -338,8 +639,7 @@ summary:hover{background:var(--bg2)}
   <ul class="nav-links">
     <li><a href="#problems" data-ru="Ситуации" data-en="Pain Points">Ситуации</a></li>
     <li><a href="#approach" data-ru="Подход" data-en="Approach">Подход</a></li>
-    <li><a href="#approach" data-ru="Процесс" data-en="Process">Процесс</a></li>
-    <li><a href="#projects" data-ru="Проекты" data-en="Projects">Проекты</a></li>
+    <li><a href="#results" data-ru="Результаты" data-en="Results">Результаты</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <div class="nav-right">
@@ -354,16 +654,16 @@ summary:hover{background:var(--bg2)}
 <div class="mob-menu" id="mobMenu">
   <a href="#problems" onclick="closeMob()" data-ru="Ситуации" data-en="Pain Points">Ситуации</a>
   <a href="#approach" onclick="closeMob()" data-ru="Подход" data-en="Approach">Подход</a>
-  <a href="#approach" onclick="closeMob()" data-ru="Процесс" data-en="Process">Процесс</a>
-  <a href="#projects" onclick="closeMob()" data-ru="Проекты" data-en="Projects">Проекты</a>
+  <a href="#results" onclick="closeMob()" data-ru="Результаты" data-en="Results">Результаты</a>
   <a href="#faq" onclick="closeMob()">FAQ</a>
   <a href="#contact" class="nav-cta" onclick="closeMob()" data-ru="Обсудить проект" data-en="Discuss Project">Обсудить проект</a>
 </div>
 
 <main id="main" role="main">
 
-<!-- HERO -->
+<!-- 1. HERO -->
 <section class="hero" id="hero" aria-label="Главный экран">
+  <div class="hero-glow" id="heroGlow"></div>
   <div class="hero-grid">
     <div>
       <div class="hero-tag sr" data-ru="Google Ads · Яндекс Директ · Реклама под ключ" data-en="Google Ads · Yandex Direct · Turnkey Advertising">Google Ads · Яндекс Директ · Реклама под ключ</div>
@@ -385,7 +685,7 @@ summary:hover{background:var(--bg2)}
         <img src="photo.png" alt="Дмитрий Вишневский" width="200" height="200">
         <div class="hero-photo-name">Дмитрий Вишневский</div>
         <div class="hero-photo-role" data-ru="Специалист по рекламе" data-en="Advertising Specialist">Специалист по рекламе</div>
-        <div class="hero-tools" style="margin-top:12px;justify-content:center">
+        <div class="hero-tools" style="margin-top:14px;justify-content:center">
           <span class="hero-tool">Google Ads</span>
           <span class="hero-tool" data-ru="Яндекс Директ" data-en="Yandex Direct">Яндекс Директ</span>
         </div>
@@ -404,8 +704,9 @@ summary:hover{background:var(--bg2)}
   </div>
 </section>
 
-<!-- PROBLEMS -->
+<!-- 2. PROBLEMS -->
 <section class="sec sec-alt" id="problems" aria-label="Ситуации клиентов">
+  <div class="sec-glow"></div>
   <div class="sec-c">
     <div class="sec-tag sr" data-ru="Знакомо?" data-en="Sound Familiar?">Знакомо?</div>
     <h2 class="sec-h sr" data-ru="В каких ситуациях ко мне обращаются" data-en="Common situations clients come with">В каких ситуациях ко мне обращаются</h2>
@@ -423,7 +724,10 @@ summary:hover{background:var(--bg2)}
   </div>
 </section>
 
-<!-- MISTAKES -->
+<!-- Bridge: Problems -> Mistakes -->
+<div class="narrative-bridge sr" data-ru="Если узнали себя — давайте разберёмся, почему так происходит" data-en="If this sounds like you — let's figure out why">Если узнали себя — давайте разберёмся, почему так происходит</div>
+
+<!-- 3. MISTAKES -->
 <section class="sec" id="mistakes" aria-label="Почему реклама не работает">
   <div class="sec-c">
     <div class="sec-tag sr" data-ru="Почему не работает" data-en="Why It Fails">Почему не работает</div>
@@ -443,8 +747,12 @@ summary:hover{background:var(--bg2)}
   </div>
 </section>
 
-<!-- APPROACH + PROCESS (merged 2-col) -->
+<!-- Bridge: Mistakes -> Approach -->
+<div class="narrative-bridge sr" data-ru="Хорошая новость — у каждой из этих проблем есть решение" data-en="Good news — each of these problems has a solution">Хорошая новость — у каждой из этих проблем есть решение</div>
+
+<!-- 4. APPROACH + PROCESS -->
 <section class="sec sec-alt" id="approach" aria-label="Подход и процесс работы">
+  <div class="sec-glow"></div>
   <div class="sec-c">
     <div class="sec-tag sr" data-ru="Мой подход" data-en="My Approach">Мой подход</div>
     <h2 class="sec-h sr" data-ru="Мой подход к работе" data-en="My approach to work">Мой подход к работе</h2>
@@ -463,11 +771,13 @@ summary:hover{background:var(--bg2)}
         <details class="more-details sr">
           <summary data-ru="подробнее" data-en="more details">подробнее</summary>
           <p style="font-size:14px;color:var(--t2);line-height:1.65;padding-top:12px" data-ru="Сотрудничаю не как исполнитель, а как партнёр в проекте. Мне важно не просто запустить рекламу, а разобраться в задаче бизнеса и довести её до результата." data-en="I collaborate not as a contractor, but as a project partner. It's important for me not just to launch ads, but to understand the business challenge and deliver results.">Сотрудничаю не как исполнитель, а как партнёр в проекте. Мне важно не просто запустить рекламу, а разобраться в задаче бизнеса и довести её до результата.</p>
+          <p style="font-size:14px;color:var(--t2);line-height:1.65;padding-top:12px" data-ru-html="Реклама обычно начинает работать, когда у бизнеса уже есть <strong style='color:var(--accent)'>понятная услуга и есть спрос</strong>. Если мы понимаем, кому продаём, готовы работать с заявками и есть бюджет на тестирование — рекламу можно выстроить как системный канал привлечения клиентов." data-en-html="Advertising usually starts working when the business already has a <strong style='color:var(--accent)'>clear service and there's demand</strong>. If we know who we're selling to, are ready to handle leads, and have a testing budget — advertising can be built as a systematic client acquisition channel.">Реклама обычно начинает работать, когда у бизнеса уже есть <strong style="color:var(--accent)">понятная услуга и есть спрос</strong>. Если мы понимаем, кому продаём, готовы работать с заявками и есть бюджет на тестирование — рекламу можно выстроить как системный канал привлечения клиентов.</p>
+          <p style="font-size:14px;color:var(--t2);line-height:1.65;padding-top:8px" data-ru-html="Но бывают ситуации, когда реклама не даёт результата — например, если <strong style='color:var(--accent)'>не сходится экономика или нет спроса</strong>." data-en-html="But there are situations when ads don't deliver — for example, if <strong style='color:var(--accent)'>the economics don't work or there's no demand</strong>.">Но бывают ситуации, когда реклама не даёт результата — например, если <strong style="color:var(--accent)">не сходится экономика или нет спроса</strong>.</p>
         </details>
       </div>
       <!-- RIGHT: Process accordion -->
       <div class="sr">
-        <p style="font-size:13px;font-weight:700;color:var(--t2);margin-bottom:14px;text-transform:uppercase;letter-spacing:.08em" data-ru="Этапы работы" data-en="Stages of Work">Этапы работы</p>
+        <p style="font-family:var(--ff-display);font-size:11px;font-weight:700;color:var(--t3);margin-bottom:16px;text-transform:uppercase;letter-spacing:.15em" data-ru="Этапы работы" data-en="Stages of Work">Этапы работы</p>
         <div class="proc-accordion">
           <details class="sr" open>
             <summary data-ru="01 — Анализ" data-en="01 — Analysis">01 — Анализ</summary>
@@ -490,15 +800,19 @@ summary:hover{background:var(--bg2)}
             <div class="faq-a" data-ru="На основе данных — оптимизация и масштабирование. Убираю неэффективное, усиливаю то, что работает." data-en="Based on data — optimization and scaling. I remove what's ineffective and strengthen what works.">На основе данных — оптимизация и масштабирование. Убираю неэффективное, усиливаю то, что работает.</div>
           </details>
         </div>
-        <p style="margin-top:20px;font-size:14px;color:var(--t2);line-height:1.65" data-ru="В каждом проекте есть свои нюансы, но логика работы обычно именно такая." data-en="Every project has its nuances, but the workflow is usually like this.">В каждом проекте есть свои нюансы, но логика работы обычно именно такая.</p>
+        <p style="margin-top:22px;font-size:14px;color:var(--t2);line-height:1.7" data-ru="В каждом проекте есть свои нюансы, но логика работы обычно именно такая." data-en="Every project has its nuances, but the workflow is usually like this.">В каждом проекте есть свои нюансы, но логика работы обычно именно такая.</p>
       </div>
     </div>
-    <div style="margin-top:32px" class="sr"><a href="#contact" class="btn-p" data-ru-html="Обсудить ваш проект &rarr;" data-en-html="Discuss Your Project &rarr;">Обсудить ваш проект &rarr;</a></div>
+    <div style="margin-top:36px" class="sr"><a href="#contact" class="btn-p" data-ru-html="Обсудить ваш проект &rarr;" data-en-html="Discuss Your Project &rarr;">Обсудить ваш проект &rarr;</a></div>
   </div>
 </section>
 
-<!-- RESULTS -->
+<!-- Bridge: Approach -> Results -->
+<div class="narrative-bridge sr" data-ru="Когда система выстроена правильно, вот что меняется" data-en="When the system is built right, here's what changes">Когда система выстроена правильно, вот что меняется</div>
+
+<!-- 5. RESULTS -->
 <section class="sec sec-alt" id="results" aria-label="Результаты">
+  <div class="sec-glow"></div>
   <div class="sec-c">
     <div class="sec-tag sr" data-ru="Что получаете" data-en="What You Get">Что получаете</div>
     <h2 class="sec-h sr" data-ru="Результат работы — это не просто запущенная реклама" data-en="The result is not just ads that are running">Результат работы — это не просто запущенная реклама</h2>
@@ -515,58 +829,59 @@ summary:hover{background:var(--bg2)}
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section class="sec" id="projects" aria-label="Типы проектов">
+<!-- Bridge: Results -> Projects + Trust -->
+<div class="narrative-bridge sr" data-ru="А вот с чем я уже работал и почему клиенты остаются" data-en="Here's what I've worked on and why clients stay">А вот с чем я уже работал и почему клиенты остаются</div>
+
+<!-- 6. PROJECTS + TRUST (merged) -->
+<section class="sec" id="projects" aria-label="Опыт и доверие">
   <div class="sec-c">
-    <div class="sec-tag sr" data-ru="Опыт" data-en="Experience">Опыт</div>
-    <h2 class="sec-h sr" data-ru="Какие проекты я запускал" data-en="Types of projects I've launched">Какие проекты я запускал</h2>
-    <div class="proj-g">
-      <div class="card proj-c sr"><h3 data-ru="Сервисный бизнес" data-en="Service Business">Сервисный бизнес</h3><p data-ru="Бизнесы, которые оказывают услуги и получают клиентов через заявки" data-en="Businesses that provide services and get clients through leads">Бизнесы, которые оказывают услуги и получают клиентов через заявки</p></div>
-      <div class="card proj-c sr sr-d1"><h3 data-ru="Образовательные проекты" data-en="Education Projects">Образовательные проекты</h3><p data-ru="Бизнесы, которые продают обучение и знания" data-en="Businesses that sell training and knowledge">Бизнесы, которые продают обучение и знания</p></div>
-      <div class="card proj-c sr sr-d2"><h3 data-ru="Международные проекты" data-en="International Projects">Международные проекты</h3><p data-ru="Бизнесы, работающие с клиентами из разных стран" data-en="Businesses working with clients from different countries">Бизнесы, работающие с клиентами из разных стран</p></div>
-      <div class="card proj-c sr sr-d3"><h3 data-ru="Локальные и удалённые услуги" data-en="Local & Remote Services">Локальные и удалённые услуги</h3><p data-ru="Бизнесы, работающие в конкретном городе или регионе, а также онлайн-проекты без привязки к географии" data-en="Businesses operating in a specific city or region, as well as online projects without geographic ties">Бизнесы, работающие в конкретном городе или регионе, а также онлайн-проекты без привязки к географии</p></div>
+    <div class="sec-tag sr" data-ru="Опыт и доверие" data-en="Experience & Trust">Опыт и доверие</div>
+    <h2 class="sec-h sr" data-ru="Опыт и доверие" data-en="Experience & Trust">Опыт и доверие</h2>
+    <p class="sec-sub sr" data-ru="Проекты, с которыми я работал, и почему клиенты остаются" data-en="Projects I've worked on and why clients stay">Проекты, с которыми я работал, и почему клиенты остаются</p>
+    <div class="two-col">
+      <!-- LEFT: Projects -->
+      <div class="sr">
+        <p style="font-family:var(--ff-display);font-size:11px;font-weight:700;color:var(--t3);margin-bottom:16px;text-transform:uppercase;letter-spacing:.15em" data-ru="Типы проектов" data-en="Project Types">Типы проектов</p>
+        <div class="proj-g">
+          <div class="card proj-c sr"><h3 data-ru="Сервисный бизнес" data-en="Service Business">Сервисный бизнес</h3><p data-ru="Бизнесы, которые оказывают услуги и получают клиентов через заявки" data-en="Businesses that provide services and get clients through leads">Бизнесы, которые оказывают услуги и получают клиентов через заявки</p></div>
+          <div class="card proj-c sr sr-d1"><h3 data-ru="Образовательные проекты" data-en="Education Projects">Образовательные проекты</h3><p data-ru="Бизнесы, которые продают обучение и знания" data-en="Businesses that sell training and knowledge">Бизнесы, которые продают обучение и знания</p></div>
+          <div class="card proj-c sr sr-d2"><h3 data-ru="Международные проекты" data-en="International Projects">Международные проекты</h3><p data-ru="Бизнесы, работающие с клиентами из разных стран" data-en="Businesses working with clients from different countries">Бизнесы, работающие с клиентами из разных стран</p></div>
+          <div class="card proj-c sr sr-d3"><h3 data-ru="Локальные и удалённые услуги" data-en="Local & Remote Services">Локальные и удалённые услуги</h3><p data-ru="Бизнесы, работающие в конкретном городе или регионе, а также онлайн-проекты без привязки к географии" data-en="Businesses operating in a specific city or region, as well as online projects without geographic ties">Бизнесы, работающие в конкретном городе или регионе, а также онлайн-проекты без привязки к географии</p></div>
+        </div>
+        <p class="proj-note sr" data-ru="Опишите ваш проект — возможно, я уже работал с похожей задачей и смогу подсказать, с чего лучше начать." data-en="Describe your project — I may have worked on a similar task and can suggest where to start.">Опишите ваш проект — возможно, я уже работал с похожей задачей и смогу подсказать, с чего лучше начать.</p>
+      </div>
+      <!-- RIGHT: Trust -->
+      <div class="sr">
+        <p style="font-family:var(--ff-display);font-size:11px;font-weight:700;color:var(--t3);margin-bottom:16px;text-transform:uppercase;letter-spacing:.15em" data-ru="Почему со мной работают" data-en="Why People Work With Me">Почему со мной работают</p>
+        <div class="wm-g" style="grid-template-columns:1fr 1fr">
+          <div class="card wm-c sr"><h3 data-ru="Прямое общение без посредников" data-en="Direct communication, no middlemen">Прямое общение без посредников</h3></div>
+          <div class="card wm-c sr sr-d1"><h3 data-ru="Быстрое внесение изменений" data-en="Quick changes implementation">Быстрое внесение изменений</h3></div>
+          <div class="card wm-c sr sr-d2"><h3 data-ru="Глубокое понимание бизнеса" data-en="Deep business understanding">Глубокое понимание бизнеса</h3></div>
+          <div class="card wm-c sr sr-d3"><h3 data-ru="Работаю лично в каждом проекте" data-en="I work personally on every project">Работаю лично в каждом проекте</h3></div>
+        </div>
+        <div class="sr" style="display:flex;align-items:center;gap:24px;margin-top:12px;flex-wrap:wrap">
+          <img src="photo.png" alt="Дмитрий Вишневский" width="72" height="72" style="border-radius:50%;border:2px solid var(--brd);flex-shrink:0" loading="lazy">
+          <div>
+            <p class="wm-bio" style="margin-bottom:8px" data-ru="Я занимаюсь рекламой с 2020 года и работал с проектами в разных нишах. Работаю напрямую с клиентами и не передаю проекты другим специалистам." data-en="I've been in advertising since 2020 and have worked on projects across various niches. I work directly with clients and never outsource projects.">Я занимаюсь рекламой с 2020 года и работал с проектами в разных нишах. Работаю напрямую с клиентами и не передаю проекты другим специалистам.</p>
+            <p class="wm-val" data-ru="Это позволяет глубже погружаться в задачи и быстрее принимать решения." data-en="This allows me to dive deeper into tasks and make decisions faster.">Это позволяет глубже погружаться в задачи и быстрее принимать решения.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="proj-note sr" data-ru="Опишите ваш проект — возможно, я уже работал с похожей задачей и смогу подсказать, с чего лучше начать." data-en="Describe your project — I may have worked on a similar task and can suggest where to start.">Опишите ваш проект — возможно, я уже работал с похожей задачей и смогу подсказать, с чего лучше начать.</p>
-    <div style="margin-top:20px" class="sr"><a href="#contact" class="btn-g" data-ru="Рассказать о проекте" data-en="Tell About Your Project">Рассказать о проекте</a></div>
+    <div style="margin-top:24px" class="sr"><a href="#contact" class="btn-g" data-ru="Рассказать о проекте" data-en="Tell About Your Project">Рассказать о проекте</a></div>
   </div>
 </section>
 
-<!-- FACTORS -->
-<section class="sec sec-alt" id="factors" aria-label="Факторы результата">
-  <div class="sec-c">
-    <div class="sec-tag sr" data-ru="Важно понимать" data-en="Important to Know">Важно понимать</div>
-    <h2 class="sec-h sr" data-ru="Что влияет на результат рекламы" data-en="What affects advertising results">Что влияет на результат рекламы</h2>
-    <p class="sec-sub sr" data-ru="Реклама — это инструмент, а не гарантия результата. Поэтому в каждом проекте важно сначала разобраться в ситуации, а уже потом запускать рекламу." data-en="Advertising is a tool, not a guarantee of results. That's why in every project it's important to first understand the situation, then launch ads.">Реклама — это инструмент, а не гарантия результата. Поэтому в каждом проекте важно сначала разобраться в ситуации, а уже потом запускать рекламу.</p>
-    <div class="fact-row sr">
-      <span class="fact-pill" data-ru="ниша и конкуренция" data-en="niche & competition">ниша и конкуренция</span>
-      <span class="fact-pill" data-ru="само предложение" data-en="the offer itself">само предложение</span>
-      <span class="fact-pill" data-ru="посадочная страница" data-en="landing page">посадочная страница</span>
-      <span class="fact-pill" data-ru="работа с заявками" data-en="lead handling">работа с заявками</span>
-      <span class="fact-pill" data-ru="стратегия рекламы" data-en="ad strategy">стратегия рекламы</span>
-    </div>
-  </div>
-</section>
+<!-- Bridge: Projects -> Quiz -->
+<div class="narrative-bridge sr" data-ru="Хотите узнать, подойдёт ли это вам?" data-en="Want to find out if this is right for you?">Хотите узнать, подойдёт ли это вам?</div>
 
-<!-- FIT -->
-<section class="sec" id="fit" aria-label="Когда реклама подходит">
-  <div class="sec-c">
-    <div class="sec-tag sr" data-ru="Честно" data-en="Honestly">Честно</div>
-    <h2 class="sec-h sr" data-ru="Когда реклама может подойти" data-en="When advertising can be a fit">Когда реклама может подойти</h2>
-    <div class="fit-box sr">
-      <p data-ru-html="Реклама обычно начинает работать, когда у бизнеса уже есть <strong>понятная услуга и есть спрос</strong>." data-en-html="Advertising usually starts working when the business already has a <strong>clear service and there's demand</strong>.">Реклама обычно начинает работать, когда у бизнеса уже есть <strong>понятная услуга и есть спрос</strong>.</p>
-      <p data-ru="Если мы понимаем, кому продаём, готовы работать с заявками и есть бюджет на тестирование — рекламу можно выстроить как системный канал привлечения клиентов." data-en="If we know who we're selling to, are ready to handle leads, and have a testing budget — advertising can be built as a systematic client acquisition channel.">Если мы понимаем, кому продаём, готовы работать с заявками и есть бюджет на тестирование — рекламу можно выстроить как системный канал привлечения клиентов.</p>
-      <p data-ru-html="Но бывают ситуации, когда реклама не даёт результата — например, если <strong>не сходится экономика или нет спроса</strong>." data-en-html="But there are situations when ads don't deliver — for example, if <strong>the economics don't work or there's no demand</strong>.">Но бывают ситуации, когда реклама не даёт результата — например, если <strong>не сходится экономика или нет спроса</strong>.</p>
-    </div>
-  </div>
-</section>
-
-<!-- QUIZ ENTRY -->
+<!-- 7. QUIZ ENTRY -->
 <section class="sec sec-alt" id="quiz-section" aria-label="Разбор проекта">
   <div class="sec-c">
     <div class="quiz-entry sr">
       <h2 data-ru="Хотите понять, подойдёт ли вам реклама?" data-en="Want to know if advertising is right for you?">Хотите понять, подойдёт ли вам реклама?</h2>
       <p data-ru="Ответьте на 5 коротких вопросов — это поможет понять, есть ли потенциал и с чего начать" data-en="Answer 5 short questions — it'll help understand the potential and where to start">Ответьте на 5 коротких вопросов — это поможет понять, есть ли потенциал и с чего начать</p>
-      <button class="btn-p btn-accent" onclick="openQuiz()" data-ru-html="Пройти короткий разбор проекта &rarr;" data-en-html="Take a Quick Project Assessment &rarr;">Пройти короткий разбор проекта &rarr;</button>
+      <button class="btn-p btn-accent" onclick="openQuiz()" style="position:relative" data-ru-html="Пройти короткий разбор проекта &rarr;" data-en-html="Take a Quick Project Assessment &rarr;">Пройти короткий разбор проекта &rarr;</button>
     </div>
   </div>
 </section>
@@ -587,77 +902,22 @@ summary:hover{background:var(--bg2)}
   </div>
 </div>
 
-<!-- WHY ME -->
-<section class="sec" id="why-me" aria-label="Почему со мной работают">
-  <div class="sec-c">
-    <div class="sec-tag sr" data-ru="Доверие" data-en="Trust">Доверие</div>
-    <h2 class="sec-h sr" data-ru="Почему со мной работают" data-en="Why people work with me">Почему со мной работают</h2>
-    <div class="wm-g">
-      <div class="card wm-c sr"><h3 data-ru="Прямое общение без посредников" data-en="Direct communication, no middlemen">Прямое общение без посредников</h3></div>
-      <div class="card wm-c sr sr-d1"><h3 data-ru="Быстрое внесение изменений" data-en="Quick changes implementation">Быстрое внесение изменений</h3></div>
-      <div class="card wm-c sr sr-d2"><h3 data-ru="Глубокое понимание бизнеса" data-en="Deep business understanding">Глубокое понимание бизнеса</h3></div>
-      <div class="card wm-c sr sr-d3"><h3 data-ru="Работаю лично в каждом проекте" data-en="I work personally on every project">Работаю лично в каждом проекте</h3></div>
-    </div>
-    <div class="sr" style="display:flex;align-items:center;gap:20px;margin-top:8px;flex-wrap:wrap">
-      <img src="photo.png" alt="Дмитрий Вишневский" width="72" height="72" style="border-radius:50%;border:2px solid var(--brd);flex-shrink:0" loading="lazy">
-      <div>
-        <p class="wm-bio" style="margin-bottom:6px" data-ru="Я занимаюсь рекламой с 2020 года и работал с проектами в разных нишах. Работаю напрямую с клиентами и не передаю проекты другим специалистам." data-en="I've been in advertising since 2020 and have worked on projects across various niches. I work directly with clients and never outsource projects.">Я занимаюсь рекламой с 2020 года и работал с проектами в разных нишах. Работаю напрямую с клиентами и не передаю проекты другим специалистам.</p>
-        <p class="wm-val" data-ru="Это позволяет глубже погружаться в задачи и быстрее принимать решения." data-en="This allows me to dive deeper into tasks and make decisions faster.">Это позволяет глубже погружаться в задачи и быстрее принимать решения.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Bridge: Quiz -> About + Pricing -->
+<div class="narrative-bridge sr" data-ru="Немного обо мне и о том, как устроена работа" data-en="A bit about me and how things work">Немного обо мне и о том, как устроена работа</div>
 
-<!-- FORMAT -->
-<section class="sec sec-alt" id="format" aria-label="Формат работы">
+<!-- 8. ABOUT + PRICING (merged) -->
+<section class="sec" id="about" aria-label="О себе и стоимость">
   <div class="sec-c">
-    <div class="sec-tag sr" data-ru="Формат работы" data-en="Work Format">Формат работы</div>
-    <h2 class="sec-h sr" data-ru="Как начинаем" data-en="How we begin">Как начинаем</h2>
-    <div class="fmt-steps">
-      <div class="fmt-step card sr"><p data-ru="Начинаем с обсуждения проекта" data-en="We start with a project discussion">Начинаем с обсуждения проекта</p></div>
-      <div class="fmt-step card sr sr-d1"><p data-ru="Смотрим текущую ситуацию, задачи и возможности" data-en="We review the current situation, goals, and opportunities">Смотрим текущую ситуацию, задачи и возможности</p></div>
-      <div class="fmt-step card sr sr-d2"><p data-ru="После этого определяем стратегию и формат работы" data-en="After that, we define the strategy and work format">После этого определяем стратегию и формат работы</p></div>
-    </div>
-    <p class="fmt-note sr" data-ru="Я беру ограниченное количество проектов, чтобы сохранять фокус на качестве." data-en="I take a limited number of projects to maintain focus on quality.">Я беру ограниченное количество проектов, чтобы сохранять фокус на качестве.</p>
-    <p class="sec-sub sr" style="margin-bottom:24px" data-ru="Если формат откликается — можно обсудить ваш проект:" data-en="If this format resonates — let's discuss your project:">Если формат откликается — можно обсудить ваш проект:</p>
-    <div class="sr"><a href="#contact" class="btn-p" data-ru-html="Обсудить ваш проект &rarr;" data-en-html="Discuss Your Project &rarr;">Обсудить ваш проект &rarr;</a></div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section class="sec" id="pricing" aria-label="Стоимость">
-  <div class="sec-c">
-    <div class="sec-tag sr" data-ru="Стоимость работы" data-en="Pricing">Стоимость работы</div>
-    <h2 class="sec-h sr" data-ru="Прозрачные условия" data-en="Transparent terms">Прозрачные условия</h2>
-    <div class="price-card sr">
-      <div class="price-tag" data-ru="Стоимость" data-en="Cost">Стоимость</div>
-      <p class="price-desc" data-ru="Стоимость работы зависит от задач проекта, сложности ниши и объёма рекламных кампаний. Точную оценку можно дать после обсуждения проекта — в разных нишах цифры могут сильно отличаться." data-en="The cost depends on project tasks, niche complexity, and ad campaign volume. An exact estimate can be given after discussing the project — numbers can vary significantly across niches.">Стоимость работы зависит от задач проекта, сложности ниши и объёма рекламных кампаний. Точную оценку можно дать после обсуждения проекта — в разных нишах цифры могут сильно отличаться.</p>
-      <p style="font-size:14px;color:var(--t2);margin-bottom:14px;font-weight:700" data-ru="Обычно работа включает:" data-en="Work usually includes:">Обычно работа включает:</p>
-      <ul class="price-list">
-        <li data-ru="анализ проекта и стратегии привлечения клиентов" data-en="project analysis and client acquisition strategy">анализ проекта и стратегии привлечения клиентов</li>
-        <li data-ru="подготовку необходимой рекламной инфраструктуры" data-en="preparing the necessary ad infrastructure">подготовку необходимой рекламной инфраструктуры</li>
-        <li data-ru="запуск рекламных кампаний" data-en="launching ad campaigns">запуск рекламных кампаний</li>
-        <li data-ru="тестирование и оптимизацию рекламы" data-en="testing and optimizing ads">тестирование и оптимизацию рекламы</li>
-      </ul>
-      <div class="price-amount" data-ru="от $300" data-en="from $300">от $300</div>
-      <p class="price-note" data-ru="Отдельно учитывается рекламный бюджет" data-en="Ad budget is separate">Отдельно учитывается рекламный бюджет</p>
-      <a href="#contact" class="btn-p" data-ru-html="Обсудить стоимость &rarr;" data-en-html="Discuss Pricing &rarr;">Обсудить стоимость &rarr;</a>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="sec sec-alt" id="about" aria-label="О себе">
-  <div class="sec-c">
-    <div class="about-lay">
-      <div class="about-photo sr">
-        <div class="about-img-wrap">
-          <img class="about-img" src="photo.png" alt="Дмитрий Вишневский — специалист по контекстной рекламе" width="220" height="220" loading="lazy" decoding="async">
+    <div class="sec-tag sr" data-ru="О себе и стоимость" data-en="About & Pricing">О себе и стоимость</div>
+    <h2 class="sec-h sr" data-ru="О себе и стоимость" data-en="About & Pricing">О себе и стоимость</h2>
+    <div class="two-col">
+      <!-- LEFT: About -->
+      <div class="sr">
+        <div class="about-photo" style="margin-bottom:24px">
+          <div class="about-img-wrap">
+            <img class="about-img" src="photo.png" alt="Дмитрий Вишневский — специалист по контекстной рекламе" width="220" height="220" loading="lazy" decoding="async">
+          </div>
         </div>
-      </div>
-      <div>
-        <div class="sec-tag sr" data-ru="Немного о себе" data-en="About Me">Немного о себе</div>
-        <h2 class="sec-h sr" style="font-size:clamp(22px,3vw,32px)">Дмитрий Вишневский</h2>
         <p class="about-role sr" data-ru="Специалист по контекстной рекламе" data-en="PPC Advertising Specialist">Специалист по контекстной рекламе</p>
         <p class="about-text sr" data-ru="Меня зовут Дмитрий Вишневский. Я занимаюсь запуском рекламы и выстраиванием систем привлечения клиентов." data-en="My name is Dmitry Vishnevsky. I specialize in launching advertising and building client acquisition systems.">Меня зовут Дмитрий Вишневский. Я занимаюсь запуском рекламы и выстраиванием систем привлечения клиентов.</p>
         <p class="about-text sr" data-ru="Мне важно не просто запустить рекламу, а разобраться в задаче бизнеса и довести её до результата." data-en="It's important for me not just to launch ads, but to understand the business challenge and deliver results.">Мне важно не просто запустить рекламу, а разобраться в задаче бизнеса и довести её до результата.</p>
@@ -668,8 +928,8 @@ summary:hover{background:var(--bg2)}
           <a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
           <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         </div>
-        <div class="about-skills sr" style="margin-top:20px">
-          <p style="font-size:13px;font-weight:700;color:var(--t2);margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em" data-ru="Инструменты" data-en="Tools">Инструменты</p>
+        <div class="about-skills sr" style="margin-top:24px">
+          <p style="font-family:var(--ff-display);font-size:11px;font-weight:700;color:var(--t3);margin-bottom:12px;text-transform:uppercase;letter-spacing:.15em" data-ru="Инструменты" data-en="Tools">Инструменты</p>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
             <span class="fact-pill">Google Ads</span>
             <span class="fact-pill" data-ru="Яндекс Директ" data-en="Yandex Direct">Яндекс Директ</span>
@@ -680,12 +940,33 @@ summary:hover{background:var(--bg2)}
           </div>
         </div>
       </div>
+      <!-- RIGHT: Pricing -->
+      <div class="sr">
+        <div class="price-card" style="max-width:100%">
+          <div class="price-tag" data-ru="Стоимость" data-en="Cost">Стоимость</div>
+          <p class="price-desc" data-ru="Стоимость работы зависит от задач проекта, сложности ниши и объёма рекламных кампаний. Точную оценку можно дать после обсуждения проекта — в разных нишах цифры могут сильно отличаться." data-en="The cost depends on project tasks, niche complexity, and ad campaign volume. An exact estimate can be given after discussing the project — numbers can vary significantly across niches.">Стоимость работы зависит от задач проекта, сложности ниши и объёма рекламных кампаний. Точную оценку можно дать после обсуждения проекта — в разных нишах цифры могут сильно отличаться.</p>
+          <p style="font-size:14px;color:var(--t2);margin-bottom:14px;font-weight:700" data-ru="Обычно работа включает:" data-en="Work usually includes:">Обычно работа включает:</p>
+          <ul class="price-list">
+            <li data-ru="анализ проекта и стратегии привлечения клиентов" data-en="project analysis and client acquisition strategy">анализ проекта и стратегии привлечения клиентов</li>
+            <li data-ru="подготовку необходимой рекламной инфраструктуры" data-en="preparing the necessary ad infrastructure">подготовку необходимой рекламной инфраструктуры</li>
+            <li data-ru="запуск рекламных кампаний" data-en="launching ad campaigns">запуск рекламных кампаний</li>
+            <li data-ru="тестирование и оптимизацию рекламы" data-en="testing and optimizing ads">тестирование и оптимизацию рекламы</li>
+          </ul>
+          <div class="price-amount" data-ru="от $300" data-en="from $300">от $300</div>
+          <p class="price-note" data-ru="Отдельно учитывается рекламный бюджет" data-en="Ad budget is separate">Отдельно учитывается рекламный бюджет</p>
+          <a href="#contact" class="btn-p" data-ru-html="Обсудить стоимость &rarr;" data-en-html="Discuss Pricing &rarr;">Обсудить стоимость &rarr;</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="sec" id="faq" aria-label="Частые вопросы">
+<!-- Bridge: About -> FAQ -->
+<div class="narrative-bridge sr" data-ru="Остались вопросы? Вот ответы на самые частые" data-en="Still have questions? Here are the most common answers">Остались вопросы? Вот ответы на самые частые</div>
+
+<!-- 9. FAQ -->
+<section class="sec sec-alt" id="faq" aria-label="Частые вопросы">
+  <div class="sec-glow"></div>
   <div class="sec-c">
     <div class="sec-tag sr" data-ru="Вопросы" data-en="Questions">Вопросы</div>
     <h2 class="sec-h sr" data-ru="Частые вопросы" data-en="Frequently Asked Questions">Частые вопросы</h2>
@@ -703,8 +984,8 @@ summary:hover{background:var(--bg2)}
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="sec sec-alt" id="contact" aria-label="Контакты">
+<!-- 10. CONTACT -->
+<section class="sec" id="contact" aria-label="Контакты">
   <div class="sec-c">
     <div class="contact-inner">
       <div class="sec-tag sr" style="justify-content:center" data-ru="Связаться" data-en="Contact">Связаться</div>
@@ -728,10 +1009,19 @@ summary:hover{background:var(--bg2)}
 
 </main>
 
+<!-- MARQUEE CTA -->
 <section class="cta-bar" aria-label="CTA">
-  <div class="sec-c">
-    <a href="#contact" class="cta-bar-link" data-ru="ОБСУДИТЬ ВАШ ПРОЕКТ" data-en="DISCUSS YOUR PROJECT">ОБСУДИТЬ ВАШ ПРОЕКТ</a>
-    <a href="#contact" class="cta-bar-arrow">&rarr;</a>
+  <div class="marquee-track" id="marqueeTrack">
+    <div class="marquee-item"><a href="#contact" data-ru="ОБСУДИТЬ ВАШ ПРОЕКТ" data-en="DISCUSS YOUR PROJECT">ОБСУДИТЬ ВАШ ПРОЕКТ</a><span class="marquee-sep"></span></div>
+    <div class="marquee-item"><a href="#contact" data-ru="ЗАПУСТИТЬ РЕКЛАМУ" data-en="LAUNCH ADS">ЗАПУСТИТЬ РЕКЛАМУ</a><span class="marquee-sep"></span></div>
+    <div class="marquee-item"><a href="#contact" data-ru="ПОЛУЧИТЬ КЛИЕНТОВ" data-en="GET CLIENTS">ПОЛУЧИТЬ КЛИЕНТОВ</a><span class="marquee-sep"></span></div>
+    <div class="marquee-item"><a href="#contact" data-ru="ОБСУДИТЬ ВАШ ПРОЕКТ" data-en="DISCUSS YOUR PROJECT">ОБСУДИТЬ ВАШ ПРОЕКТ</a><span class="marquee-sep"></span></div>
+    <div class="marquee-item"><a href="#contact" data-ru="ЗАПУСТИТЬ РЕКЛАМУ" data-en="LAUNCH ADS">ЗАПУСТИТЬ РЕКЛАМУ</a><span class="marquee-sep"></span></div>
+    <div class="marquee-item"><a href="#contact" data-ru="ПОЛУЧИТЬ КЛИЕНТОВ" data-en="GET CLIENTS">ПОЛУЧИТЬ КЛИЕНТОВ</a><span class="marquee-sep"></span></div>
+    <div class="marquee-item"><a href="#contact" data-ru="ОБСУДИТЬ ВАШ ПРОЕКТ" data-en="DISCUSS YOUR PROJECT">ОБСУДИТЬ ВАШ ПРОЕКТ</a><span class="marquee-sep"></span></div>
+    <div class="marquee-item"><a href="#contact" data-ru="ЗАПУСТИТЬ РЕКЛАМУ" data-en="LAUNCH ADS">ЗАПУСТИТЬ РЕКЛАМУ</a><span class="marquee-sep"></span></div>
+    <div class="marquee-item"><a href="#contact" data-ru="ПОЛУЧИТЬ КЛИЕНТОВ" data-en="GET CLIENTS">ПОЛУЧИТЬ КЛИЕНТОВ</a><span class="marquee-sep"></span></div>
+    <div class="marquee-item"><a href="#contact" data-ru="ОБСУДИТЬ ВАШ ПРОЕКТ" data-en="DISCUSS YOUR PROJECT">ОБСУДИТЬ ВАШ ПРОЕКТ</a><span class="marquee-sep"></span></div>
   </div>
 </section>
 
@@ -767,6 +1057,14 @@ function closeMob(){burger.classList.remove('on');mobMenu.classList.remove('open
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target)}})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('.sr').forEach(el=>obs.observe(el));
 
+/* ===== HERO MOUSE GLOW ===== */
+const heroGlow=document.getElementById('heroGlow');
+const heroSection=document.getElementById('hero');
+heroSection.addEventListener('mousemove',e=>{
+  const r=heroSection.getBoundingClientRect();
+  heroGlow.style.transform=`translate(${e.clientX-r.left-300}px,${e.clientY-r.top-300}px)`;
+},{passive:true});
+
 /* ===== QUIZ ===== */
 const quizDataAll={ru:[{q:'Чем вы занимаетесь?',ctx:'Хочу понять, в каком направлении вы работаете — в разных нишах реклама может вести себя по-разному.',opts:['Услуги (ремонт, авто, юристы и т.д.)','Образование (курсы, школы)','Онлайн-услуги','Другое']},{q:'Запускали ли вы ранее рекламу?',ctx:'Это помогает понять, с чего мы начинаем — с нуля или уже есть какой-то опыт, от которого можно оттолкнуться.',opts:['Да, реклама сейчас работает','Да, пробовали, но без результата','Нет, ещё не запускали']},{q:'Какая сейчас основная задача?',ctx:'У всех разная ситуация, поэтому важно понять, какая задача сейчас стоит в первую очередь.',opts:['Получить первые заявки','Снизить стоимость заявки','Сделать поток заявок стабильным','Масштабировать рекламу']},{q:'Есть ли у вас посадочная страница?',ctx:'Сайт сильно влияет на результат — даже при нормальной рекламе заявки могут не идти, если с ним есть проблемы.',opts:['Да, есть','Нет','В процессе']},{q:'Какой бюджет готовы выделить на рекламу?',ctx:'Это нужно, чтобы понимать, как быстро можно протестировать рекламу и выйти на рабочие результаты.',type:'slider'}],en:[{q:'What does your business do?',ctx:'I want to understand what direction you work in — ads behave differently in different niches.',opts:['Services (repair, auto, lawyers, etc.)','Education (courses, schools)','Online services','Other']},{q:'Have you run ads before?',ctx:"This helps understand if we're starting from zero or building on existing experience.",opts:['Yes, ads are running now','Yes, tried but no results',"No, haven't launched yet"]},{q:"What's your main goal right now?",ctx:"Everyone's situation is different, so it's important to understand the priority.",opts:['Get first leads','Reduce cost per lead','Make lead flow stable','Scale advertising']},{q:'Do you have a landing page?',ctx:'The website heavily affects results — even with good ads, leads may not come if there are issues with it.',opts:['Yes','No','In progress']},{q:'What budget are you ready to allocate for ads?',ctx:'This helps understand how quickly we can test ads and reach working results.',type:'slider'}]};
 function getQuizData(){return quizDataAll[currentLang]}
@@ -782,7 +1080,7 @@ function quizPrev(){if(quizStep>0){quizStep--;renderQuiz()}}
 function renderResult(){quizBar.style.width='100%';quizStepNum.textContent=currentLang==='ru'?'Готово':'Done';quizBack.style.display='none';quizNext.style.display='none';const t=currentLang==='ru'?{thanks:'Спасибо за ответы',p1:'Судя по вашей ситуации, рекламу можно рассматривать как канал привлечения клиентов, но важно правильно подойти к запуску и не идти вслепую.',p2:'В большинстве похожих проектов результат зависит от того, насколько грамотно выстроена стратегия и как проходит этап тестирования.',p3:'Давайте посмотрим вашу ситуацию и разберём, с чего лучше начать.',note:'Если честно, в таких задачах почти всегда есть нюансы, которые лучше разбирать уже на примере конкретного проекта.',author:'Дмитрий Вишневский',choose:'Выберите удобный способ обратной связи:',placeholder:'Username или номер телефона',submit:'Отправить'}:{thanks:'Thank you for your answers',p1:"Based on your situation, advertising can be considered as a client acquisition channel, but it's important to approach the launch correctly and not go in blind.",p2:'In most similar projects, results depend on how well the strategy is built and how the testing phase goes.',p3:"Let's look at your situation and figure out where to start.",note:'To be honest, these tasks almost always have nuances that are better discussed using a specific project as an example.',author:'Dmitry Vishnevsky',choose:'Choose your preferred contact method:',placeholder:'Username or phone number',submit:'Submit'};const html=`<div class="quiz-result"><h3>${t.thanks}</h3><p>${t.p1}</p><p>${t.p2}</p><p>${t.p3}</p><div class="quiz-result-note"><div class="quiz-avatar" style="flex-shrink:0"><img src="photo.png" alt="" width="44" height="44"></div><p>${t.note}<br><strong style="color:var(--t1)">— ${t.author}</strong></p></div><p style="font-size:14px;color:var(--t2);margin-bottom:16px">${t.choose}</p><div class="contact-sel"><input type="radio" name="qmethod" id="qm-phone" value="phone"><label for="qm-phone">Phone</label><input type="radio" name="qmethod" id="qm-tg" value="telegram" checked><label for="qm-tg">Telegram</label><input type="radio" name="qmethod" id="qm-wa" value="whatsapp"><label for="qm-wa">WhatsApp</label><input type="radio" name="qmethod" id="qm-vb" value="viber"><label for="qm-vb">Viber</label></div><input type="text" class="contact-input" placeholder="${t.placeholder}"><button class="btn-p btn-accent" onclick="closeQuiz()" style="margin:12px auto 0;display:flex">${t.submit} &rarr;</button></div>`;if(document.startViewTransition){document.startViewTransition(()=>{quizBody.innerHTML=html})}else{quizBody.innerHTML=html}}
 
 /* ===== FORM ===== */
-function handleSubmit(e){e.preventDefault();const btn=e.target.querySelector('.contact-submit');const t=btn.textContent;btn.textContent=currentLang==='ru'?'Отправлено!':'Sent!';btn.style.background='#06d6a0';setTimeout(()=>{btn.textContent=t;btn.style.background='';e.target.reset()},3000)}
+function handleSubmit(e){e.preventDefault();const btn=e.target.querySelector('.contact-submit');const t=btn.textContent;btn.textContent=currentLang==='ru'?'Отправлено!':'Sent!';btn.style.background='linear-gradient(135deg,#06d6a0,#00b894)';btn.style.boxShadow='0 0 32px rgba(6,214,160,.3)';setTimeout(()=>{btn.textContent=t;btn.style.background='';btn.style.boxShadow='';e.target.reset()},3000)}
 
 /* ===== SMOOTH SCROLL ===== */
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
