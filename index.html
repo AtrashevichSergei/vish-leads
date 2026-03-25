@@ -109,27 +109,27 @@ body *{cursor:none}
 .hero-photo-wrap{perspective:1000px;display:flex;align-items:flex-end;justify-content:center;position:relative}
 .hero-photo-wrap::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80%;height:40%;background:radial-gradient(ellipse,rgba(212,165,74,.08),transparent 70%);filter:blur(40px);pointer-events:none}
 
-/* 3D floating logos behind photo */
-.hero-logos{position:absolute;inset:0;pointer-events:none;z-index:0;perspective:600px}
+/* 3D floating logos around photo */
+.hero-logos{position:absolute;inset:-40px;pointer-events:none;z-index:2;perspective:600px}
 .hero-logo{
   position:absolute;
   width:56px;height:56px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.06);
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.1);
   border-radius:14px;
-  backdrop-filter:blur(8px);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   display:flex;align-items:center;justify-content:center;
   animation:logoFloat 6s ease-in-out infinite;
   transform-style:preserve-3d;
   box-shadow:0 8px 32px rgba(0,0,0,.2);
 }
-.hero-logo svg,.hero-logo img{width:28px;height:28px;opacity:.7}
-.hero-logo:nth-child(1){top:5%;left:8%;animation-delay:0s;animation-duration:7s}
-.hero-logo:nth-child(2){top:12%;right:5%;animation-delay:1.2s;animation-duration:8s}
-.hero-logo:nth-child(3){top:55%;left:2%;animation-delay:0.6s;animation-duration:6.5s}
-.hero-logo:nth-child(4){bottom:18%;right:8%;animation-delay:2s;animation-duration:7.5s}
-.hero-logo:nth-child(5){top:35%;right:0%;animation-delay:0.3s;animation-duration:9s}
-.hero-logo:nth-child(6){bottom:5%;left:15%;animation-delay:1.8s;animation-duration:6s}
+.hero-logo svg,.hero-logo img{width:28px;height:28px;opacity:.85}
+.hero-logo:nth-child(1){top:0;left:0;animation-delay:0s;animation-duration:7s}
+.hero-logo:nth-child(2){top:0;right:0;animation-delay:1.2s;animation-duration:8s}
+.hero-logo:nth-child(3){top:45%;left:-20px;animation-delay:0.6s;animation-duration:6.5s}
+.hero-logo:nth-child(4){bottom:15%;right:-10px;animation-delay:2s;animation-duration:7.5s}
+.hero-logo:nth-child(5){top:30%;right:-20px;animation-delay:0.3s;animation-duration:9s}
+.hero-logo:nth-child(6){bottom:0;left:20%;animation-delay:1.8s;animation-duration:6s}
 @keyframes logoFloat{
   0%{transform:translateY(0) rotateX(0deg) rotateY(0deg)}
   25%{transform:translateY(-12px) rotateX(8deg) rotateY(-6deg)}
