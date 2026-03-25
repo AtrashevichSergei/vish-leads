@@ -20,7 +20,7 @@
 <meta name="twitter:image" content="https://vish-leads.com/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Дмитрий Вишневский","jobTitle":"Специалист по контекстной рекламе","url":"https://vish-leads.com","image":"photo.png","email":"visjb3t3t@gmail.com","sameAs":["https://t.me/vishnevsky","https://www.youtube.com/@vishnevsky","https://www.linkedin.com/in/vishnevsky"],"knowsAbout":["Google Ads","Яндекс Директ","контекстная реклама","привлечение клиентов"]}
 </script>
@@ -50,12 +50,13 @@
   --grad-text:linear-gradient(135deg,#FF6B2C,#FF8F5C);
   --ff:'Plus Jakarta Sans',system-ui,sans-serif;
   --ff-display:'Plus Jakarta Sans',system-ui,sans-serif;
+  --ff-serif:'Instrument Serif',Georgia,serif;
   --ease:cubic-bezier(.16,1,.3,1);
   --ease-out:cubic-bezier(.22,1,.36,1);
   --r:20px;--r-sm:14px;--r-pill:100px;
   --shadow:0 1px 3px rgba(0,0,0,.04),0 4px 24px rgba(0,0,0,.04);
   --shadow-h:0 8px 40px rgba(0,0,0,.08);
-  --cont:1140px;--pad:clamp(64px,10vw,120px);
+  --cont:1140px;--pad:clamp(80px,14vw,160px);
 }
 
 html{scroll-behavior:smooth;scroll-padding-top:88px}
@@ -83,9 +84,11 @@ body::after{
 .sr-d1{transition-delay:.08s}.sr-d2{transition-delay:.16s}.sr-d3{transition-delay:.24s}
 .sr-d4{transition-delay:.32s}.sr-d5{transition-delay:.4s}.sr-d6{transition-delay:.48s}
 @media(prefers-reduced-motion:reduce){.sr{opacity:1!important;transform:none!important;transition:none!important}}
+.blur-in{filter:blur(8px);opacity:0;transition:filter 1s var(--ease-out),opacity 1s var(--ease-out)}
+.blur-in.vis{filter:blur(0);opacity:1}
 
 /* ===== NARRATIVE BRIDGES ===== */
-.narrative-bridge{text-align:center;padding:32px 20px;font-size:15px;color:var(--t3);font-style:italic;max-width:600px;margin:0 auto}
+.narrative-bridge{text-align:center;padding:48px 20px;font-size:18px;color:var(--t3);font-style:italic;max-width:600px;margin:0 auto;font-family:var(--ff-serif)}
 
 /* ===== NAV ===== */
 .nav{
@@ -100,7 +103,7 @@ body::after{
 .nav-logo{font-family:var(--ff-display);font-weight:800;font-size:15px;color:var(--t1);text-decoration:none;letter-spacing:.08em;text-transform:uppercase}
 .nav-logo span{background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .nav-links{display:flex;align-items:center;gap:36px;list-style:none}
-.nav-links a{font-size:13px;font-weight:500;color:var(--t3);text-decoration:none;transition:color .3s;letter-spacing:.02em;text-transform:uppercase}
+.nav-links a{font-size:13px;font-weight:400;color:var(--t3);text-decoration:none;transition:color .3s;letter-spacing:.02em;text-transform:uppercase}
 .nav-links a:hover{color:var(--t1)}
 .nav-right{display:flex;align-items:center;gap:14px}
 .lang-toggle{
@@ -111,10 +114,10 @@ body::after{
 }
 .lang-toggle:hover{border-color:var(--accent);color:var(--accent)}
 .nav-cta{
-  padding:11px 26px;
+  padding:8px 20px;
   background:var(--grad);
   border:none;border-radius:var(--r-pill);
-  font-family:var(--ff);font-size:13px;font-weight:600;color:var(--bg);
+  font-family:var(--ff);font-size:12px;font-weight:600;color:var(--bg);letter-spacing:.02em;
   cursor:pointer;text-decoration:none;
   transition:all .4s var(--ease);
   display:inline-flex;align-items:center;gap:8px;
@@ -167,7 +170,7 @@ body::after{
 
 .hero h1{
   font-family:var(--ff-display);
-  font-size:clamp(36px,5.5vw,68px);font-weight:800;line-height:1.05;
+  font-size:clamp(36px,6vw,64px);font-weight:800;line-height:1.05;
   letter-spacing:-.05em;margin-bottom:24px;color:var(--t1);
 }
 .hero h1 em{
@@ -347,14 +350,14 @@ body::after{
 .mist-cta{margin-top:28px}
 
 /* ===== APPROACH (2-col) ===== */
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
 @media(max-width:768px){.two-col{grid-template-columns:1fr;gap:36px}}
 .appr-intro{font-size:clamp(16px,1.8vw,20px);line-height:1.75;color:var(--t1);margin-bottom:28px}
 .appr-intro strong{background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .appr-list{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
 .appr-list li{font-size:14px;color:var(--t2);line-height:1.6;display:flex;align-items:flex-start;gap:12px}
 .appr-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:8px;flex-shrink:0;box-shadow:0 0 6px var(--glow)}
-.appr-pos{font-size:15px;color:var(--accent);font-weight:600;font-style:italic}
+.appr-pos{font-family:var(--ff-serif);font-size:15px;color:var(--accent);font-weight:600;font-style:italic}
 .more-details{margin-top:16px}
 .more-details summary{font-size:13px;font-weight:600;color:var(--accent);cursor:pointer;display:inline-flex;align-items:center;gap:8px;list-style:none;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(232,164,90,.3)}
 .more-details summary::-webkit-details-marker{display:none}
@@ -394,7 +397,7 @@ body::after{
 }
 
 /* ===== HERO QUOTE ===== */
-.hero-quote{font-size:14px;color:var(--t3);font-style:italic;margin-bottom:20px;letter-spacing:.02em}
+.hero-quote{font-family:var(--ff-serif);font-size:18px;color:var(--t3);font-style:italic;margin-bottom:20px;letter-spacing:.02em}
 
 /* ===== RESULTS ===== */
 .res-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:28px}
@@ -622,6 +625,44 @@ summary:hover{background:var(--card-h)}
   mask-image:linear-gradient(90deg,transparent,#fff 30%,#fff 70%,transparent);
   -webkit-mask-image:linear-gradient(90deg,transparent,#fff 30%,#fff 70%,transparent);
 }
+
+/* ===== PROJECT CARD HOVER TOOLTIP ===== */
+.proj-c{position:relative;cursor:pointer}
+.proj-c::before{
+  content:'';
+  position:absolute;top:16px;right:16px;
+  width:32px;height:32px;
+  border-radius:50%;
+  background:var(--t1);
+  opacity:0;
+  transform:scale(0.5);
+  transition:all .35s var(--ease);
+  z-index:1;
+}
+.proj-c::after{
+  content:'\2192';
+  position:absolute;top:22px;right:22px;
+  font-size:14px;color:var(--bg);
+  opacity:0;
+  transform:scale(0.5);
+  transition:all .35s var(--ease);
+  z-index:2;
+}
+.proj-c:hover::before{opacity:1;transform:scale(1)}
+.proj-c:hover::after{opacity:1;transform:scale(1)}
+
+/* ===== SCROLL-DRIVEN PARALLAX ON HERO PHOTO ===== */
+@supports(animation-timeline:scroll()){
+  .hero-photo-card img{
+    animation:heroParallax linear;
+    animation-timeline:scroll();
+    animation-range:0px 600px;
+  }
+  @keyframes heroParallax{
+    from{transform:translateY(-15px)}
+    to{transform:translateY(15px)}
+  }
+}
 </style>
 </head>
 <body>
@@ -705,7 +746,7 @@ summary:hover{background:var(--card-h)}
   <div class="sec-glow"></div>
   <div class="sec-c">
     <div class="sec-tag sr" data-ru="Знакомо?" data-en="Sound Familiar?">Знакомо?</div>
-    <h2 class="sec-h sr" data-ru="В каких ситуациях ко мне обращаются" data-en="Common situations clients come with">В каких ситуациях ко мне обращаются</h2>
+    <h2 class="sec-h sr blur-in" data-ru="В каких ситуациях ко мне обращаются" data-en="Common situations clients come with">В каких ситуациях ко мне обращаются</h2>
     <p class="sec-sub sr" data-ru="Обычно ситуация выглядит так:" data-en="It usually looks like this:">Обычно ситуация выглядит так:</p>
     <div class="prob-g">
       <div class="card prob-c sr"><div class="prob-i">?</div><h3 data-ru="Нет понимания, какие рекламные каналы могут работать" data-en="No clarity on which ad channels could work">Нет понимания, какие рекламные каналы могут работать</h3></div>
@@ -721,13 +762,13 @@ summary:hover{background:var(--card-h)}
 </section>
 
 <!-- Bridge: Problems -> Mistakes -->
-<div class="narrative-bridge sr" data-ru="Если узнали себя — давайте разберёмся, почему так происходит" data-en="If this sounds like you — let's figure out why">Если узнали себя — давайте разберёмся, почему так происходит</div>
+<div class="narrative-bridge sr blur-in" data-ru="Если узнали себя — давайте разберёмся, почему так происходит" data-en="If this sounds like you — let's figure out why">Если узнали себя — давайте разберёмся, почему так происходит</div>
 
 <!-- 3. MISTAKES -->
 <section class="sec" id="mistakes" aria-label="Почему реклама не работает">
   <div class="sec-c">
     <div class="sec-tag sr" data-ru="Почему не работает" data-en="Why It Fails">Почему не работает</div>
-    <h2 class="sec-h sr" data-ru="Почему реклама часто не работает" data-en="Why advertising often doesn't work">Почему реклама часто не работает</h2>
+    <h2 class="sec-h sr blur-in" data-ru="Почему реклама часто не работает" data-en="Why advertising often doesn't work">Почему реклама часто не работает</h2>
     <p class="sec-sub sr" data-ru="На практике я часто вижу одни и те же ошибки:" data-en="In practice, I see the same mistakes over and over:">На практике я часто вижу одни и те же ошибки:</p>
     <div class="mist-g">
       <div class="mist-c sr"><div class="mist-i">&times;</div><div><h3 data-ru="Запуск рекламы без стратегии" data-en="Launching ads without a strategy">Запуск рекламы без стратегии</h3><p data-ru="Настройка «на глаз» без анализа ниши и конкурентов" data-en="Setting up 'by eye' without niche and competitor analysis">Настройка «на глаз» без анализа ниши и конкурентов</p></div></div>
@@ -744,14 +785,14 @@ summary:hover{background:var(--card-h)}
 </section>
 
 <!-- Bridge: Mistakes -> Approach -->
-<div class="narrative-bridge sr" data-ru="Хорошая новость — у каждой из этих проблем есть решение" data-en="Good news — each of these problems has a solution">Хорошая новость — у каждой из этих проблем есть решение</div>
+<div class="narrative-bridge sr blur-in" data-ru="Хорошая новость — у каждой из этих проблем есть решение" data-en="Good news — each of these problems has a solution">Хорошая новость — у каждой из этих проблем есть решение</div>
 
 <!-- 4. APPROACH + PROCESS -->
 <section class="sec sec-alt" id="approach" aria-label="Подход и процесс работы">
   <div class="sec-glow"></div>
   <div class="sec-c">
     <div class="sec-tag sr" data-ru="Мой подход" data-en="My Approach">Мой подход</div>
-    <h2 class="sec-h sr" data-ru="Мой подход к работе" data-en="My approach to work">Мой подход к работе</h2>
+    <h2 class="sec-h sr blur-in" data-ru="Мой подход к работе" data-en="My approach to work">Мой подход к работе</h2>
     <p class="sec-sub sr" data-ru="Понятный подход и чёткий процесс — от анализа до результата" data-en="A clear approach and structured process — from analysis to results">Понятный подход и чёткий процесс — от анализа до результата</p>
     <div class="two-col">
       <!-- LEFT: Approach -->
@@ -804,14 +845,14 @@ summary:hover{background:var(--card-h)}
 </section>
 
 <!-- Bridge: Approach -> Results -->
-<div class="narrative-bridge sr" data-ru="Когда система выстроена правильно, вот что меняется" data-en="When the system is built right, here's what changes">Когда система выстроена правильно, вот что меняется</div>
+<div class="narrative-bridge sr blur-in" data-ru="Когда система выстроена правильно, вот что меняется" data-en="When the system is built right, here's what changes">Когда система выстроена правильно, вот что меняется</div>
 
 <!-- 5. RESULTS -->
 <section class="sec sec-alt" id="results" aria-label="Результаты">
   <div class="sec-glow"></div>
   <div class="sec-c">
     <div class="sec-tag sr" data-ru="Что получаете" data-en="What You Get">Что получаете</div>
-    <h2 class="sec-h sr" data-ru="Результат работы — это не просто запущенная реклама" data-en="The result is not just ads that are running">Результат работы — это не просто запущенная реклама</h2>
+    <h2 class="sec-h sr blur-in" data-ru="Результат работы — это не просто запущенная реклама" data-en="The result is not just ads that are running">Результат работы — это не просто запущенная реклама</h2>
     <p class="sec-sub sr" data-ru="Появляется система привлечения клиентов, с которой можно работать и развивать. Это означает:" data-en="A client acquisition system emerges that you can work with and grow. This means:">Появляется система привлечения клиентов, с которой можно работать и развивать. Это означает:</p>
     <div class="res-grid">
       <div class="card res-card sr"><div class="res-icon">$</div><p data-ru="Понятная стоимость заявки" data-en="Clear cost per lead">Понятная стоимость заявки</p></div>
@@ -826,13 +867,13 @@ summary:hover{background:var(--card-h)}
 </section>
 
 <!-- Bridge: Results -> Projects + Trust -->
-<div class="narrative-bridge sr" data-ru="А вот с чем я уже работал и почему клиенты остаются" data-en="Here's what I've worked on and why clients stay">А вот с чем я уже работал и почему клиенты остаются</div>
+<div class="narrative-bridge sr blur-in" data-ru="А вот с чем я уже работал и почему клиенты остаются" data-en="Here's what I've worked on and why clients stay">А вот с чем я уже работал и почему клиенты остаются</div>
 
 <!-- 6. PROJECTS + TRUST (merged) -->
 <section class="sec" id="projects" aria-label="Опыт и доверие">
   <div class="sec-c">
     <div class="sec-tag sr" data-ru="Опыт и доверие" data-en="Experience & Trust">Опыт и доверие</div>
-    <h2 class="sec-h sr" data-ru="Опыт и доверие" data-en="Experience & Trust">Опыт и доверие</h2>
+    <h2 class="sec-h sr blur-in" data-ru="Опыт и доверие" data-en="Experience & Trust">Опыт и доверие</h2>
     <p class="sec-sub sr" data-ru="Проекты, с которыми я работал, и почему клиенты остаются" data-en="Projects I've worked on and why clients stay">Проекты, с которыми я работал, и почему клиенты остаются</p>
     <div class="two-col">
       <!-- LEFT: Projects -->
@@ -869,7 +910,7 @@ summary:hover{background:var(--card-h)}
 </section>
 
 <!-- Bridge: Projects -> Quiz -->
-<div class="narrative-bridge sr" data-ru="Хотите узнать, подойдёт ли это вам?" data-en="Want to find out if this is right for you?">Хотите узнать, подойдёт ли это вам?</div>
+<div class="narrative-bridge sr blur-in" data-ru="Хотите узнать, подойдёт ли это вам?" data-en="Want to find out if this is right for you?">Хотите узнать, подойдёт ли это вам?</div>
 
 <!-- 7. QUIZ ENTRY -->
 <section class="sec sec-alt" id="quiz-section" aria-label="Разбор проекта">
@@ -899,13 +940,13 @@ summary:hover{background:var(--card-h)}
 </div>
 
 <!-- Bridge: Quiz -> About + Pricing -->
-<div class="narrative-bridge sr" data-ru="Немного обо мне и о том, как устроена работа" data-en="A bit about me and how things work">Немного обо мне и о том, как устроена работа</div>
+<div class="narrative-bridge sr blur-in" data-ru="Немного обо мне и о том, как устроена работа" data-en="A bit about me and how things work">Немного обо мне и о том, как устроена работа</div>
 
 <!-- 8. ABOUT + PRICING (merged) -->
 <section class="sec" id="about" aria-label="О себе и стоимость">
   <div class="sec-c">
     <div class="sec-tag sr" data-ru="О себе и стоимость" data-en="About & Pricing">О себе и стоимость</div>
-    <h2 class="sec-h sr" data-ru="О себе и стоимость" data-en="About & Pricing">О себе и стоимость</h2>
+    <h2 class="sec-h sr blur-in" data-ru="О себе и стоимость" data-en="About & Pricing">О себе и стоимость</h2>
     <div class="two-col">
       <!-- LEFT: About -->
       <div class="sr">
@@ -958,14 +999,14 @@ summary:hover{background:var(--card-h)}
 </section>
 
 <!-- Bridge: About -> FAQ -->
-<div class="narrative-bridge sr" data-ru="Остались вопросы? Вот ответы на самые частые" data-en="Still have questions? Here are the most common answers">Остались вопросы? Вот ответы на самые частые</div>
+<div class="narrative-bridge sr blur-in" data-ru="Остались вопросы? Вот ответы на самые частые" data-en="Still have questions? Here are the most common answers">Остались вопросы? Вот ответы на самые частые</div>
 
 <!-- 9. FAQ -->
 <section class="sec sec-alt" id="faq" aria-label="Частые вопросы">
   <div class="sec-glow"></div>
   <div class="sec-c">
     <div class="sec-tag sr" data-ru="Вопросы" data-en="Questions">Вопросы</div>
-    <h2 class="sec-h sr" data-ru="Частые вопросы" data-en="Frequently Asked Questions">Частые вопросы</h2>
+    <h2 class="sec-h sr blur-in" data-ru="Частые вопросы" data-en="Frequently Asked Questions">Частые вопросы</h2>
     <p class="sec-sub sr" data-ru="Если не нашли ответ — напишите, обсудим лично" data-en="Didn't find your answer? Write me, we'll discuss it personally">Если не нашли ответ — напишите, обсудим лично</p>
     <div class="faq-list">
       <details class="sr"><summary data-ru="Когда появляются первые заявки" data-en="When do first leads appear">Когда появляются первые заявки</summary><div class="faq-a" data-ru="В некоторых проектах заявки могут пойти уже в первые дни. Но прогнозируемый результат обычно появляется позже — когда после тестирования становится понятно, что именно работает." data-en="In some projects, leads can come in the first few days. But predictable results usually appear later — when testing reveals what actually works.">В некоторых проектах заявки могут пойти уже в первые дни. Но прогнозируемый результат обычно появляется позже — когда после тестирования становится понятно, что именно работает.</div></details>
