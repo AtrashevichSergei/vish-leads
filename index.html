@@ -96,20 +96,19 @@ body *{cursor:none}
 
 /* ═══ CHAPTER SYSTEM ═══ */
 .ch{padding:clamp(80px,14vh,160px) clamp(20px,5vw,60px);position:relative;overflow:hidden}
-.ch-clip{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.ch-clip{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .ch-clip.vis{opacity:1;transform:none}
+/* Fallback: make visible after 3s if JS fails */
+body.loaded .ch-clip{opacity:1;transform:none}
 .ch-inner{max-width:var(--cont);margin:0 auto;position:relative;z-index:1}
-.ch-label{font-family:var(--hd);font-size:12px;font-weight:500;letter-spacing:.06em;color:var(--t3);margin-bottom:20px;display:flex;align-items:center;gap:0}
+.ch-label{font-family:var(--hd);font-size:12px;font-weight:500;letter-spacing:.06em;color:var(--t3);margin-bottom:20px;display:flex;align-items:center;gap:0;opacity:0;transform:translateY(12px);transition:all .6s var(--ease)}
+.ch-label.vis{opacity:1;transform:none}
 .ch-label::before{content:'[';margin-right:8px;color:var(--blue);font-size:16px;font-weight:300}
 .ch-label::after{content:']';margin-left:8px;color:var(--blue);font-size:16px;font-weight:300}
 
-/* Split-text targets */
+/* Headings */
 .split-heading{font-family:var(--hd);font-size:clamp(32px,5.5vw,64px);font-weight:700;line-height:1.12;letter-spacing:-.04em;margin-bottom:20px}
 .split-heading em{font-style:normal;color:var(--blue)}
-/* After split-text runs: */
-.word{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:4px}
-.word-inner{display:inline-block;transform:translateY(105%);transition:transform .7s var(--ease);will-change:transform}
-.word-inner.vis{transform:none}
 .ch-desc{font-size:17px;color:var(--t2);line-height:1.618;max-width:520px;margin-bottom:40px;opacity:0;transform:translateY(24px);transition:all .8s var(--ease) .3s}
 .ch-desc.vis{opacity:1;transform:none}
 
@@ -658,50 +657,16 @@ void main(){
   (function draw(now){gl.uniform1f(ut,now*.001);gl.uniform2f(ur,c.width,c.height);gl.uniform2f(um,gmx,gmy);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);requestAnimationFrame(draw)})(0);
 }
 
-/* ═══ 4. SPLIT-TEXT ENGINE ═══ */
-function splitText(){
-  document.querySelectorAll('.split-heading').forEach(el=>{
-    if(el.dataset.splitDone)return;
-    const html=el.innerHTML;
-    const tmp=document.createElement('div');tmp.innerHTML=html;
-    let result='';
-    function process(node){
-      if(node.nodeType===3){
-        node.textContent.split(/(\s+)/).forEach(w=>{
-          if(w.trim())result+=`<span class="word"><span class="word-inner">${w}</span></span>`;
-          else result+=w;
-        });
-      }else if(node.nodeType===1){
-        result+=`<${node.tagName.toLowerCase()}`;
-        for(const a of node.attributes)result+=` ${a.name}="${a.value}"`;
-        result+='>';
-        node.childNodes.forEach(process);
-        result+=`</${node.tagName.toLowerCase()}>`;
-      }
-    }
-    tmp.childNodes.forEach(process);
-    el.innerHTML=result;
-    el.dataset.splitDone='1';
-  });
-}
-function triggerWords(el){
-  el.querySelectorAll('.word-inner').forEach((w,i)=>{
-    setTimeout(()=>w.classList.add('vis'),i*80);
-  });
-}
+/* ═══ 4. (split-text removed for reliability) ═══ */
 
 /* ═══ 5. SCROLL OBSERVER (unified) ═══ */
 function initObservers(){
   const obs=new IntersectionObserver(entries=>{
     entries.forEach(e=>{
-      if(!e.isIntersecting)return;
-      const el=e.target;
-      if(el.classList.contains('ch-clip')){el.classList.add('vis');triggerWords(el);el.querySelectorAll('.ch-desc,.ch-label').forEach(d=>d.classList.add('vis'))}
-      if(el.classList.contains('hero-badge')||el.classList.contains('hero-sub')||el.classList.contains('hero-actions'))el.classList.add('vis');
-      obs.unobserve(el);
+      if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}
     });
-  },{threshold:.15,rootMargin:'0px 0px -60px 0px'});
-  document.querySelectorAll('.ch-clip,.hero-badge,.hero-sub,.hero-actions').forEach(el=>obs.observe(el));
+  },{threshold:.05,rootMargin:'0px 0px -20px 0px'});
+  document.querySelectorAll('.ch-clip,.hero-badge,.hero-sub,.hero-actions,.ch-desc,.ch-label').forEach(el=>obs.observe(el));
 }
 
 /* ═══ 6. NUMBER COUNTERS ═══ */
@@ -773,7 +738,7 @@ function closeMob(){burger.classList.remove('on');mobMenu.classList.remove('open
 
 /* ═══ LANGUAGE ═══ */
 let currentLang=localStorage.getItem('lang')||'ru';
-function setLang(lang){currentLang=lang;localStorage.setItem('lang',lang);document.documentElement.lang=lang;document.getElementById('langToggle').textContent=lang==='ru'?'EN':'RU';document.querySelectorAll('[data-ru]').forEach(el=>{if(el.dataset[lang])el.textContent=el.dataset[lang]});document.querySelectorAll('[data-ru-html]').forEach(el=>{const a='data-'+lang+'-html';if(el.hasAttribute(a))el.innerHTML=el.getAttribute(a)});document.querySelectorAll('[data-ru-placeholder]').forEach(el=>{const a='data-'+lang+'-placeholder';if(el.hasAttribute(a))el.placeholder=el.getAttribute(a)});document.querySelectorAll('.split-heading').forEach(el=>{delete el.dataset.splitDone});splitText();if(document.getElementById('quizOverlay').classList.contains('active'))renderQuiz()}
+function setLang(lang){currentLang=lang;localStorage.setItem('lang',lang);document.documentElement.lang=lang;document.getElementById('langToggle').textContent=lang==='ru'?'EN':'RU';document.querySelectorAll('[data-ru]').forEach(el=>{if(el.dataset[lang])el.textContent=el.dataset[lang]});document.querySelectorAll('[data-ru-html]').forEach(el=>{const a='data-'+lang+'-html';if(el.hasAttribute(a))el.innerHTML=el.getAttribute(a)});document.querySelectorAll('[data-ru-placeholder]').forEach(el=>{const a='data-'+lang+'-placeholder';if(el.hasAttribute(a))el.placeholder=el.getAttribute(a)});if(document.getElementById('quizOverlay').classList.contains('active'))renderQuiz()}
 function toggleLang(){setLang(currentLang==='ru'?'en':'ru')}
 
 /* ═══ QUIZ ═══ */
@@ -797,7 +762,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click'
 
 /* ═══ INIT ALL ═══ */
 function initPage(){
-  splitText();
+  document.body.classList.add('loaded');
   initObservers();
   initCounters();
   initWebGL();
@@ -810,10 +775,9 @@ function initPage(){
   // Trigger hero reveals
   setTimeout(()=>{
     document.querySelector('.hero-badge')?.classList.add('vis');
-    triggerWords(document.querySelector('.hero'));
-    setTimeout(()=>document.querySelector('.hero-sub')?.classList.add('vis'),300);
-    setTimeout(()=>document.querySelector('.hero-actions')?.classList.add('vis'),500);
-  },200);
+    setTimeout(()=>document.querySelector('.hero-sub')?.classList.add('vis'),200);
+    setTimeout(()=>document.querySelector('.hero-actions')?.classList.add('vis'),400);
+  },100);
 }
 if(currentLang!=='ru')setLang(currentLang);
 </script>
