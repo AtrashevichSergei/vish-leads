@@ -1,0 +1,12 @@
+# Backups and temp files
+*.backup
+photo_old.png
+photo_new.png
+photo_avatar_backup.png
+photo_0.png
+photo_1.png
+photo_web.*
+extracted_*.png
+index_light_backup.html
+HANDOFF.md
+.DS_Store
