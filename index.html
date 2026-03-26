@@ -75,10 +75,10 @@ nav.stuck{padding:16px 64px;background:rgba(10,10,12,.92);backdrop-filter:blur(3
 .hero-right{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:160px 64px 100px 80px;position:relative;z-index:1}
 .hero-status{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border:1px solid rgba(61,143,95,.3);background:rgba(61,143,95,.07);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--green-light);margin-bottom:36px;width:fit-content;opacity:0;animation:up .7s ease .15s forwards}
 .hs-dot{width:5px;height:5px;background:var(--green-light);border-radius:50%;animation:blink 2s ease infinite}
-.hero-h1{font-family:var(--serif);font-size:clamp(40px,5vw,72px);font-weight:900;line-height:.95;letter-spacing:-.02em;margin-bottom:36px;opacity:0;animation:up .7s ease .3s forwards}
+.hero-h1{font-family:var(--serif);font-size:clamp(40px,5vw,72px);font-weight:900;line-height:.95;letter-spacing:-.02em;margin-bottom:24px;opacity:0;animation:up .7s ease .3s forwards}
 .hero-h1 em{font-style:italic;background:linear-gradient(90deg,var(--gold),#6ba3f7,var(--gold));background-size:200% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s ease-in-out infinite;display:block}
 @keyframes shimmer{0%{background-position:100% 0}50%{background-position:0% 0}100%{background-position:100% 0}}
-.hero-h1 .dim{color:var(--mid);font-weight:400;font-style:italic;font-size:.65em;-webkit-text-fill-color:var(--mid)}
+.hero-h1 .dim{color:var(--mid);font-weight:400;font-style:italic;font-size:.65em;-webkit-text-fill-color:var(--mid);display:block;margin-top:8px}
 .hero-honest{font-size:16px;font-weight:300;color:var(--light);line-height:1.75;max-width:440px;margin-bottom:48px;border-left:2px solid var(--gold);padding-left:20px;opacity:0;animation:up .7s ease .45s forwards;position:relative}
 .hero-honest::before{content:'';position:absolute;left:-2px;top:0;bottom:0;width:2px;background:var(--gold);box-shadow:0 0 12px rgba(59,125,232,0.4),0 0 24px rgba(59,125,232,0.15);animation:glowBorder 3s ease-in-out infinite}
 @keyframes glowBorder{0%,100%{box-shadow:0 0 8px rgba(59,125,232,0.3),0 0 16px rgba(59,125,232,0.1)}50%{box-shadow:0 0 16px rgba(59,125,232,0.6),0 0 32px rgba(59,125,232,0.2)}}
