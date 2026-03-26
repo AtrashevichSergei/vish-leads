@@ -983,10 +983,14 @@ if(langToggle)langToggle.textContent=currentLang==='ru'?'EN':'RU';
   document.querySelectorAll('.faq-item').forEach(item=>createNoise(item,'.2',false));
   /* WA button: always */
   document.querySelectorAll('.wa-btn').forEach(btn=>createNoise(btn,'.15',true));
-  /* About + Reviews section backgrounds */
+  /* About + Reviews section backgrounds — behind content */
   document.querySelectorAll('.about-wrap,.reviews-wrap').forEach(sec=>{
-    sec.style.position='relative';sec.style.overflow='hidden';
-    createNoise(sec,'.12',true);
+    const wrap=document.createElement('div');
+    wrap.style.cssText='position:absolute;inset:0;overflow:hidden;z-index:0';
+    sec.insertBefore(wrap,sec.firstChild);
+    createNoise(wrap,'.12',true);
+    /* Ensure content is above */
+    Array.from(sec.children).forEach(ch=>{if(ch!==wrap)ch.style.position='relative';if(ch!==wrap)ch.style.zIndex='1'});
   });
 })();
 </script>
