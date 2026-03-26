@@ -3,322 +3,224 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Дмитрий Вишневский — Реклама под ключ | Google Ads и Яндекс Директ</title>
-<meta name="description" content="Помогаю бизнесу получать клиентов через рекламу в Google и Яндекс. 4+ лет опыта, работаю лично, запуск под ключ.">
-<meta name="theme-color" content="#0a0a14">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.88em' font-size='85' fill='%234361ee'>V</text></svg>">
-<meta property="og:title" content="Дмитрий Вишневский — Реклама под ключ">
-<meta property="og:description" content="Системный performance-маркетинг. Google Ads, Яндекс Директ. 4+ лет, $100K+ бюджетов.">
-<meta property="og:url" content="https://vish-leads.com/">
-<meta property="og:type" content="website">
+<title>Дмитрий Вишневский — Реклама под ключ</title>
+<meta name="description" content="Системный performance-маркетинг. Google Ads, Яндекс Директ. Под ключ.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.88em' font-size='85' fill='%23fff'>V</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"VISH-LEADS","provider":{"@type":"Person","name":"Дмитрий Вишневский","jobTitle":"Специалист по контекстной рекламе","url":"https://vish-leads.com","sameAs":["https://t.me/vishnevsky","https://www.youtube.com/@vishnevsky","https://www.linkedin.com/in/vishnevsky"]},"serviceType":"Контекстная реклама","priceRange":"от $300"}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"VISH-LEADS","provider":{"@type":"Person","name":"Дмитрий Вишневский"},"serviceType":"Контекстная реклама","priceRange":"от $300"}</script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --light:#fafafa;--white:#fff;--dark:#0a0a14;--darker:#06060e;
-  --t1:#111118;--t2:#6b6b78;--t3:#9d9daa;
-  --t1d:#e8e8ec;--t2d:rgba(232,232,236,.5);--t3d:rgba(232,232,236,.25);
-  --blue:#4361ee;--blue2:#3651d4;
-  --brd:rgba(0,0,0,.06);--brd-d:rgba(255,255,255,.06);
-  --ff:'DM Sans',system-ui,sans-serif;
-  --hd:'Outfit',system-ui,sans-serif;
-  --ease:cubic-bezier(.19,1,.22,1);
-  --r:8px;--r2:12px;
-}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{font-family:var(--ff);font-size:16px;font-weight:400;line-height:1.6;background:var(--light);color:var(--t1);overflow-x:hidden;cursor:none}
-body *{cursor:none}
-::selection{background:rgba(67,97,238,.12)}
+:root{--black:#000;--white:#fff;--gray:#86868b;--gray2:#424245;--gray3:#1d1d1f;--link:#2997ff;--bg-dark:#000;--bg-light:#f5f5f7;--ff:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff);background:var(--black);color:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:rgba(41,151,255,.2)}
 
-/* ── Progress ── */
-.scroll-progress{position:fixed;top:0;left:0;height:2px;background:var(--blue);z-index:10001;transform-origin:left;transform:scaleX(0);will-change:transform}
-
-/* ── Cursor ── */
-.cur-ring{position:fixed;width:32px;height:32px;border:1px solid rgba(67,97,238,.35);border-radius:50%;pointer-events:none;z-index:10000;transition:width .35s var(--ease),height .35s var(--ease),opacity .25s;transform:translate(-50%,-50%)}
-.cur-dot{position:fixed;width:4px;height:4px;background:var(--blue);border-radius:50%;pointer-events:none;z-index:10001;transform:translate(-50%,-50%)}
-.cur-ring.active{width:56px;height:56px;opacity:.4}
-@media(hover:none),(pointer:coarse){.cur-ring,.cur-dot{display:none!important}body,body *{cursor:auto}}
-
-/* ── Loader ── */
-.loader{position:fixed;inset:0;z-index:9998;background:var(--dark);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px}
-.loader.out{animation:ldOut .7s var(--ease) forwards}
-@keyframes ldOut{to{opacity:0;visibility:hidden}}
-.loader-v{width:48px;height:56px;opacity:0}
-.loader-v path{stroke:var(--blue);stroke-width:2.5;fill:none;stroke-dasharray:200;stroke-dashoffset:200}
-.loader.go .loader-v{opacity:1}
-.loader.go .loader-v path{animation:drawV .8s var(--ease) forwards}
-@keyframes drawV{to{stroke-dashoffset:0}}
-.loader-word{display:flex;gap:1px;overflow:hidden;height:24px}
-.loader-letter{font-family:var(--hd);font-size:14px;font-weight:300;letter-spacing:.3em;color:var(--t3d);transform:translateY(100%);opacity:0}
-.loader.go .loader-letter{animation:lUp .4s var(--ease) forwards}
-@keyframes lUp{to{transform:none;opacity:1}}
-.loader-line{width:0;height:1px;background:var(--blue)}
-.loader.go .loader-line{animation:lGrow .5s var(--ease) 1.2s forwards}
-@keyframes lGrow{to{width:80px}}
-
-/* ── Nav ── */
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 clamp(24px,5vw,64px);transition:all .5s var(--ease)}
-.nav-in{max-width:1120px;margin:0 auto;padding:24px 0;display:flex;align-items:center;justify-content:space-between;transition:padding .5s}
-.nav.scrolled{background:rgba(250,250,250,.9);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
-.nav.scrolled .nav-in{padding:14px 0}
-.nav-logo{font-family:var(--hd);font-weight:600;font-size:13px;color:var(--t2);text-decoration:none;letter-spacing:.18em;text-transform:uppercase}
-.nav-links{display:flex;gap:32px;list-style:none}
-.nav-links a{font-size:13px;font-weight:500;color:var(--t3);text-decoration:none;transition:color .3s}
-.nav-links a:hover{color:var(--blue)}
-.nav-right{display:flex;align-items:center;gap:16px}
-.lang-btn{font-family:var(--hd);font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--t3);background:none;border:1px solid var(--brd);padding:6px 14px;border-radius:var(--r);transition:all .3s}
-.lang-btn:hover{border-color:var(--blue);color:var(--blue)}
-.nav-cta{font-size:13px;font-weight:600;color:#fff;background:var(--blue);padding:10px 24px;border-radius:var(--r);text-decoration:none;transition:all .3s var(--ease)}
-.nav-cta:hover{background:var(--blue2)}
-.burger{display:none;background:none;border:none;padding:8px;flex-direction:column;gap:5px}
-.burger span{width:20px;height:1.5px;background:var(--t1);transition:all .3s}
-.burger.on span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}.burger.on span:nth-child(2){opacity:0}.burger.on span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
-.mob-menu{display:none;position:fixed;inset:0;z-index:999;background:var(--white);flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;transition:opacity .3s}
+/* ── Nav (Apple-style) ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,0,0,.8);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px)}
+.nav-in{max-width:1024px;margin:0 auto;padding:0 22px;height:44px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:14px;font-weight:600;color:var(--white);text-decoration:none;letter-spacing:-.01em}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:12px;color:var(--gray);text-decoration:none;transition:color .3s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{font-size:12px;color:var(--link);text-decoration:none;transition:opacity .3s}
+.nav-cta:hover{opacity:.7}
+.burger{display:none;background:none;border:none;padding:8px;flex-direction:column;gap:4px}
+.burger span{width:18px;height:1px;background:var(--white);transition:all .3s}
+.burger.on span:nth-child(1){transform:rotate(45deg) translate(3px,3px)}.burger.on span:nth-child(2){opacity:0}.burger.on span:nth-child(3){transform:rotate(-45deg) translate(3px,-3px)}
+.mob-menu{display:none;position:fixed;inset:0;top:44px;z-index:99;background:rgba(0,0,0,.95);backdrop-filter:blur(20px);flex-direction:column;align-items:center;padding-top:60px;gap:24px;opacity:0;transition:opacity .3s}
 .mob-menu.open{display:flex;opacity:1}
-.mob-menu a{font-family:var(--hd);font-size:24px;font-weight:300;color:var(--t1);text-decoration:none}
+.mob-menu a{font-size:28px;font-weight:600;color:var(--white);text-decoration:none}
+.lang-btn{font-size:11px;color:var(--gray);background:none;border:none;font-family:var(--ff);cursor:pointer;transition:color .3s}
+.lang-btn:hover{color:var(--white)}
+.nav-right{display:flex;align-items:center;gap:16px}
 @media(max-width:768px){.nav-links{display:none}.burger{display:flex}.nav-cta{display:none}}
 
 /* ── Sections ── */
-.sec{padding:clamp(80px,12vh,140px) clamp(24px,5vw,64px);position:relative}
-.sec-dark{background:var(--dark);color:var(--t1d)}
-.sec-dark .sec-label{color:var(--blue)}
-.sec-dark .sec-desc{color:var(--t2d)}
-.sec-dark .sec-head{color:var(--t1d)}
-.sec-inner{max-width:1120px;margin:0 auto}
-.sec-label{font-family:var(--hd);font-size:12px;font-weight:500;letter-spacing:.06em;color:var(--t3);margin-bottom:16px}
-.sec-label::before{content:'[ ';color:var(--blue);font-weight:300}
-.sec-label::after{content:' ]';color:var(--blue);font-weight:300}
-.sec-head{font-family:var(--hd);font-size:clamp(32px,5vw,56px);font-weight:800;letter-spacing:-.05em;line-height:1.08;margin-bottom:16px;color:var(--t1)}
-.sec-head em{font-style:normal;color:var(--blue)}
-.sec-desc{font-size:17px;font-weight:300;color:var(--t2);line-height:1.6;max-width:520px;margin-bottom:48px}
+.section{padding:clamp(100px,20vh,200px) 24px;text-align:center;position:relative;overflow:hidden}
+.section-dark{background:var(--bg-dark);color:var(--white)}
+.section-light{background:var(--bg-light);color:var(--gray3)}
+.section-inner{max-width:980px;margin:0 auto}
+
+/* ── Apple Typography ── */
+.headline{font-size:clamp(48px,8vw,96px);font-weight:700;letter-spacing:-.025em;line-height:1.04;margin-bottom:16px}
+.headline-sm{font-size:clamp(32px,5vw,56px);font-weight:700;letter-spacing:-.025em;line-height:1.07;margin-bottom:16px}
+.subhead{font-size:clamp(20px,2.5vw,28px);font-weight:400;color:var(--gray);line-height:1.4;max-width:600px;margin:0 auto 40px}
+.section-light .subhead{color:var(--gray2)}
+.eyebrow{font-size:clamp(14px,1.5vw,17px);font-weight:600;color:var(--gray);margin-bottom:8px;text-transform:none;letter-spacing:0}
+.section-light .eyebrow{color:var(--gray2)}
+.link-cta{font-size:clamp(17px,2vw,21px);color:var(--link);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:opacity .3s}
+.link-cta:hover{opacity:.7}
+.link-cta::after{content:'›';font-size:1.2em}
 
 /* ── Reveal ── */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(0,0,.5,1),transform .8s cubic-bezier(0,0,.5,1)}
 .rv.vis{opacity:1;transform:none}
-.rv-d1{transition-delay:.08s}.rv-d2{transition-delay:.16s}.rv-d3{transition-delay:.24s}.rv-d4{transition-delay:.32s}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important;transition:none!important}.loader{display:none!important}#glCanvas{display:none!important}}
+.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important;transition:none!important}}
 
-/* ── Buttons ── */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:var(--r);font-family:var(--ff);font-size:14px;font-weight:600;text-decoration:none;transition:all .3s var(--ease);border:none}
-.btn-blue{background:var(--blue);color:#fff}
-.btn-blue:hover{background:var(--blue2);transform:translateY(-1px)}
-.btn-outline{background:none;color:var(--t2);border:1px solid var(--brd)}
-.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
-.btn-outline-d{background:none;color:var(--t2d);border:1px solid var(--brd-d)}
-.btn-outline-d:hover{border-color:var(--blue);color:var(--blue)}
+/* ── HERO ── */
+.hero{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 24px 80px;background:var(--black);text-align:center;position:relative}
+.hero-photo-wrap{margin-top:48px;position:relative;max-width:480px;width:100%}
+.hero-photo{width:100%;height:auto;filter:drop-shadow(0 40px 80px rgba(0,0,0,.5))}
+.hero-stats{display:flex;gap:48px;justify-content:center;margin-top:40px}
+.hero-stat-val{font-size:clamp(36px,5vw,56px);font-weight:700;letter-spacing:-.03em;line-height:1}
+.hero-stat-label{font-size:14px;color:var(--gray);margin-top:4px}
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.btn-blue{display:inline-flex;align-items:center;padding:12px 24px;background:var(--link);color:var(--white);border-radius:980px;font-family:var(--ff);font-size:17px;font-weight:400;text-decoration:none;border:none;transition:all .3s;cursor:pointer}
+.btn-blue:hover{background:#0077ed}
+.btn-outline{display:inline-flex;align-items:center;padding:12px 24px;background:transparent;color:var(--link);border:2px solid var(--link);border-radius:980px;font-family:var(--ff);font-size:17px;font-weight:400;text-decoration:none;cursor:pointer;transition:all .3s}
+.btn-outline:hover{background:var(--link);color:var(--white)}
+.hero-platforms{display:flex;gap:12px;justify-content:center;margin-top:48px;flex-wrap:wrap}
+.platform{width:44px;height:44px;border-radius:10px;background:var(--gray3);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:all .3s}
+.platform:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+.platform svg{width:20px;height:20px;opacity:.7}
 
-/* ══ HERO ══ */
-.hero{min-height:100vh;min-height:100dvh;display:flex;align-items:center;padding:0 clamp(24px,5vw,64px);position:relative;overflow:hidden;background:var(--light)}
-#glCanvas{position:absolute;inset:0;z-index:0;width:100%;height:100%}
-.hero-in{max-width:1120px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1}
-.hero-left{padding:48px 0}
-.hero-badge{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:32px;display:flex;align-items:center;gap:10px;opacity:0;transform:translateY(12px);transition:all .5s var(--ease)}
-.hero-badge.vis{opacity:1;transform:none}
-.hero-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--blue);animation:breathe 3s ease-in-out infinite}
-@keyframes breathe{0%,100%{opacity:1}50%{opacity:.3}}
-.hero h1{font-family:var(--hd);font-size:clamp(40px,7vw,80px);font-weight:800;line-height:1.02;letter-spacing:-.05em;margin-bottom:24px;color:var(--t1)}
-.hero h1 em{font-style:normal;color:var(--blue)}
-.hero-sub{font-size:17px;font-weight:300;color:var(--t2);line-height:1.6;max-width:440px;margin-bottom:40px;opacity:0;transform:translateY(12px);transition:all .6s var(--ease) .3s}
-.hero-sub.vis{opacity:1;transform:none}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;opacity:0;transform:translateY(12px);transition:all .5s var(--ease) .5s}
-.hero-actions.vis{opacity:1;transform:none}
-.hero-right{position:relative;display:flex;align-items:flex-end;justify-content:center;min-height:480px}
-.hero-photo{max-width:460px;width:100%;height:auto;position:relative;z-index:2;filter:drop-shadow(0 32px 64px rgba(0,0,0,.12));transition:transform .6s var(--ease);will-change:transform}
-.hero-stats{display:flex;gap:8px;position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);z-index:3}
-.hero-stat{background:var(--white);border:1px solid var(--brd);border-radius:var(--r);padding:12px 20px;text-align:center}
-.hero-stat strong{font-family:var(--hd);font-size:24px;font-weight:800;display:block;color:var(--blue)}
-.hero-stat span{font-size:11px;color:var(--t3);white-space:nowrap}
-/* Floating logos */
-.fl-wrap{position:absolute;inset:-24px;z-index:1;pointer-events:none;perspective:800px}
-.fl{position:absolute;width:48px;height:48px;background:var(--white);border:1px solid var(--brd);border-radius:var(--r2);display:flex;align-items:center;justify-content:center;transform-style:preserve-3d;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.fl svg{width:22px;height:22px;opacity:.8}
-.fl:nth-child(1){top:6%;left:4%;animation:fa 8s ease-in-out infinite}
-.fl:nth-child(2){top:10%;right:2%;animation:fb 9s ease-in-out infinite .5s}
-.fl:nth-child(3){top:50%;left:-2%;animation:fa 7s ease-in-out infinite 1s}
-.fl:nth-child(4){top:38%;right:-2%;animation:fb 10s ease-in-out infinite 1.5s}
-.fl:nth-child(5){bottom:22%;right:8%;animation:fa 8s ease-in-out infinite .8s}
-.fl:nth-child(6){bottom:10%;left:12%;animation:fb 7.5s ease-in-out infinite 2s}
-@keyframes fa{0%,100%{transform:translateY(0) rotateY(0)}50%{transform:translateY(-10px) rotateY(8deg)}}
-@keyframes fb{0%,100%{transform:translateY(0) rotateX(0)}50%{transform:translateY(-12px) rotateX(-6deg)}}
-@media(max-width:768px){.hero-in{grid-template-columns:1fr;text-align:center}.hero-right{min-height:300px;order:-1}.hero-photo{max-width:280px}.hero-actions{justify-content:center}.hero-sub{margin:0 auto 40px}.hero-stats{position:relative;bottom:auto;left:auto;transform:none;justify-content:center;margin-top:16px}.fl-wrap{display:none}}
-
-/* ══ PROBLEMS (dark) ══ */
-.prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--brd-d);border-radius:var(--r2);overflow:hidden}
-.prob{background:var(--dark);padding:32px;transition:background .4s}
-.prob:hover{background:rgba(255,255,255,.03)}
-.prob-num{font-family:var(--hd);font-size:11px;font-weight:500;color:var(--blue);letter-spacing:.1em;margin-bottom:16px}
-.prob h3{font-size:15px;font-weight:600;color:var(--t1d);margin-bottom:8px;line-height:1.4}
-.prob p{font-size:13px;font-weight:300;color:var(--t2d);line-height:1.5}
+/* ── Problems (light) ── */
+.prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px;text-align:left;max-width:980px;margin-left:auto;margin-right:auto}
+.prob-card{background:var(--white);border-radius:18px;padding:32px;transition:transform .3s}
+.prob-card:hover{transform:scale(1.02)}
+.prob-num{font-size:13px;font-weight:600;color:var(--link);margin-bottom:12px}
+.prob-card h3{font-size:17px;font-weight:600;color:var(--gray3);margin-bottom:8px;line-height:1.3}
+.prob-card p{font-size:14px;color:var(--gray);line-height:1.5}
 @media(max-width:768px){.prob-grid{grid-template-columns:1fr}}
 
-/* ══ MISTAKES (light) ══ */
-.mist-list{display:flex;flex-direction:column;gap:8px;max-width:600px}
-.mist{display:flex;gap:16px;padding:20px 24px;border:1px solid var(--brd);border-radius:var(--r);transition:border-color .3s}
-.mist:hover{border-color:rgba(200,50,50,.15)}
-.mist-x{width:28px;height:28px;border-radius:var(--r);background:rgba(200,50,50,.06);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#c83232;font-size:12px;font-weight:700}
-.mist h4{font-size:14px;font-weight:600;margin-bottom:2px}
-.mist p{font-size:13px;font-weight:300;color:var(--t2)}
-.fix-banner{margin-top:40px;padding:24px 32px;background:var(--blue);border-radius:var(--r);text-align:center}
-.fix-banner p{font-family:var(--hd);font-size:20px;font-weight:700;color:#fff}
+/* ── Process (dark) ── */
+.process-row{display:flex;gap:1px;margin-top:64px;max-width:980px;margin-left:auto;margin-right:auto;border-radius:18px;overflow:hidden}
+.step{flex:1;padding:40px 24px;background:var(--gray3);text-align:left;transition:background .3s}
+.step:hover{background:rgba(255,255,255,.08)}
+.step-num{font-size:48px;font-weight:700;color:rgba(255,255,255,.08);line-height:1;margin-bottom:16px;letter-spacing:-.03em}
+.step-title{font-size:17px;font-weight:600;margin-bottom:8px}
+.step-desc{font-size:14px;color:var(--gray);line-height:1.5}
+@media(max-width:768px){.process-row{flex-direction:column}}
 
-/* ══ PROCESS (dark) ══ */
-.pipe-wrap{perspective:1200px;margin-top:56px}
-.pipe{display:flex;gap:1px;transform-style:preserve-3d;transform:rotateX(2deg);background:var(--brd-d);border-radius:var(--r2);overflow:hidden}
-.pipe-s{flex:1;padding:32px 20px;background:var(--dark);transition:all .5s var(--ease);min-height:200px;position:relative}
-.pipe-s:hover{background:rgba(255,255,255,.03);transform:translateZ(12px);z-index:2}
-.pipe-n{font-family:var(--hd);font-size:44px;font-weight:800;color:var(--blue);opacity:.15;line-height:1;margin-bottom:12px}
-.pipe-t{font-family:var(--hd);font-size:15px;font-weight:700;color:var(--t1d);margin-bottom:8px}
-.pipe-d{font-size:13px;font-weight:300;color:var(--t2d);line-height:1.5}
-@media(max-width:768px){.pipe{flex-direction:column;transform:none}}
+/* ── Cases ── */
+.cases-row{display:flex;gap:16px;margin-top:64px;max-width:980px;margin-left:auto;margin-right:auto;justify-content:center}
+.case-card{width:300px;height:380px;border-radius:18px;background:var(--gray3);padding:32px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;transition:transform .3s}
+.case-card:hover{transform:scale(1.02)}
+.case-tag{font-size:12px;font-weight:600;color:var(--link);margin-bottom:8px}
+.case-card h3{font-size:24px;font-weight:600;margin-bottom:4px}
+.case-card p{font-size:14px;color:var(--gray)}
+.case-soon{position:absolute;top:20px;right:20px;font-size:11px;font-weight:500;color:var(--gray);border:1px solid rgba(255,255,255,.1);padding:4px 12px;border-radius:980px}
+@media(max-width:768px){.cases-row{flex-direction:column;align-items:center}}
 
-/* ══ CASES (light, h-scroll) ══ */
-.cases-wrap{height:300vh;position:relative}
-.cases-sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden;padding:0 clamp(24px,5vw,64px)}
-.cases-track{display:flex;gap:20px;will-change:transform}
-.case{width:360px;height:420px;flex-shrink:0;perspective:1000px}
-.case-flip{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .6s var(--ease)}
-.case:hover .case-flip{transform:rotateY(180deg)}
-.case-front,.case-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:var(--r2);overflow:hidden}
-.case-front{background:var(--dark);display:flex;flex-direction:column;justify-content:flex-end;padding:32px;color:var(--t1d)}
-.case-tag{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
-.case-front h3{font-family:var(--hd);font-size:22px;font-weight:700;margin-bottom:6px}
-.case-front p{font-size:13px;color:var(--t2d)}
-.case-soon{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--t3d);position:absolute;top:20px;right:20px;border:1px solid var(--brd-d);padding:5px 12px;border-radius:var(--r)}
-.case-back{background:var(--white);border:1px solid var(--brd);transform:rotateY(180deg);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px;text-align:center}
-.case-back h4{font-family:var(--hd);font-size:18px;font-weight:700;margin-bottom:24px;color:var(--t1)}
-.case-metric{margin-bottom:16px}
-.case-metric strong{font-family:var(--hd);font-size:28px;font-weight:800;display:block;color:var(--blue)}
-.case-metric span{font-size:12px;color:var(--t3)}
-@media(max-width:768px){.cases-wrap{height:auto}.cases-sticky{position:relative;height:auto;padding:60px 20px}.cases-track{flex-direction:column;width:100%}.case{width:100%;height:340px}}
+/* ── About (light) ── */
+.about-wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:64px;align-items:start;max-width:980px;margin:64px auto 0;text-align:left}
+.about-img{width:100%;max-width:300px;border-radius:18px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.08))}
+.about-role{font-size:14px;font-weight:600;color:var(--link);margin-bottom:12px}
+.about-bio{font-size:17px;color:var(--gray2);line-height:1.6;margin-bottom:20px}
+.about-socials{display:flex;gap:8px;margin-bottom:24px}
+.about-socials a{width:32px;height:32px;border-radius:8px;background:rgba(0,0,0,.04);display:flex;align-items:center;justify-content:center;color:var(--gray2);text-decoration:none;transition:all .3s}
+.about-socials a:hover{background:rgba(41,151,255,.1);color:var(--link)}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.tool{font-size:12px;color:var(--gray);border:1px solid rgba(0,0,0,.08);padding:6px 14px;border-radius:980px}
+.price-box{background:var(--white);border-radius:18px;padding:32px;border:1px solid rgba(0,0,0,.04)}
+.price-eyebrow{font-size:12px;font-weight:600;color:var(--link);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em}
+.price-val{font-size:clamp(36px,5vw,48px);font-weight:700;color:var(--gray3);margin-bottom:4px;letter-spacing:-.03em}
+.price-note{font-size:14px;color:var(--gray);margin-bottom:20px}
+.price-list{list-style:none;margin-bottom:24px}
+.price-list li{font-size:14px;color:var(--gray2);padding:8px 0;border-bottom:1px solid rgba(0,0,0,.04);display:flex;align-items:center;gap:8px}
+.price-list li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--link);flex-shrink:0}
+@media(max-width:768px){.about-wrap{grid-template-columns:1fr;text-align:center}.about-img{margin:0 auto}.about-socials,.tools{justify-content:center}}
 
-/* ══ TESTIMONIALS (dark) ══ */
-.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--brd-d);border-radius:var(--r2);overflow:hidden}
-.test-card{background:var(--dark);padding:32px;position:relative}
-.test-card::before{content:'\201C';font-family:var(--hd);font-size:40px;color:var(--blue);opacity:.2;position:absolute;top:16px;right:20px;line-height:1}
-.test-q{font-size:14px;font-weight:300;color:var(--t2d);line-height:1.6;font-style:italic;margin-bottom:20px}
-.test-name{font-size:12px;font-weight:600;color:var(--t1d)}
-.test-role{font-size:11px;color:var(--t3d)}
-@media(max-width:768px){.test-grid{grid-template-columns:1fr}}
-
-/* ══ ABOUT (light) ══ */
-.about-grid{display:grid;grid-template-columns:1fr 1.618fr;gap:64px;align-items:start}
-.about-photo{position:relative;width:280px}
-.about-photo img{width:100%;height:auto;border-radius:var(--r2);filter:drop-shadow(0 16px 40px rgba(0,0,0,.08))}
-.about-role{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-bottom:16px}
-.about-bio{font-size:16px;font-weight:300;color:var(--t2);line-height:1.6;margin-bottom:16px}
-.about-socials{display:flex;gap:8px;margin-top:16px}
-.about-socials a{width:36px;height:36px;border-radius:var(--r);border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;color:var(--t3);text-decoration:none;transition:all .3s}
-.about-socials a:hover{border-color:var(--blue);color:var(--blue)}
-.tools-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:20px}
-.tool{padding:6px 14px;border:1px solid var(--brd);border-radius:var(--r);font-size:11px;color:var(--t3);transition:all .3s}
-.tool:hover{border-color:var(--blue);color:var(--blue)}
-.price-card{border:1px solid var(--brd);border-radius:var(--r2);padding:40px;margin-top:32px;position:relative}
-.price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--blue);border-radius:var(--r2) var(--r2) 0 0}
-.price-label{font-family:var(--hd);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:20px}
-.price-amount{font-family:var(--hd);font-size:clamp(36px,5vw,52px);font-weight:800;color:var(--t1);margin-bottom:4px}
-.price-note{font-size:13px;color:var(--t3);margin-bottom:20px}
-.price-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
-.price-list li{font-size:14px;font-weight:300;color:var(--t2);display:flex;align-items:center;gap:10px}
-.price-list li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--blue);flex-shrink:0}
-@media(max-width:768px){.about-grid{grid-template-columns:1fr;text-align:center}.about-photo{margin:0 auto}.about-socials,.tools-row{justify-content:center}}
-
-/* ══ FAQ (dark) ══ */
-.faq-list{max-width:640px;display:flex;flex-direction:column;gap:1px;margin-top:56px;background:var(--brd-d);border-radius:var(--r2);overflow:hidden}
-details{background:var(--dark);transition:background .3s}
-details[open]{background:rgba(255,255,255,.02)}
-summary{padding:20px 24px;font-size:15px;font-weight:500;color:var(--t1d);display:flex;justify-content:space-between;align-items:center;gap:16px;list-style:none}
+/* ── FAQ (dark) ── */
+.faq-list{max-width:680px;margin:64px auto 0;text-align:left}
+details{border-bottom:1px solid rgba(255,255,255,.08)}
+details:first-child{border-top:1px solid rgba(255,255,255,.08)}
+summary{padding:20px 0;font-size:17px;font-weight:600;color:var(--white);display:flex;justify-content:space-between;align-items:center;cursor:pointer;list-style:none}
 summary::-webkit-details-marker{display:none}
-summary::after{content:'+';font-family:var(--hd);font-size:18px;color:var(--blue);transition:transform .3s var(--ease)}
+summary::after{content:'+';font-size:24px;font-weight:300;color:var(--gray);transition:transform .3s}
 details[open] summary::after{transform:rotate(45deg)}
-.faq-a{padding:0 24px 20px;font-size:14px;font-weight:300;line-height:1.6;color:var(--t2d)}
+.faq-a{padding:0 0 20px;font-size:17px;color:var(--gray);line-height:1.6}
 
-/* ══ CONTACT (light) ══ */
-.contact-center{max-width:420px;margin:0 auto;text-align:center}
-.contact-tg{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:var(--blue);border-radius:var(--r);font-size:15px;font-weight:600;color:#fff;text-decoration:none;transition:all .3s var(--ease);margin-bottom:20px}
-.contact-tg:hover{background:var(--blue2);transform:translateY(-1px)}
-.contact-or{font-size:13px;font-weight:300;color:var(--t3);margin-bottom:20px}
+/* ── Contact (dark) ── */
+.contact-inner{max-width:400px;margin:0 auto;text-align:center}
+.tg-btn{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:var(--link);border-radius:980px;font-family:var(--ff);font-size:17px;color:var(--white);text-decoration:none;transition:all .3s;margin-bottom:24px}
+.tg-btn:hover{background:#0077ed;transform:scale(1.02)}
+.contact-or{font-size:14px;color:var(--gray);margin-bottom:24px}
 .c-form{display:flex;flex-direction:column;gap:8px;align-items:center}
-.c-sel{display:flex;gap:6px;justify-content:center}
-.c-sel label{padding:6px 14px;border:1px solid var(--brd);border-radius:var(--r);font-size:12px;color:var(--t3);transition:all .3s}
+.c-sel{display:flex;gap:8px;justify-content:center;margin-bottom:8px}
+.c-sel label{font-size:14px;color:var(--gray);border:1px solid rgba(255,255,255,.1);padding:8px 16px;border-radius:980px;cursor:pointer;transition:all .3s}
 .c-sel input{display:none}
-.c-sel input:checked+label{border-color:var(--blue);color:var(--blue)}
-.c-input{width:100%;max-width:360px;padding:12px 16px;border:1px solid var(--brd);border-radius:var(--r);font-family:var(--ff);font-size:14px;color:var(--t1);outline:none;transition:border .3s;background:var(--white)}
-.c-input::placeholder{color:var(--t3)}
-.c-input:focus{border-color:var(--blue)}
-.c-submit{width:100%;max-width:360px;padding:14px;background:var(--blue);border:none;border-radius:var(--r);font-family:var(--ff);font-size:14px;font-weight:600;color:#fff;transition:background .3s}
-.c-submit:hover{background:var(--blue2)}
+.c-sel input:checked+label{border-color:var(--link);color:var(--link)}
+.c-input{width:100%;max-width:360px;padding:14px 16px;background:var(--gray3);border:1px solid rgba(255,255,255,.1);border-radius:12px;font-family:var(--ff);font-size:16px;color:var(--white);outline:none;transition:border .3s}
+.c-input::placeholder{color:var(--gray)}
+.c-input:focus{border-color:var(--link)}
+.c-submit{width:100%;max-width:360px;padding:14px;background:var(--link);border:none;border-radius:12px;font-family:var(--ff);font-size:16px;font-weight:600;color:var(--white);cursor:pointer;transition:background .3s}
+.c-submit:hover{background:#0077ed}
 
-/* ══ QUIZ ══ */
-.quiz-overlay{display:none;position:fixed;inset:0;z-index:2000;background:var(--white);overflow-y:auto}
+/* ── Divider ── */
+.divider{height:1px;background:rgba(255,255,255,.08);max-width:980px;margin:0 auto}
+.section-light .divider{background:rgba(0,0,0,.06)}
+
+/* ── Quiz ── */
+.quiz-overlay{display:none;position:fixed;inset:0;z-index:200;background:var(--black);overflow-y:auto}
 .quiz-overlay.active{display:block}
-.quiz-inner{max-width:520px;margin:0 auto;padding:40px 24px;min-height:100dvh;display:flex;flex-direction:column}
+.quiz-inner{max-width:500px;margin:0 auto;padding:40px 24px;min-height:100dvh;display:flex;flex-direction:column}
 .quiz-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:48px}
-.quiz-close{border:1px solid var(--brd);border-radius:var(--r);width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:var(--t3);font-size:16px;background:none;transition:all .3s}
-.quiz-close:hover{border-color:var(--blue);color:var(--blue)}
-.quiz-progress{flex:1;margin:0 16px;height:2px;background:rgba(0,0,0,.04);border-radius:1px;overflow:hidden}
-.quiz-bar{height:100%;background:var(--blue);transition:width .5s var(--ease)}
-.quiz-step-num{font-family:var(--hd);font-size:11px;color:var(--t3);font-weight:500;letter-spacing:.1em}
+.quiz-close{background:none;border:1px solid rgba(255,255,255,.1);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:18px;cursor:pointer;transition:all .3s}
+.quiz-close:hover{border-color:var(--link);color:var(--link)}
+.quiz-progress{flex:1;margin:0 16px;height:2px;background:var(--gray3);border-radius:1px;overflow:hidden}
+.quiz-bar{height:100%;background:var(--link);transition:width .5s}
+.quiz-step-num{font-size:12px;color:var(--gray)}
 .quiz-body{flex:1;display:flex;flex-direction:column;justify-content:center}
 .quiz-author{display:flex;align-items:center;gap:12px;margin-bottom:24px}
-.quiz-avatar{width:36px;height:36px;border-radius:50%;overflow:hidden;border:2px solid var(--brd);flex-shrink:0}
+.quiz-avatar{width:36px;height:36px;border-radius:50%;overflow:hidden;border:2px solid var(--gray3)}
 .quiz-avatar img{width:100%;height:100%;object-fit:cover}
-.quiz-author-name{font-size:12px;font-weight:600;color:var(--t2)}
-.quiz-q{font-family:var(--hd);font-size:clamp(20px,3.5vw,28px);font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
-.quiz-context{font-size:13px;font-weight:300;color:var(--t2);margin-bottom:24px}
-.quiz-opts{display:flex;flex-direction:column;gap:6px}
-.quiz-opt{padding:14px 18px;border:1px solid var(--brd);border-radius:var(--r);font-family:var(--ff);font-size:14px;color:var(--t1);transition:all .3s;text-align:left;width:100%;background:none}
-.quiz-opt:hover{border-color:rgba(67,97,238,.2)}
-.quiz-opt.sel{border-color:var(--blue);color:var(--blue);font-weight:600}
+.quiz-author-name{font-size:13px;color:var(--gray)}
+.quiz-q{font-size:clamp(24px,4vw,32px);font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
+.quiz-context{font-size:15px;color:var(--gray);margin-bottom:24px}
+.quiz-opts{display:flex;flex-direction:column;gap:8px}
+.quiz-opt{padding:16px;background:var(--gray3);border:1px solid rgba(255,255,255,.06);border-radius:12px;font-family:var(--ff);font-size:16px;color:var(--white);cursor:pointer;transition:all .3s;text-align:left;width:100%}
+.quiz-opt:hover{border-color:rgba(255,255,255,.15)}
+.quiz-opt.sel{border-color:var(--link);color:var(--link)}
 .quiz-slider{margin:20px 0}
-.quiz-slider input[type=range]{width:100%;-webkit-appearance:none;height:2px;background:var(--brd);border-radius:1px;outline:none}
-.quiz-slider input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--blue);border:3px solid var(--white);box-shadow:0 1px 4px rgba(0,0,0,.1)}
-.quiz-slider-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--t3);margin-top:6px}
+.quiz-slider input[type=range]{width:100%;-webkit-appearance:none;height:2px;background:var(--gray3);border-radius:1px;outline:none}
+.quiz-slider input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--link);border:3px solid var(--black)}
+.quiz-slider-labels{display:flex;justify-content:space-between;font-size:12px;color:var(--gray);margin-top:6px}
 .quiz-nav{display:flex;gap:8px;margin-top:32px}
-.quiz-back{padding:12px 20px;border:1px solid var(--brd);border-radius:var(--r);font-family:var(--ff);font-size:13px;color:var(--t2);background:none;transition:all .3s}
-.quiz-back:hover{border-color:var(--blue);color:var(--blue)}
-.quiz-next{padding:12px 20px;background:var(--blue);border:none;border-radius:var(--r);font-family:var(--ff);font-size:13px;font-weight:600;color:#fff;transition:all .3s;flex:1;max-width:180px}
-.quiz-next:hover{background:var(--blue2)}
-.quiz-next:disabled{opacity:.25;pointer-events:none}
+.quiz-back{padding:12px 20px;background:var(--gray3);border:none;border-radius:980px;font-family:var(--ff);font-size:14px;color:var(--gray);cursor:pointer;transition:color .3s}
+.quiz-back:hover{color:var(--white)}
+.quiz-next{padding:12px 20px;background:var(--link);border:none;border-radius:980px;font-family:var(--ff);font-size:14px;font-weight:600;color:var(--white);cursor:pointer;transition:background .3s;flex:1;max-width:160px}
+.quiz-next:hover{background:#0077ed}
+.quiz-next:disabled{opacity:.3;pointer-events:none}
 .quiz-result{text-align:center}
-.quiz-result h3{font-family:var(--hd);font-size:24px;font-weight:700;margin-bottom:14px}
-.quiz-result p{font-size:14px;font-weight:300;color:var(--t2);line-height:1.6;margin-bottom:12px}
-.quiz-result-note{display:flex;gap:12px;padding:16px;border:1px solid var(--brd);border-radius:var(--r);text-align:left;margin:16px 0}
-.quiz-result-note p{margin:0;font-size:13px;font-style:italic}
-.btn-gold{background:var(--blue);color:#fff;border:none;border-radius:var(--r);padding:14px 28px;font-family:var(--ff);font-size:14px;font-weight:600;text-decoration:none;transition:all .3s}
-.btn-gold:hover{background:var(--blue2)}
-@media(max-width:500px){.sec{padding:60px 20px}.btn{width:100%;justify-content:center}.case{height:280px}}
+.quiz-result h3{font-size:28px;font-weight:700;margin-bottom:14px}
+.quiz-result p{font-size:17px;color:var(--gray);line-height:1.6;margin-bottom:12px}
+.quiz-result-note{display:flex;gap:12px;padding:16px;background:var(--gray3);border-radius:12px;text-align:left;margin:16px 0}
+.quiz-result-note p{margin:0;font-size:14px;font-style:italic}
+.btn-gold{display:inline-flex;padding:14px 28px;background:var(--link);color:var(--white);border:none;border-radius:980px;font-family:var(--ff);font-size:14px;font-weight:600;text-decoration:none;cursor:pointer;transition:background .3s}
+.btn-gold:hover{background:#0077ed}
+
+/* ── Footer ── */
+.footer{padding:16px 24px;border-top:1px solid rgba(255,255,255,.08);background:var(--black)}
+.footer-in{max-width:980px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-brand{font-size:12px;color:var(--gray)}
+.footer-links{display:flex;gap:16px}
+.footer-links a{font-size:12px;color:var(--gray);text-decoration:none;transition:color .3s}
+.footer-links a:hover{color:var(--white)}
+
+@media(max-width:500px){.section{padding:80px 20px}.hero{padding:100px 20px 60px}.hero-stats{gap:32px}}
 </style>
 </head>
 <body>
-<div class="scroll-progress" id="scrollProg"></div>
-<div class="cur-ring" id="curRing"></div>
-<div class="cur-dot" id="curDot"></div>
 
-<div class="loader" id="loader">
-  <svg class="loader-v" viewBox="0 0 40 48"><path d="M4 4L20 44L36 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  <div class="loader-word" id="loaderWord"></div>
-  <div class="loader-line"></div>
-</div>
-
-<nav class="nav" id="nav">
-  <div class="nav-in">
-    <a href="#" class="nav-logo">VISH — LEADS</a>
-    <ul class="nav-links">
-      <li><a href="#problems" data-ru="Ситуации" data-en="Problems">Ситуации</a></li>
-      <li><a href="#process" data-ru="Процесс" data-en="Process">Процесс</a></li>
-      <li><a href="#about" data-ru="О себе" data-en="About">О себе</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
-    <div class="nav-right">
-      <button class="lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
-      <a href="#contact" class="nav-cta magnetic" data-ru="Обсудить проект" data-en="Discuss">Обсудить проект</a>
-    </div>
-    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+<nav class="nav"><div class="nav-in">
+  <a href="#" class="nav-logo" data-ru="VISH-LEADS" data-en="VISH-LEADS">VISH-LEADS</a>
+  <ul class="nav-links">
+    <li><a href="#problems" data-ru="Ситуации" data-en="Problems">Ситуации</a></li>
+    <li><a href="#process" data-ru="Процесс" data-en="Process">Процесс</a></li>
+    <li><a href="#about" data-ru="О себе" data-en="About">О себе</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
+    <a href="#contact" class="nav-cta" data-ru="Обсудить проект ›" data-en="Discuss ›">Обсудить проект ›</a>
   </div>
-</nav>
+  <button class="burger" id="burger"><span></span><span></span><span></span></button>
+</div></nav>
 <div class="mob-menu" id="mobMenu">
   <a href="#problems" onclick="closeMob()" data-ru="Ситуации" data-en="Problems">Ситуации</a>
   <a href="#process" onclick="closeMob()" data-ru="Процесс" data-en="Process">Процесс</a>
@@ -328,170 +230,126 @@ details[open] summary::after{transform:rotate(45deg)}
 </div>
 
 <main>
-<!-- HERO — light -->
+<!-- HERO -->
 <section class="hero" id="hero">
-  <canvas id="glCanvas"></canvas>
-  <div class="hero-in">
-    <div class="hero-left">
-      <div class="hero-badge" data-ru="Google Ads · Яндекс Директ · Performance" data-en="Google Ads · Yandex Direct · Performance">Google Ads · Яндекс Директ · Performance</div>
-      <h1 data-ru-html="Выстраиваю систему<br><em>привлечения клиентов</em>" data-en-html="I build<br><em>client acquisition</em> systems">Выстраиваю систему<br><em>привлечения клиентов</em></h1>
-      <p class="hero-sub" data-ru="Анализирую рынок, строю стратегию, запускаю кампании и оптимизирую до предсказуемого потока заявок. Персонально. Под ключ." data-en="I analyze the market, build strategy, launch campaigns and optimize until leads flow predictably. Personally. Turnkey.">Анализирую рынок, строю стратегию, запускаю кампании и оптимизирую до предсказуемого потока заявок. Персонально. Под ключ.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-blue magnetic" data-ru-html="Обсудить проект &rarr;" data-en-html="Discuss &rarr;">Обсудить проект &rarr;</a>
-        <button class="btn btn-outline magnetic" onclick="openQuiz()" data-ru="Разбор проекта" data-en="Assessment">Разбор проекта</button>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="fl-wrap">
-        <div class="fl"><svg viewBox="0 0 24 24" fill="none"><path d="M3.5 21h3l7-14.5L11 2 3.5 21z" fill="#4285F4"/><path d="M20.5 21h-3L11 6.5 13.5 2l7 19z" fill="#34A853"/><circle cx="6" cy="19.5" r="2.5" fill="#FBBC04"/></svg></div>
-        <div class="fl"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#FC3F1D" opacity=".9"/><text x="8" y="17" font-size="13" font-weight="800" fill="#fff" font-family="sans-serif">Я</text></svg></div>
-        <div class="fl"><svg viewBox="0 0 24 24" fill="none"><path d="M20 4v16a2 2 0 1 1-4 0V4a2 2 0 1 1 4 0z" fill="#F9AB00"/><path d="M13 10v10a2 2 0 1 1-4 0V10a2 2 0 1 1 4 0z" fill="#E37400"/><circle cx="5" cy="20" r="2" fill="#E37400"/></svg></div>
-        <div class="fl"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" fill="#1877F2"/></svg></div>
-        <div class="fl"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" fill="#FFD60A" opacity=".85"/><path d="M7 17V10l4-4 3 5 3-3v9" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        <div class="fl"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l10 5.5v9L12 22 2 16.5v-9L12 2z" fill="#8AB4F8" opacity=".85"/><path d="M12 8v8M8 12h8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
-      </div>
-      <img src="hero-photo.png" alt="Дмитрий Вишневский" class="hero-photo" id="heroPhoto" width="600" height="495">
-      <div class="hero-stats">
-        <div class="hero-stat"><strong data-counter="4">0</strong><span data-ru="лет опыта" data-en="years">лет опыта</span></div>
-        <div class="hero-stat"><strong data-counter="100" data-prefix="$" data-suffix="K+">0</strong><span data-ru="бюджетов" data-en="budgets">бюджетов</span></div>
-      </div>
-    </div>
+  <p class="eyebrow rv" data-ru="Performance-маркетинг" data-en="Performance Marketing">Performance-маркетинг</p>
+  <h1 class="headline rv rv-d1" data-ru-html="Система привлечения<br>клиентов." data-en-html="Client acquisition<br>system.">Система привлечения<br>клиентов.</h1>
+  <p class="subhead rv rv-d2" data-ru="Анализирую рынок. Строю стратегию. Запускаю рекламу. Оптимизирую до предсказуемого потока заявок." data-en="Market analysis. Strategy. Launch. Optimization to predictable lead flow.">Анализирую рынок. Строю стратегию. Запускаю рекламу. Оптимизирую до предсказуемого потока заявок.</p>
+  <div class="hero-actions rv rv-d2">
+    <a href="#contact" class="btn-blue" data-ru="Обсудить проект" data-en="Discuss Project">Обсудить проект</a>
+    <button class="btn-outline" onclick="openQuiz()" data-ru="Разбор проекта" data-en="Assessment">Разбор проекта</button>
+  </div>
+  <div class="hero-photo-wrap rv rv-d3">
+    <img src="hero-photo.png" alt="Дмитрий Вишневский" class="hero-photo" id="heroPhoto" width="600" height="495">
+  </div>
+  <div class="hero-stats rv rv-d3">
+    <div><div class="hero-stat-val" data-counter="4">0+</div><div class="hero-stat-label" data-ru="лет опыта" data-en="years">лет опыта</div></div>
+    <div><div class="hero-stat-val" data-counter="100" data-prefix="$" data-suffix="K+">0</div><div class="hero-stat-label" data-ru="управляемых бюджетов" data-en="managed budgets">управляемых бюджетов</div></div>
+  </div>
+  <div class="hero-platforms rv rv-d3">
+    <div class="platform"><svg viewBox="0 0 24 24" fill="none"><path d="M3.5 21h3l7-14.5L11 2 3.5 21z" fill="#4285F4"/><path d="M20.5 21h-3L11 6.5 13.5 2l7 19z" fill="#34A853"/><circle cx="6" cy="19.5" r="2.5" fill="#FBBC04"/></svg></div>
+    <div class="platform"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#FC3F1D" opacity=".9"/><text x="8" y="17" font-size="13" font-weight="800" fill="#fff" font-family="sans-serif">Я</text></svg></div>
+    <div class="platform"><svg viewBox="0 0 24 24" fill="none"><path d="M20 4v16a2 2 0 1 1-4 0V4a2 2 0 1 1 4 0z" fill="#F9AB00"/><path d="M13 10v10a2 2 0 1 1-4 0V10a2 2 0 1 1 4 0z" fill="#E37400"/><circle cx="5" cy="20" r="2" fill="#E37400"/></svg></div>
+    <div class="platform"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" fill="#1877F2"/></svg></div>
+    <div class="platform"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" fill="#FFD60A" opacity=".85"/><path d="M7 17V10l4-4 3 5 3-3v9" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
   </div>
 </section>
 
-<!-- PROBLEMS — dark -->
-<section class="sec sec-dark rv" id="problems">
-  <div class="sec-inner">
-    <div class="sec-label rv" data-ru="01 — Знакомо?" data-en="01 — Sound familiar?">01 — Знакомо?</div>
-    <h2 class="sec-head rv rv-d1" data-ru-html="С чем обычно <em>приходят</em>" data-en-html="What clients <em>come with</em>">С чем обычно <em>приходят</em></h2>
+<!-- PROBLEMS (light) -->
+<section class="section section-light" id="problems">
+  <div class="section-inner">
+    <p class="eyebrow rv" data-ru="Знакомые ситуации" data-en="Common situations">Знакомые ситуации</p>
+    <h2 class="headline-sm rv rv-d1" data-ru-html="С чем приходят<br>чаще всего." data-en-html="What clients<br>come with.">С чем приходят<br>чаще всего.</h2>
     <div class="prob-grid">
-      <div class="prob rv rv-d1"><div class="prob-num">01</div><h3 data-ru="Неясно, какие каналы сработают" data-en="Unclear which channels work">Неясно, какие каналы сработают</h3><p data-ru="Google, Яндекс, Meta — каждый требует своей стратегии. Без анализа это лотерея." data-en="Each channel needs its own strategy. Without analysis, it's a lottery.">Google, Яндекс, Meta — каждый требует своей стратегии. Без анализа это лотерея.</p></div>
-      <div class="prob rv rv-d2"><div class="prob-num">02</div><h3 data-ru="Бюджет тратится впустую" data-en="Budget wasted">Бюджет тратится впустую</h3><p data-ru="Деньги уходят, конверсии не растут. Причина — в настройке кампаний." data-en="Money spent, conversions flat. Reason: campaign configuration.">Деньги уходят, конверсии не растут. Причина — в настройке кампаний.</p></div>
-      <div class="prob rv rv-d3"><div class="prob-num">03</div><h3 data-ru="Высокая стоимость лида" data-en="High CPL">Высокая стоимость лида</h3><p data-ru="CPA выше допустимого. Юнит-экономика не сходится — масштабирование невозможно." data-en="CPA above threshold. Unit economics broken — can't scale.">CPA выше допустимого. Юнит-экономика не сходится — масштабирование невозможно.</p></div>
-      <div class="prob rv rv-d1"><div class="prob-num">04</div><h3 data-ru="Реклама крутится — заявок нет" data-en="Ads run — zero leads">Реклама крутится — заявок нет</h3><p data-ru="Показы есть, клики есть. Проблема в связке: оффер → страница → аудитория." data-en="Impressions, clicks, but no leads. Problem: offer → page → audience chain.">Показы есть, клики есть. Проблема в связке: оффер → страница → аудитория.</p></div>
-      <div class="prob rv rv-d2"><div class="prob-num">05</div><h3 data-ru="Нет системы привлечения" data-en="No system">Нет системы привлечения</h3><p data-ru="Клиенты приходят хаотично. Нет воронки, нет аналитики, нет контроля." data-en="Chaotic leads. No funnel, no analytics, no control.">Клиенты приходят хаотично. Нет воронки, нет аналитики, нет контроля.</p></div>
-      <div class="prob rv rv-d3"><div class="prob-num">06</div><h3 data-ru="Непонятно с чего начать" data-en="Where to start?">Непонятно с чего начать</h3><p data-ru="Рынок, конкуренты, бюджет — слишком много переменных. Нужна ясная стратегия." data-en="Market, competitors, budget — too many variables. Need clear strategy.">Рынок, конкуренты, бюджет — слишком много переменных. Нужна ясная стратегия.</p></div>
+      <div class="prob-card rv"><div class="prob-num">01</div><h3 data-ru="Неясно, какие каналы сработают" data-en="Unclear which channels work">Неясно, какие каналы сработают</h3><p data-ru="Каждый канал требует своей стратегии. Без анализа — лотерея." data-en="Each channel needs its strategy. Without analysis — lottery.">Каждый канал требует своей стратегии. Без анализа — лотерея.</p></div>
+      <div class="prob-card rv rv-d1"><div class="prob-num">02</div><h3 data-ru="Бюджет тратится впустую" data-en="Budget wasted">Бюджет тратится впустую</h3><p data-ru="Деньги уходят, конверсии не растут. Причина — в настройке." data-en="Money spent, no conversions. Reason — setup.">Деньги уходят, конверсии не растут. Причина — в настройке.</p></div>
+      <div class="prob-card rv rv-d2"><div class="prob-num">03</div><h3 data-ru="Высокая стоимость лида" data-en="High CPL">Высокая стоимость лида</h3><p data-ru="CPA выше допустимого. Юнит-экономика не сходится." data-en="CPA too high. Unit economics broken.">CPA выше допустимого. Юнит-экономика не сходится.</p></div>
+      <div class="prob-card rv"><div class="prob-num">04</div><h3 data-ru="Реклама крутится — заявок нет" data-en="Ads run — zero leads">Реклама крутится — заявок нет</h3><p data-ru="Проблема в связке: оффер → страница → аудитория." data-en="Problem: offer → page → audience chain.">Проблема в связке: оффер → страница → аудитория.</p></div>
+      <div class="prob-card rv rv-d1"><div class="prob-num">05</div><h3 data-ru="Нет системы" data-en="No system">Нет системы</h3><p data-ru="Клиенты хаотично. Нет воронки, нет аналитики." data-en="Chaotic leads. No funnel, no analytics.">Клиенты хаотично. Нет воронки, нет аналитики.</p></div>
+      <div class="prob-card rv rv-d2"><div class="prob-num">06</div><h3 data-ru="Непонятно с чего начать" data-en="Where to start?">Непонятно с чего начать</h3><p data-ru="Слишком много переменных. Нужна ясная стратегия." data-en="Too many variables. Need clear strategy.">Слишком много переменных. Нужна ясная стратегия.</p></div>
     </div>
   </div>
 </section>
 
-<!-- MISTAKES — light -->
-<section class="sec rv" id="mistakes">
-  <div class="sec-inner">
-    <div class="sec-label rv" data-ru="02 — Корень проблемы" data-en="02 — Root cause">02 — Корень проблемы</div>
-    <h2 class="sec-head rv rv-d1" data-ru-html="Почему реклама <em>не работает</em>" data-en-html="Why ads <em>don't work</em>">Почему реклама <em>не работает</em></h2>
-    <p class="sec-desc rv rv-d2" data-ru="Одни и те же ошибки в 90% проектов:" data-en="Same mistakes in 90% of projects:">Одни и те же ошибки в 90% проектов:</p>
-    <div class="mist-list">
-      <div class="mist rv"><div class="mist-x">&times;</div><div><h4 data-ru="Запуск без стратегии" data-en="No strategy">Запуск без стратегии</h4><p data-ru="Настройка «на глаз» без анализа ниши и конкурентов" data-en="'By eye' setup without niche analysis">Настройка «на глаз» без анализа ниши и конкурентов</p></div></div>
-      <div class="mist rv rv-d1"><div class="mist-x">&times;</div><div><h4 data-ru="Неправильная аудитория" data-en="Wrong audience">Неправильная аудитория</h4><p data-ru="Показы идут на тех, кто никогда не купит" data-en="Showing to people who'll never buy">Показы идут на тех, кто никогда не купит</p></div></div>
-      <div class="mist rv rv-d2"><div class="mist-x">&times;</div><div><h4 data-ru="Слабый оффер" data-en="Weak offer">Слабый оффер</h4><p data-ru="Посетитель не понимает ценность предложения" data-en="Visitor doesn't see the value">Посетитель не понимает ценность предложения</p></div></div>
-      <div class="mist rv rv-d3"><div class="mist-x">&times;</div><div><h4 data-ru="Нет аналитики" data-en="No analytics">Нет аналитики</h4><p data-ru="Без данных невозможно принять правильное решение" data-en="Can't make right decisions without data">Без данных невозможно принять правильное решение</p></div></div>
-    </div>
-    <div class="fix-banner rv rv-d4"><p data-ru="Всё это — решаемо" data-en="All fixable">Всё это — решаемо</p></div>
-  </div>
-</section>
-
-<!-- PROCESS — dark -->
-<section class="sec sec-dark rv" id="process">
-  <div class="sec-inner">
-    <div class="sec-label rv" data-ru="03 — Процесс" data-en="03 — Process">03 — Процесс</div>
-    <h2 class="sec-head rv rv-d1" data-ru-html="От анализа до <em>результата</em>" data-en-html="From analysis to <em>results</em>">От анализа до <em>результата</em></h2>
-    <p class="sec-desc rv rv-d2" data-ru="5 этапов. Одна логика — нюансы зависят от ниши." data-en="5 stages. One logic — details depend on niche.">5 этапов. Одна логика — нюансы зависят от ниши.</p>
-    <div class="pipe-wrap rv">
-      <div class="pipe">
-        <div class="pipe-s"><div class="pipe-n">01</div><div class="pipe-t" data-ru="Аудит" data-en="Audit">Аудит</div><div class="pipe-d" data-ru="Анализ ниши, конкурентов, семантического ядра. Определение точек входа." data-en="Niche, competitors, semantic core analysis. Entry points.">Анализ ниши, конкурентов, семантического ядра. Определение точек входа.</div></div>
-        <div class="pipe-s"><div class="pipe-n">02</div><div class="pipe-t" data-ru="Стратегия" data-en="Strategy">Стратегия</div><div class="pipe-d" data-ru="Медиаплан, каналы, УТП. Прогноз бюджета и CPA по сегментам." data-en="Media plan, channels, USP. Budget and CPA forecast.">Медиаплан, каналы, УТП. Прогноз бюджета и CPA по сегментам.</div></div>
-        <div class="pipe-s"><div class="pipe-n">03</div><div class="pipe-t" data-ru="Инфраструктура" data-en="Setup">Инфраструктура</div><div class="pipe-d" data-ru="Аналитика, пиксели, конверсии. Посадочные страницы и кабинеты." data-en="Analytics, pixels, conversions. Landing pages and accounts.">Аналитика, пиксели, конверсии. Посадочные страницы и кабинеты.</div></div>
-        <div class="pipe-s"><div class="pipe-n">04</div><div class="pipe-t" data-ru="Тест" data-en="Test">Тест</div><div class="pipe-d" data-ru="A/B тестирование креативов и аудиторий. Решения на основе метрик." data-en="A/B testing creatives and audiences. Data-driven decisions.">A/B тестирование креативов и аудиторий. Решения на основе метрик.</div></div>
-        <div class="pipe-s"><div class="pipe-n">05</div><div class="pipe-t" data-ru="Масштаб" data-en="Scale">Масштаб</div><div class="pipe-d" data-ru="Усиление рабочих связок. Снижение CPA, рост объёма заявок." data-en="Amplify what works. Lower CPA, increase lead volume.">Усиление рабочих связок. Снижение CPA, рост объёма заявок.</div></div>
-      </div>
+<!-- PROCESS (dark) -->
+<section class="section section-dark" id="process">
+  <div class="section-inner">
+    <p class="eyebrow rv" data-ru="Как это работает" data-en="How it works">Как это работает</p>
+    <h2 class="headline-sm rv rv-d1" data-ru-html="От анализа<br>до результата." data-en-html="From analysis<br>to results.">От анализа<br>до результата.</h2>
+    <p class="subhead rv rv-d2" data-ru="Пять этапов. Одна логика. Нюансы зависят от ниши." data-en="Five stages. One logic. Details depend on niche.">Пять этапов. Одна логика. Нюансы зависят от ниши.</p>
+    <div class="process-row rv">
+      <div class="step"><div class="step-num">01</div><div class="step-title" data-ru="Аудит" data-en="Audit">Аудит</div><div class="step-desc" data-ru="Ниша, конкуренты, семантическое ядро. Точки входа." data-en="Niche, competitors, semantic core. Entry points.">Ниша, конкуренты, семантическое ядро. Точки входа.</div></div>
+      <div class="step"><div class="step-num">02</div><div class="step-title" data-ru="Стратегия" data-en="Strategy">Стратегия</div><div class="step-desc" data-ru="Медиаплан, каналы, УТП. Прогноз CPA." data-en="Media plan, channels, USP. CPA forecast.">Медиаплан, каналы, УТП. Прогноз CPA.</div></div>
+      <div class="step"><div class="step-num">03</div><div class="step-title" data-ru="Запуск" data-en="Launch">Запуск</div><div class="step-desc" data-ru="Аналитика, пиксели, конверсии. Кабинеты." data-en="Analytics, pixels, conversions. Accounts.">Аналитика, пиксели, конверсии. Кабинеты.</div></div>
+      <div class="step"><div class="step-num">04</div><div class="step-title" data-ru="Тест" data-en="Test">Тест</div><div class="step-desc" data-ru="A/B тестирование. Решения на основе метрик." data-en="A/B testing. Data-driven decisions.">A/B тестирование. Решения на основе метрик.</div></div>
+      <div class="step"><div class="step-num">05</div><div class="step-title" data-ru="Масштаб" data-en="Scale">Масштаб</div><div class="step-desc" data-ru="Снижение CPA. Рост объёма заявок." data-en="Lower CPA. More leads.">Снижение CPA. Рост объёма заявок.</div></div>
     </div>
   </div>
 </section>
 
-<!-- CASES — light, h-scroll -->
-<div class="cases-wrap" id="casesWrap">
-  <div class="cases-sticky">
-    <div class="sec-inner" style="width:100%">
-      <div class="sec-label" data-ru="04 — Кейсы" data-en="04 — Cases">04 — Кейсы</div>
-      <h2 class="sec-head" style="margin-bottom:40px" data-ru-html="Проекты <em>в работе</em>" data-en-html="Projects <em>in progress</em>">Проекты <em>в работе</em></h2>
-      <div class="cases-track" id="casesTrack">
-        <div class="case"><div class="case-flip"><div class="case-front"><span class="case-soon" data-ru="Скоро" data-en="Soon">Скоро</span><span class="case-tag" data-ru="Сервисный бизнес" data-en="Services">Сервисный бизнес</span><h3 data-ru="Ремонт квартир" data-en="Home Renovation">Ремонт квартир</h3><p>Google Ads</p></div><div class="case-back"><h4 data-ru="Метрики" data-en="Metrics">Метрики</h4><div class="case-metric"><strong>—</strong><span data-ru="CPA" data-en="CPA">CPA</span></div><div class="case-metric"><strong>—</strong><span data-ru="заявок/мес" data-en="leads/mo">заявок/мес</span></div></div></div></div>
-        <div class="case"><div class="case-flip"><div class="case-front"><span class="case-soon" data-ru="Скоро" data-en="Soon">Скоро</span><span class="case-tag" data-ru="Образование" data-en="Education">Образование</span><h3 data-ru="Онлайн-школа" data-en="Online School">Онлайн-школа</h3><p data-ru="Яндекс Директ" data-en="Yandex Direct">Яндекс Директ</p></div><div class="case-back"><h4 data-ru="Метрики" data-en="Metrics">Метрики</h4><div class="case-metric"><strong>—</strong><span data-ru="CPA" data-en="CPA">CPA</span></div><div class="case-metric"><strong>—</strong><span data-ru="конверсия" data-en="CVR">конверсия</span></div></div></div></div>
-        <div class="case"><div class="case-flip"><div class="case-front"><span class="case-soon" data-ru="Скоро" data-en="Soon">Скоро</span><span class="case-tag" data-ru="Международный" data-en="International">Международный</span><h3 data-ru="Мультирегион" data-en="Multi-region">Мультирегион</h3><p>Google Ads</p></div><div class="case-back"><h4 data-ru="Метрики" data-en="Metrics">Метрики</h4><div class="case-metric"><strong>—</strong><span>ROI</span></div><div class="case-metric"><strong>—</strong><span data-ru="бюджет" data-en="budget">бюджет</span></div></div></div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- TESTIMONIALS — dark -->
-<section class="sec sec-dark rv" id="testimonials">
-  <div class="sec-inner">
-    <div class="sec-label rv" data-ru="05 — Отзывы" data-en="05 — Reviews">05 — Отзывы</div>
-    <h2 class="sec-head rv rv-d1" data-ru-html="Что говорят <em>клиенты</em>" data-en-html="What clients <em>say</em>">Что говорят <em>клиенты</em></h2>
-    <div class="test-grid">
-      <div class="test-card rv"><p class="test-q" data-ru="Отзыв будет добавлен после завершения проекта." data-en="Review will be added after project completion.">Отзыв будет добавлен после завершения проекта.</p><div class="test-name" data-ru="Имя клиента" data-en="Client name">Имя клиента</div><div class="test-role" data-ru="Сервисный бизнес" data-en="Services">Сервисный бизнес</div></div>
-      <div class="test-card rv rv-d1"><p class="test-q" data-ru="Отзыв будет добавлен после завершения проекта." data-en="Review will be added after project completion.">Отзыв будет добавлен после завершения проекта.</p><div class="test-name" data-ru="Имя клиента" data-en="Client name">Имя клиента</div><div class="test-role" data-ru="Образование" data-en="Education">Образование</div></div>
-      <div class="test-card rv rv-d2"><p class="test-q" data-ru="Отзыв будет добавлен после завершения проекта." data-en="Review will be added after project completion.">Отзыв будет добавлен после завершения проекта.</p><div class="test-name" data-ru="Имя клиента" data-en="Client name">Имя клиента</div><div class="test-role" data-ru="Международный" data-en="International">Международный</div></div>
+<!-- CASES (dark) -->
+<section class="section section-dark" id="cases">
+  <div class="section-inner">
+    <p class="eyebrow rv" data-ru="Кейсы" data-en="Cases">Кейсы</p>
+    <h2 class="headline-sm rv rv-d1" data-ru-html="Проекты<br>в работе." data-en-html="Projects<br>in progress.">Проекты<br>в работе.</h2>
+    <div class="cases-row rv rv-d2">
+      <div class="case-card"><span class="case-soon" data-ru="Скоро" data-en="Soon">Скоро</span><div class="case-tag" data-ru="Сервисный бизнес" data-en="Services">Сервисный бизнес</div><h3 data-ru="Ремонт квартир" data-en="Home Renovation">Ремонт квартир</h3><p>Google Ads</p></div>
+      <div class="case-card"><span class="case-soon" data-ru="Скоро" data-en="Soon">Скоро</span><div class="case-tag" data-ru="Образование" data-en="Education">Образование</div><h3 data-ru="Онлайн-школа" data-en="Online School">Онлайн-школа</h3><p data-ru="Яндекс Директ" data-en="Yandex Direct">Яндекс Директ</p></div>
+      <div class="case-card"><span class="case-soon" data-ru="Скоро" data-en="Soon">Скоро</span><div class="case-tag" data-ru="Международный" data-en="International">Международный</div><h3 data-ru="Мультирегион" data-en="Multi-region">Мультирегион</h3><p>Google Ads</p></div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT — light -->
-<section class="sec rv" id="about">
-  <div class="sec-inner">
-    <div class="sec-label rv" data-ru="06 — О себе" data-en="06 — About">06 — О себе</div>
-    <h2 class="sec-head rv rv-d1">Дмитрий Вишневский</h2>
-    <div class="about-grid">
+<!-- ABOUT (light) -->
+<section class="section section-light" id="about">
+  <div class="section-inner">
+    <p class="eyebrow rv" data-ru="О себе" data-en="About">О себе</p>
+    <h2 class="headline-sm rv rv-d1">Дмитрий Вишневский</h2>
+    <div class="about-wrap">
+      <div><img src="about-photo.png" alt="Дмитрий Вишневский" class="about-img rv"></div>
       <div>
-        <div class="about-photo rv"><img src="about-photo.png" alt="Дмитрий Вишневский" width="500" height="466"></div>
-      </div>
-      <div>
-        <p class="about-role rv" data-ru="Performance-маркетолог" data-en="Performance Marketer">Performance-маркетолог</p>
-        <p class="about-bio rv" data-ru="Специализируюсь на performance-маркетинге с 2020 года. Работаю напрямую с каждым проектом — без делегирования. Погружаюсь в юнит-экономику бизнеса, чтобы реклама была инвестицией с измеримым ROI." data-en="Performance marketing since 2020. Work directly on every project. I dive into unit economics so advertising becomes an investment with measurable ROI.">Специализируюсь на performance-маркетинге с 2020 года. Работаю напрямую с каждым проектом — без делегирования. Погружаюсь в юнит-экономику бизнеса, чтобы реклама была инвестицией с измеримым ROI.</p>
+        <p class="about-role rv" data-ru="Performance-маркетолог · с 2020 года" data-en="Performance Marketer · since 2020">Performance-маркетолог · с 2020 года</p>
+        <p class="about-bio rv" data-ru="Работаю напрямую с каждым проектом — без делегирования. Погружаюсь в юнит-экономику бизнеса, чтобы реклама была инвестицией с измеримым ROI." data-en="Work directly on every project. I dive into unit economics so advertising becomes an investment with measurable ROI.">Работаю напрямую с каждым проектом — без делегирования. Погружаюсь в юнит-экономику бизнеса, чтобы реклама была инвестицией с измеримым ROI.</p>
         <div class="about-socials rv">
-          <a href="https://t.me/vishnevsky" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
-          <a href="https://www.youtube.com/@vishnevsky" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-          <a href="https://www.linkedin.com/in/vishnevsky" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.064 2.064 0 1 1 0-4.128 2.064 2.064 0 0 1 0 4.128zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"/></svg></a>
+          <a href="https://t.me/vishnevsky" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+          <a href="https://www.youtube.com/@vishnevsky" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="https://www.linkedin.com/in/vishnevsky" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.064 2.064 0 1 1 0-4.128 2.064 2.064 0 0 1 0 4.128zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"/></svg></a>
         </div>
-        <div class="tools-row rv">
-          <span class="tool">Google Ads</span><span class="tool" data-ru="Яндекс Директ" data-en="Yandex Direct">Яндекс Директ</span><span class="tool">Analytics</span><span class="tool" data-ru="Метрика" data-en="Metrica">Метрика</span><span class="tool" data-ru="A/B тесты" data-en="A/B Tests">A/B тесты</span>
-        </div>
-        <div class="price-card rv">
-          <div class="price-label" data-ru="Стоимость" data-en="Pricing">Стоимость</div>
-          <div class="price-amount" data-ru="от $300" data-en="from $300">от $300</div>
+        <div class="tools rv"><span class="tool">Google Ads</span><span class="tool" data-ru="Яндекс Директ" data-en="Yandex Direct">Яндекс Директ</span><span class="tool">Analytics</span><span class="tool" data-ru="Метрика" data-en="Metrica">Метрика</span></div>
+        <div class="price-box rv">
+          <div class="price-eyebrow" data-ru="Стоимость" data-en="Pricing">Стоимость</div>
+          <div class="price-val" data-ru="от $300" data-en="from $300">от $300</div>
           <p class="price-note" data-ru="Рекламный бюджет — отдельно" data-en="Ad budget separate">Рекламный бюджет — отдельно</p>
           <ul class="price-list"><li data-ru="Анализ и стратегия" data-en="Analysis & strategy">Анализ и стратегия</li><li data-ru="Подготовка инфраструктуры" data-en="Infrastructure">Подготовка инфраструктуры</li><li data-ru="Запуск кампаний" data-en="Launch">Запуск кампаний</li><li data-ru="Оптимизация" data-en="Optimization">Оптимизация</li></ul>
-          <a href="#contact" class="btn btn-blue magnetic" data-ru-html="Обсудить &rarr;" data-en-html="Discuss &rarr;">Обсудить &rarr;</a>
+          <a href="#contact" class="link-cta" data-ru="Обсудить стоимость" data-en="Discuss pricing">Обсудить стоимость</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ — dark -->
-<section class="sec sec-dark rv" id="faq">
-  <div class="sec-inner">
-    <div class="sec-label rv" data-ru="07 — Вопросы" data-en="07 — FAQ">07 — Вопросы</div>
-    <h2 class="sec-head rv rv-d1" data-ru-html="Частые <em>вопросы</em>" data-en-html="Common <em>questions</em>">Частые <em>вопросы</em></h2>
+<!-- FAQ (dark) -->
+<section class="section section-dark" id="faq">
+  <div class="section-inner">
+    <p class="eyebrow rv" data-ru="Вопросы и ответы" data-en="Q&A">Вопросы и ответы</p>
+    <h2 class="headline-sm rv rv-d1" data-ru="Частые вопросы." data-en="Common questions.">Частые вопросы.</h2>
     <div class="faq-list">
-      <details><summary data-ru="Когда появляются первые заявки?" data-en="When do first leads come?">Когда появляются первые заявки?</summary><div class="faq-a" data-ru="Иногда — в первые дни. Прогнозируемый результат — после тестирования и оптимизации." data-en="Sometimes in days. Predictable results — after testing and optimization.">Иногда — в первые дни. Прогнозируемый результат — после тестирования и оптимизации.</div></details>
-      <details><summary data-ru="Какой бюджет нужен?" data-en="Budget needed?">Какой бюджет нужен?</summary><div class="faq-a" data-ru="Тестовый — от $100. Точнее после обсуждения проекта." data-en="Test — from $100. More precise after discussion.">Тестовый — от $100. Точнее после обсуждения проекта.</div></details>
-      <details><summary data-ru="Работаете с другими странами?" data-en="Work internationally?">Работаете с другими странами?</summary><div class="faq-a" data-ru="Да, с русскоязычными предпринимателями по всему миру." data-en="Yes, with Russian-speaking entrepreneurs worldwide.">Да, с русскоязычными предпринимателями по всему миру.</div></details>
-      <details><summary data-ru="Нужно разбираться в рекламе?" data-en="Need ad expertise?">Нужно разбираться в рекламе?</summary><div class="faq-a" data-ru="Нет. Я беру рекламу на себя. От вас — работа с заявками." data-en="No. I handle ads. From you — lead handling.">Нет. Я беру рекламу на себя. От вас — работа с заявками.</div></details>
-      <details><summary data-ru="Есть гарантии?" data-en="Guarantees?">Есть гарантии?</summary><div class="faq-a" data-ru="Гарантий в рекламе нет. Но можно выстроить систему и понять, что работает." data-en="No guarantees in ads. But we build a system and find what works.">Гарантий в рекламе нет. Но можно выстроить систему и понять, что работает.</div></details>
+      <details class="rv"><summary data-ru="Когда появляются первые заявки?" data-en="When do first leads come?">Когда появляются первые заявки?</summary><div class="faq-a" data-ru="Иногда — в первые дни. Прогнозируемый результат — после тестирования." data-en="Sometimes in days. Predictable results — after testing.">Иногда — в первые дни. Прогнозируемый результат — после тестирования.</div></details>
+      <details class="rv rv-d1"><summary data-ru="Какой бюджет нужен?" data-en="Budget needed?">Какой бюджет нужен?</summary><div class="faq-a" data-ru="Тестовый — от $100. Точнее после обсуждения." data-en="Test — from $100. More precise after discussion.">Тестовый — от $100. Точнее после обсуждения.</div></details>
+      <details class="rv rv-d2"><summary data-ru="Работаете с другими странами?" data-en="Work internationally?">Работаете с другими странами?</summary><div class="faq-a" data-ru="Да, с русскоязычными предпринимателями по всему миру." data-en="Yes, worldwide.">Да, с русскоязычными предпринимателями по всему миру.</div></details>
+      <details class="rv rv-d3"><summary data-ru="Есть гарантии?" data-en="Guarantees?">Есть гарантии?</summary><div class="faq-a" data-ru="Гарантий нет. Но можно выстроить систему и понять, что работает." data-en="No guarantees. But we build a system and find what works.">Гарантий нет. Но можно выстроить систему и понять, что работает.</div></details>
     </div>
   </div>
 </section>
 
-<!-- CONTACT — light -->
-<section class="sec rv" id="contact">
-  <div class="sec-inner">
-    <div class="contact-center">
-      <div class="sec-label rv" style="text-align:center" data-ru="Связаться" data-en="Contact">Связаться</div>
-      <h2 class="sec-head rv rv-d1" style="text-align:center" data-ru-html="Давайте <em>обсудим</em>" data-en-html="Let's <em>talk</em>">Давайте <em>обсудим</em></h2>
-      <p class="sec-desc rv rv-d2" style="text-align:center;margin:0 auto 32px" data-ru-html="Обычно отвечаю <strong style='color:var(--blue)'>в течение часа</strong>" data-en-html="Usually respond <strong style='color:var(--blue)'>within an hour</strong>">Обычно отвечаю <strong style="color:var(--blue)">в течение часа</strong></p>
-      <a href="https://t.me/vishnevsky" target="_blank" rel="noopener" class="contact-tg magnetic rv" data-ru-html="Написать в Telegram &rarr;" data-en-html="Telegram &rarr;">Написать в Telegram &rarr;</a>
+<!-- CONTACT (dark) -->
+<section class="section section-dark" id="contact">
+  <div class="section-inner">
+    <div class="contact-inner">
+      <p class="eyebrow rv" data-ru="Начать" data-en="Start">Начать</p>
+      <h2 class="headline-sm rv rv-d1" data-ru="Давайте обсудим." data-en="Let's talk.">Давайте обсудим.</h2>
+      <p class="subhead rv rv-d2" data-ru-html="Обычно отвечаю в течение часа." data-en-html="Usually respond within an hour.">Обычно отвечаю в течение часа.</p>
+      <a href="https://t.me/vishnevsky" target="_blank" rel="noopener" class="tg-btn rv" data-ru-html="Написать в Telegram &rarr;" data-en-html="Telegram &rarr;">Написать в Telegram &rarr;</a>
       <p class="contact-or rv" data-ru="или оставьте контакт" data-en="or leave your contact">или оставьте контакт</p>
       <form class="c-form rv" onsubmit="handleSubmit(event)">
         <div class="c-sel"><input type="radio" name="method" id="m-tg" value="telegram" checked><label for="m-tg">Telegram</label><input type="radio" name="method" id="m-wa" value="whatsapp"><label for="m-wa">WhatsApp</label><input type="radio" name="method" id="m-ph" value="phone"><label for="m-ph">Phone</label></div>
@@ -511,69 +369,28 @@ details[open] summary::after{transform:rotate(45deg)}
 </div>
 </main>
 
+<footer class="footer"><div class="footer-in">
+  <span class="footer-brand">VISH-LEADS &copy; 2026</span>
+  <div class="footer-links"><a href="https://t.me/vishnevsky" target="_blank">Telegram</a><a href="https://www.youtube.com/@vishnevsky" target="_blank">YouTube</a><a href="https://www.linkedin.com/in/vishnevsky" target="_blank">LinkedIn</a></div>
+</div></footer>
+
 <script>
-/* ══ ENGINE ══ */
-const LD=document.getElementById('loader');
-'VISH-LEADS'.split('').forEach((c,i)=>{const s=document.createElement('span');s.className='loader-letter';s.textContent=c;s.style.animationDelay=(.5+i*.05)+'s';document.getElementById('loaderWord').appendChild(s)});
-requestAnimationFrame(()=>LD.classList.add('go'));
-initPage();
-window.addEventListener('load',()=>setTimeout(()=>LD.classList.add('out'),1200));
-
-/* Cursor */
-const ring=document.getElementById('curRing'),dot=document.getElementById('curDot');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'},{passive:true});
-(function cLoop(){rx+=(mx-rx)*.09;ry+=(my-ry)*.09;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(cLoop)})();
-function setupCursorHovers(){document.querySelectorAll('a,button,summary,.quiz-opt,.c-sel label,.tool,.prob,.case').forEach(el=>{el.addEventListener('mouseenter',()=>ring.classList.add('active'));el.addEventListener('mouseleave',()=>ring.classList.remove('active'))})}
-
-function setupMagnetic(){document.querySelectorAll('.magnetic').forEach(btn=>{btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();const x=e.clientX-r.left-r.width/2;const y=e.clientY-r.top-r.height/2;btn.style.transform=`translate(${x*.2}px,${y*.2}px)`;btn.style.transition='transform .1s'});btn.addEventListener('mouseleave',()=>{btn.style.transform='';btn.style.transition='transform .4s var(--ease)'})})}
-
-/* WebGL */
-function initWebGL(){
-  const c=document.getElementById('glCanvas');
-  const gl=c.getContext('webgl',{alpha:true,premultipliedAlpha:false});
-  if(!gl){c.style.background='radial-gradient(ellipse at 30% 40%,rgba(67,97,238,.03),transparent 50%)';return}
-  function resize(){c.width=c.offsetWidth;c.height=c.offsetHeight;gl.viewport(0,0,c.width,c.height)}
-  resize();window.addEventListener('resize',resize);
-  const vs=`attribute vec2 p;void main(){gl_Position=vec4(p,0,1);}`;
-  const fs=`precision mediump float;uniform float t;uniform vec2 r;uniform vec2 m;float mb(vec2 p,vec2 c,float s){return s/dot(p-c,p-c);}void main(){vec2 uv=gl_FragCoord.xy/r;vec2 ms=m/r;float v=0.0;v+=mb(uv,vec2(.3+sin(t*.3)*.12,.4+cos(t*.4)*.12),.008);v+=mb(uv,vec2(.7+cos(t*.35)*.1,.35+sin(t*.45)*.1),.006);v+=mb(uv,vec2(.5+sin(t*.25)*.15,.65+cos(t*.3)*.12),.005);v+=mb(uv,mix(vec2(.5,.5),ms,.25),.004);v=smoothstep(.8,2.2,v);vec3 c1=vec3(.263,.38,.933);gl_FragColor=vec4(c1*v*.15,v*.08);}`;
-  function compile(src,type){const s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);return s}
-  const prog=gl.createProgram();gl.attachShader(prog,compile(vs,gl.VERTEX_SHADER));gl.attachShader(prog,compile(fs,gl.FRAGMENT_SHADER));gl.linkProgram(prog);gl.useProgram(prog);
-  const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
-  const p=gl.getAttribLocation(prog,'p');gl.enableVertexAttribArray(p);gl.vertexAttribPointer(p,2,gl.FLOAT,false,0,0);
-  const ut=gl.getUniformLocation(prog,'t'),ur=gl.getUniformLocation(prog,'r'),um=gl.getUniformLocation(prog,'m');
-  let gmx=c.width/2,gmy=c.height/2;
-  document.getElementById('hero').addEventListener('mousemove',e=>{const rect=c.getBoundingClientRect();gmx=e.clientX-rect.left;gmy=rect.height-(e.clientY-rect.top)},{passive:true});
-  gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);
-  (function draw(now){gl.uniform1f(ut,now*.001);gl.uniform2f(ur,c.width,c.height);gl.uniform2f(um,gmx,gmy);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);requestAnimationFrame(draw)})(0);
-}
-
 /* Observer */
-function initObservers(){
-  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})},{threshold:.05,rootMargin:'0px 0px -20px 0px'});
-  document.querySelectorAll('.rv,.sec-label,.sec-desc').forEach(el=>obs.observe(el));
-}
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 
 /* Counters */
-function initCounters(){const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;const target=+el.dataset.counter;const prefix=el.dataset.prefix||'';const suffix=el.dataset.suffix||'+';const dur=1500;const start=performance.now();function step(now){const p=Math.min((now-start)/dur,1);const ease=1-Math.pow(1-p,4);el.textContent=prefix+Math.round(target*ease)+suffix;if(p<1)requestAnimationFrame(step)}requestAnimationFrame(step);obs.unobserve(el)})},{threshold:.5});document.querySelectorAll('[data-counter]').forEach(el=>obs.observe(el))}
-
-/* Parallax */
-function initParallax(){const photo=document.getElementById('heroPhoto');if(!photo||window.innerWidth<769)return;window.addEventListener('scroll',()=>{const s=window.scrollY;if(s>window.innerHeight)return;photo.style.transform=`translateY(${s*.12}px)`},{passive:true})}
-
-/* H-Scroll */
-function initHScroll(){const wrap=document.getElementById('casesWrap'),track=document.getElementById('casesTrack');if(!wrap||!track||window.innerWidth<769)return;window.addEventListener('scroll',()=>{const rect=wrap.getBoundingClientRect();const progress=Math.max(0,Math.min(1,-rect.top/(rect.height-window.innerHeight)));track.style.transform=`translateX(${-progress*(track.scrollWidth-window.innerWidth+80)}px)`},{passive:true})}
-
-/* Scroll Progress */
-function initScrollProgress(){const bar=document.getElementById('scrollProg');window.addEventListener('scroll',()=>{bar.style.transform=`scaleX(${window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)})`},{passive:true})}
-
-/* Photo Tilt */
-function initPhotoTilt(){const photo=document.getElementById('heroPhoto');if(!photo)return;const hero=document.getElementById('hero');hero.addEventListener('mousemove',e=>{const r=photo.getBoundingClientRect();const x=(e.clientX-r.left-r.width/2)/r.width*5;const y=(e.clientY-r.top-r.height/2)/r.height*-3;photo.style.transform=`perspective(800px) rotateY(${x}deg) rotateX(${y}deg)`},{passive:true});hero.addEventListener('mouseleave',()=>{photo.style.transform=''})}
+const cObs=new IntersectionObserver(e=>{e.forEach(x=>{if(!x.isIntersecting)return;const el=x.target;const t=+el.dataset.counter,pre=el.dataset.prefix||'',suf=el.dataset.suffix||'+',dur=1200,st=performance.now();function step(now){const p=Math.min((now-st)/dur,1);const ease=1-Math.pow(1-p,3);el.textContent=pre+Math.round(t*ease)+suf;if(p<1)requestAnimationFrame(step)}requestAnimationFrame(step);cObs.unobserve(el)})},{threshold:.5});
+document.querySelectorAll('[data-counter]').forEach(el=>cObs.observe(el));
 
 /* Nav */
-const nav=document.getElementById('nav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50),{passive:true});
 const burger=document.getElementById('burger'),mobMenu=document.getElementById('mobMenu');
 burger.addEventListener('click',()=>{burger.classList.toggle('on');mobMenu.classList.toggle('open');document.body.style.overflow=mobMenu.classList.contains('open')?'hidden':''});
 function closeMob(){burger.classList.remove('on');mobMenu.classList.remove('open');document.body.style.overflow=''}
+
+/* Photo tilt */
+const heroPhoto=document.getElementById('heroPhoto');
+if(heroPhoto&&window.matchMedia('(hover:hover)').matches){document.getElementById('hero').addEventListener('mousemove',e=>{const r=heroPhoto.getBoundingClientRect();const x=(e.clientX-r.left-r.width/2)/r.width*4;const y=(e.clientY-r.top-r.height/2)/r.height*-3;heroPhoto.style.transform=`perspective(800px) rotateY(${x}deg) rotateX(${y}deg)`;heroPhoto.style.transition='transform .1s'},{passive:true});document.getElementById('hero').addEventListener('mouseleave',()=>{heroPhoto.style.transform='';heroPhoto.style.transition='transform .5s'})}
 
 /* Lang */
 let currentLang=localStorage.getItem('lang')||'ru';
@@ -581,7 +398,7 @@ function setLang(lang){currentLang=lang;localStorage.setItem('lang',lang);docume
 function toggleLang(){setLang(currentLang==='ru'?'en':'ru')}
 
 /* Quiz */
-const QD={ru:[{q:'Чем занимаетесь?',ctx:'В разных нишах реклама работает по-разному.',opts:['Услуги','Образование','Онлайн','Другое']},{q:'Запускали рекламу?',ctx:'Точка старта.',opts:['Да, работает','Да, без результата','Нет']},{q:'Основная задача?',ctx:'Приоритет.',opts:['Первые заявки','Снизить цену','Стабильный поток','Масштаб']},{q:'Есть сайт?',ctx:'Влияет на результат.',opts:['Да','Нет','В процессе']},{q:'Бюджет?',ctx:'Скорость тестирования.',type:'slider'}],en:[{q:'Your business?',ctx:'Ads differ by niche.',opts:['Services','Education','Online','Other']},{q:'Run ads before?',ctx:'Starting point.',opts:['Yes, running','Yes, no results','Not yet']},{q:'Main goal?',ctx:'Priority.',opts:['First leads','Lower cost','Stable flow','Scale']},{q:'Have a site?',ctx:'Affects results.',opts:['Yes','No','In progress']},{q:'Budget?',ctx:'Testing speed.',type:'slider'}]};
+const QD={ru:[{q:'Чем занимаетесь?',ctx:'В разных нишах реклама работает по-разному.',opts:['Услуги','Образование','Онлайн','Другое']},{q:'Запускали рекламу?',ctx:'Точка старта.',opts:['Да, работает','Без результата','Нет']},{q:'Основная задача?',ctx:'Приоритет.',opts:['Первые заявки','Снизить цену','Стабильный поток','Масштаб']},{q:'Есть сайт?',ctx:'Влияет на результат.',opts:['Да','Нет','В процессе']},{q:'Бюджет?',ctx:'Скорость тестирования.',type:'slider'}],en:[{q:'Your business?',ctx:'Ads differ by niche.',opts:['Services','Education','Online','Other']},{q:'Run ads?',ctx:'Starting point.',opts:['Yes','No results','Not yet']},{q:'Main goal?',ctx:'Priority.',opts:['First leads','Lower cost','Stable flow','Scale']},{q:'Have a site?',ctx:'Affects results.',opts:['Yes','No','WIP']},{q:'Budget?',ctx:'Testing speed.',type:'slider'}]};
 let qStep=0;const qAns=[];
 const qBody=document.getElementById('quizBody'),qBar=document.getElementById('quizBar'),qNum=document.getElementById('quizStepNum'),qBack=document.getElementById('quizBack'),qNext=document.getElementById('quizNext');
 function openQuiz(){document.getElementById('quizOverlay').classList.add('active');document.body.style.overflow='hidden';qStep=0;qNext.style.display='';renderQuiz()}
@@ -591,17 +408,9 @@ function quizSelect(i){qAns[qStep]=i;qNext.disabled=false;document.querySelector
 function quizSlider(v){document.getElementById('sliderVal').textContent='$'+v;qAns[qStep]=+v}
 function quizNextStep(){if(qStep<QD[currentLang].length){qStep++;renderQuiz()}}
 function quizPrev(){if(qStep>0){qStep--;renderQuiz()}}
-function renderQResult(){qBar.style.width='100%';qNum.textContent=currentLang==='ru'?'Готово':'Done';qBack.style.display='none';qNext.style.display='none';const t=currentLang==='ru';qBody.innerHTML=`<div class="quiz-result"><h3>${t?'Спасибо!':'Thanks!'}</h3><p>${t?'Давайте разберём детали.':'Let\'s discuss details.'}</p><div class="quiz-result-note"><div class="quiz-avatar" style="flex-shrink:0"><img src="photo.png" alt="" width="36" height="36"></div><p>${t?'Лучше обсудить на примере проекта.':'Better to discuss on project example.'}<br><strong>— ${t?'Дмитрий':'Dmitry'}</strong></p></div><a href="https://t.me/vishnevsky" target="_blank" class="btn-gold" style="margin:16px auto 0;display:inline-flex">${t?'Telegram':'Telegram'} &rarr;</a></div>`}
-
-function handleSubmit(e){e.preventDefault();const f=e.target;const m=f.querySelector('input[name="method"]:checked')?.value||'telegram';const c=f.querySelector('.c-input').value.trim();if(!c)return;window.open('mailto:visjb3t3t@gmail.com?subject='+encodeURIComponent('VISH-LEADS')+'&body='+encodeURIComponent(m+': '+c),'_blank');const btn=f.querySelector('.c-submit');const t=btn.textContent;btn.textContent=currentLang==='ru'?'Отправлено!':'Sent!';setTimeout(()=>{btn.textContent=t;f.reset()},2500)}
-
+function renderQResult(){qBar.style.width='100%';qNum.textContent=currentLang==='ru'?'Готово':'Done';qBack.style.display='none';qNext.style.display='none';const t=currentLang==='ru';qBody.innerHTML=`<div class="quiz-result"><h3>${t?'Спасибо!':'Thanks!'}</h3><p>${t?'Давайте разберём детали.':'Let\'s discuss.'}</p><div class="quiz-result-note"><div class="quiz-avatar" style="flex-shrink:0"><img src="photo.png" alt="" width="36" height="36"></div><p>${t?'Лучше обсудить на примере проекта.':'Better on project example.'}<br><strong>— ${t?'Дмитрий':'Dmitry'}</strong></p></div><a href="https://t.me/vishnevsky" target="_blank" class="btn-gold" style="margin:16px auto 0;display:inline-flex">Telegram &rarr;</a></div>`}
+function handleSubmit(e){e.preventDefault();const f=e.target;const m=f.querySelector('input[name="method"]:checked')?.value||'telegram';const c=f.querySelector('.c-input').value.trim();if(!c)return;window.open('mailto:visjb3t3t@gmail.com?subject='+encodeURIComponent('VISH-LEADS')+'&body='+encodeURIComponent(m+': '+c),'_blank');const btn=f.querySelector('.c-submit');btn.textContent=currentLang==='ru'?'Отправлено!':'Sent!';setTimeout(()=>{btn.textContent=currentLang==='ru'?'Отправить':'Send';f.reset()},2500)}
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
-
-function initPage(){
-  document.body.classList.add('loaded');
-  initObservers();initCounters();initWebGL();initParallax();initPhotoTilt();initHScroll();initScrollProgress();setupCursorHovers();setupMagnetic();
-  setTimeout(()=>{document.querySelector('.hero-badge')?.classList.add('vis');setTimeout(()=>document.querySelector('.hero-sub')?.classList.add('vis'),150);setTimeout(()=>document.querySelector('.hero-actions')?.classList.add('vis'),300)},100);
-}
 if(currentLang!=='ru')setLang(currentLang);
 </script>
 </body>
