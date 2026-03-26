@@ -128,7 +128,8 @@ nav.stuck{padding:16px 64px;background:rgba(10,10,12,.92);backdrop-filter:blur(3
 @media(max-width:960px){.honest-bar{grid-template-columns:1fr;gap:16px;padding:48px 24px}}
 
 /* CASES */
-.cases-wrap{padding:100px 64px;border-bottom:1px solid var(--border)}
+.cases-wrap{padding:100px 64px;border-bottom:1px solid var(--border);position:relative}
+.cases-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(59,125,232,.15) 1px,transparent 1px);background-size:20px 20px;z-index:0;pointer-events:none}
 .cases-head{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-bottom:72px;align-items:end}
 .cases-list{display:flex;flex-direction:column}
 .case-row{display:grid;grid-template-columns:56px 1fr 180px;gap:40px;align-items:start;padding:44px 0;border-top:1px solid var(--border);position:relative;transition:background .25s}
