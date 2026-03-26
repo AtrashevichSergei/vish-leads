@@ -102,8 +102,8 @@ nav.stuck{padding:16px 64px;background:rgba(10,10,12,.92);backdrop-filter:blur(3
 .hero-metric-val{font-family:var(--serif);font-size:clamp(32px,3.5vw,44px);font-weight:900;color:var(--white);line-height:1;margin-bottom:8px;display:flex;align-items:baseline}
 .hero-metric-unit{font-family:var(--mono);font-size:0.5em;color:var(--gold-bright);font-weight:400;margin-left:2px}
 .hero-metric-label{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--mid);line-height:1.4;text-transform:uppercase}
-.hero-metric-photo{padding:0;overflow:hidden}
-.hero-metric-photo img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.hero-metric-photo{padding:0;overflow:visible;position:relative;z-index:2}
+.hero-metric-photo img{width:calc(100% + 30px);height:calc(100% + 40px);object-fit:cover;object-position:top;display:block;margin:-20px -15px -20px -15px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.5))}
 
 /* Hero tools tabs */
 .hero-tools{display:flex;flex-wrap:wrap;gap:6px;max-width:420px;opacity:0;animation:up .7s ease .8s forwards;margin-top:20px}
