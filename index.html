@@ -145,7 +145,6 @@ nav.stuck{padding:16px 64px;background:rgba(10,10,12,.92);backdrop-filter:blur(3
 .case-pills{display:flex;gap:8px;flex-wrap:wrap}
 .case-pill{padding:4px 10px;border:1px solid var(--border);font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .case-metric{text-align:center;padding:32px 28px;border-radius:var(--radius);background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:var(--glass-border);position:relative;overflow:hidden}
-.case-metric::after{content:'';position:absolute;inset:0;background:url('noise.png') repeat;opacity:.35;pointer-events:none;border-radius:inherit}
 .case-big{font-family:var(--serif);font-size:46px;font-weight:900;color:var(--green-light);line-height:1;margin-bottom:4px}
 .case-big.warn{color:#e07b3a}
 .case-meta{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--mid);text-transform:uppercase}
@@ -979,7 +978,7 @@ if(langToggle)langToggle.textContent=currentLang==='ru'?'EN':'RU';
     window.addEventListener('resize',resize);
   }
   /* Prob-cards: always visible */
-  document.querySelectorAll('.prob-card').forEach(card=>createNoise(card,'.2',true));
+  document.querySelectorAll('.prob-card,.case-metric').forEach(card=>createNoise(card,'.2',true));
   /* FAQ-cards: hover only */
   document.querySelectorAll('.faq-item').forEach(item=>createNoise(item,'.2',false));
   /* WA button: always */
