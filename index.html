@@ -200,7 +200,7 @@ nav.stuck{padding:16px 64px;background:rgba(10,10,12,.92);backdrop-filter:blur(3
 .problems-head{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-bottom:72px;align-items:end}
 .prob-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border)}
 .prob-card{background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:var(--glass-border);padding:40px 32px;position:relative;overflow:hidden;transition:background .3s,transform .3s,box-shadow .3s}
-.prob-card canvas.tv-noise{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.12;mix-blend-mode:screen}
+.prob-card canvas.tv-noise{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.3;mix-blend-mode:overlay}
 .prob-card:hover{background:rgba(21,21,21,0.75);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.3)}
 .prob-card::before{content:'';position:absolute;top:0;left:0;width:0;height:2px;background:var(--gold);transition:width .4s}
 .prob-card:hover::before{width:100%}
