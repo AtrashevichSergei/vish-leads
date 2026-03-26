@@ -108,6 +108,73 @@ nav.stuck{padding:16px 64px;background:rgba(9,9,9,.92);backdrop-filter:blur(32px
 .honest-attr{margin-top:20px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--mid)}
 @media(max-width:960px){.honest-bar{grid-template-columns:1fr;gap:16px;padding:48px 24px}}
 
+/* CASES */
+.cases-wrap{padding:100px 64px;border-bottom:1px solid var(--border)}
+.cases-head{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-bottom:72px;align-items:end}
+.cases-list{display:flex;flex-direction:column}
+.case-row{display:grid;grid-template-columns:56px 1fr 180px;gap:40px;align-items:start;padding:44px 0;border-top:1px solid var(--border);position:relative;transition:background .25s}
+.case-row:last-child{border-bottom:1px solid var(--border)}
+.case-row::after{content:'';position:absolute;bottom:-1px;left:0;width:0;height:1px;background:var(--gold);transition:width .4s ease}
+.case-row:hover::after{width:100%}
+.case-idx{font-family:var(--mono);font-size:11px;color:var(--muted);padding-top:4px}
+.case-niche{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.case-name{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--white);margin-bottom:10px;line-height:1.2;transition:color .25s}
+.case-row:hover .case-name{color:var(--gold)}
+.case-story{font-size:13px;font-weight:300;color:var(--mid);line-height:1.65;margin-bottom:16px;max-width:480px}
+.case-context{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.6;margin-bottom:16px}
+.case-context span{color:var(--light)}
+.case-pills{display:flex;gap:8px;flex-wrap:wrap}
+.case-pill{padding:4px 10px;border:1px solid var(--border);font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.case-metric{text-align:right;padding-top:4px}
+.case-big{font-family:var(--serif);font-size:46px;font-weight:900;color:var(--green-light);line-height:1;margin-bottom:4px}
+.case-big.warn{color:#e07b3a}
+.case-meta{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--mid);text-transform:uppercase}
+.case-period{font-size:12px;color:var(--muted);margin-top:4px}
+@media(max-width:960px){.cases-wrap{padding:72px 24px}.cases-head{grid-template-columns:1fr;gap:24px}.case-row{grid-template-columns:1fr;gap:16px}.case-idx{display:none}.case-metric{text-align:left}}
+
+/* OPINIONS */
+.opinion-wrap{padding:100px 64px;border-bottom:1px solid var(--border);background:var(--deep)}
+.opinion-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:60px}
+.opinion-card{background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:var(--glass-border);padding:36px 32px;transition:border-color .3s,box-shadow .3s,transform .3s}
+.opinion-card:hover{border-color:rgba(59,125,232,.15);box-shadow:0 0 0 1px var(--gold),0 16px 40px rgba(0,0,0,.3);transform:translateY(-4px)}
+.opinion-icon{font-size:28px;display:block;margin-bottom:16px}
+.opinion-claim{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--white);margin-bottom:12px;line-height:1.3}
+.opinion-text{font-size:13px;font-weight:300;color:var(--mid);line-height:1.7;margin-bottom:16px}
+.opinion-verdict{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+@media(max-width:960px){.opinion-wrap{padding:72px 24px}.opinion-grid{grid-template-columns:1fr}}
+
+/* SERVICES */
+.services-wrap{padding:100px 64px;border-bottom:1px solid var(--border)}
+.services-head{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-bottom:60px;align-items:end}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.svc{background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:var(--glass-border);padding:40px 36px;position:relative;transition:border-color .3s,transform .3s,box-shadow .3s}
+.svc:hover{border-color:rgba(59,125,232,.15);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.svc-badge{position:absolute;top:16px;right:16px;font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);padding:4px 10px;border:1px solid rgba(59,125,232,.2);background:rgba(59,125,232,.06)}
+.svc-label{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.svc-name{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--white);margin-bottom:12px;line-height:1.2}
+.svc-desc{font-size:14px;font-weight:300;color:var(--mid);line-height:1.7;margin-bottom:20px}
+.svc-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.svc-list li{font-size:13px;font-weight:300;color:var(--light);padding-left:16px;position:relative;line-height:1.5}
+.svc-list li::before{content:'—';position:absolute;left:0;color:var(--gold);font-family:var(--mono)}
+.svc-slots{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.06em}
+.svc-slots strong{color:var(--gold)}
+@media(max-width:960px){.services-wrap{padding:72px 24px}.services-head{grid-template-columns:1fr;gap:24px}.services-grid{grid-template-columns:1fr}}
+
+/* REVIEWS */
+.reviews-wrap{padding:100px 64px;border-bottom:1px solid var(--border);background:var(--deep)}
+.reviews-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:60px}
+.review{background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:var(--glass-border);padding:36px 32px;transition:border-color .3s,box-shadow .3s,transform .3s}
+.review:hover{border-color:rgba(59,125,232,.15);box-shadow:0 0 0 1px var(--gold),0 16px 40px rgba(0,0,0,.3);transform:translateY(-4px)}
+.review-result{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;padding:4px 10px;border:1px solid rgba(59,125,232,.2);display:inline-block;background:rgba(59,125,232,.06)}
+.review-q{font-family:var(--serif);font-size:48px;color:rgba(59,125,232,.2);line-height:1;margin-bottom:-8px}
+.review-text{font-size:14px;font-weight:300;color:var(--light);line-height:1.7;margin-bottom:16px}
+.review-moment{font-size:13px;font-style:italic;color:var(--gold);margin-bottom:20px;padding-left:12px;border-left:2px solid rgba(59,125,232,.3)}
+.review-author{display:flex;align-items:center;gap:12px}
+.review-ava{width:36px;height:36px;border-radius:50%;background:rgba(59,125,232,.15);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:14px;font-weight:700;color:var(--gold);flex-shrink:0}
+.review-name{font-size:13px;font-weight:600;color:var(--white)}
+.review-role{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.06em}
+@media(max-width:960px){.reviews-wrap{padding:72px 24px}.reviews-grid{grid-template-columns:1fr}}
+
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .reveal.on{opacity:1;transform:none}
@@ -300,9 +367,9 @@ footer{padding:64px 64px 40px;background:var(--glass-bg);backdrop-filter:blur(12
 <nav id="nav">
   <a href="#" class="nav-mark">ДВ</a>
   <ul class="nav-center">
-    <li><a href="#problems" data-ru="Ситуации" data-en="Problems">Ситуации</a></li>
+    <li><a href="#cases" data-ru="Кейсы" data-en="Cases">Кейсы</a></li>
+    <li><a href="#services" data-ru="Услуги" data-en="Services">Услуги</a></li>
     <li><a href="#process" data-ru="Процесс" data-en="Process">Процесс</a></li>
-    <li><a href="#about" data-ru="О себе" data-en="About">О себе</a></li>
     <li><a href="#blog" data-ru="Блог" data-en="Blog">Блог</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
@@ -310,9 +377,9 @@ footer{padding:64px 64px 40px;background:var(--glass-bg);backdrop-filter:blur(12
   <button class="burger" id="burger"><span></span><span></span><span></span></button>
 </nav>
 <div class="mob-menu" id="mobMenu">
-  <a href="#problems" onclick="closeMob()" data-ru="Ситуации" data-en="Problems">Ситуации</a>
+  <a href="#cases" onclick="closeMob()" data-ru="Кейсы" data-en="Cases">Кейсы</a>
+  <a href="#services" onclick="closeMob()" data-ru="Услуги" data-en="Services">Услуги</a>
   <a href="#process" onclick="closeMob()" data-ru="Процесс" data-en="Process">Процесс</a>
-  <a href="#about" onclick="closeMob()" data-ru="О себе" data-en="About">О себе</a>
   <a href="#blog" onclick="closeMob()" data-ru="Блог" data-en="Blog">Блог</a>
   <a href="#faq" onclick="closeMob()">FAQ</a>
   <a href="#contact" onclick="closeMob()" data-ru="Обсудить" data-en="Discuss">Обсудить</a>
@@ -364,6 +431,63 @@ footer{padding:64px 64px 40px;background:var(--glass-bg);backdrop-filter:blur(12
   </div>
 </div>
 
+<section class="cases-wrap" id="cases">
+  <div class="cases-head">
+    <div>
+      <div class="s-tag reveal" data-ru="Реальные результаты" data-en="Real Results">Реальные результаты</div>
+      <h2 class="s-title reveal" data-ru-html="Кейсы с <em>контекстом</em>" data-en-html="Cases with <em>context</em>">Кейсы с <em>контекстом</em></h2>
+    </div>
+    <p class="s-body reveal" data-ru="Не просто «снизил CPA». Ниже — с чего начинали, что делали и за сколько. Потому что без контекста цифры ничего не значат." data-en="Not just 'lowered CPA'. Below — starting point, actions, and timeline. Because without context, numbers mean nothing.">Не просто «снизил CPA». Ниже — с чего начинали, что делали и за сколько. Потому что без контекста цифры ничего не значат.</p>
+  </div>
+  <div class="cases-list">
+    <div class="case-row reveal">
+      <div class="case-idx">001</div>
+      <div>
+        <div class="case-niche">Услуги · Юридическая фирма</div>
+        <h3 class="case-name">Юридическая компания в Израиле</h3>
+        <p class="case-story">Клиент тратил $2000/мес на Google Ads без аналитики. 70% бюджета уходило на нецелевые клики. Перестроили кампании с нуля: точные ключи, минус-слова, A/B тесты посадочных.</p>
+        <div class="case-context">Старт: <span>CPA $85</span> · Период: <span>3 месяца</span> · Бюджет: <span>$2000/мес</span></div>
+        <div class="case-pills"><span class="case-pill">Google Ads</span><span class="case-pill">A/B тесты</span><span class="case-pill">Аналитика</span></div>
+      </div>
+      <div class="case-metric">
+        <div class="case-big warn">−62%</div>
+        <div class="case-meta">стоимость заявки</div>
+        <div class="case-period">$85 → $32 за лид</div>
+      </div>
+    </div>
+    <div class="case-row reveal">
+      <div class="case-idx">002</div>
+      <div>
+        <div class="case-niche">Образование · Онлайн-курсы</div>
+        <h3 class="case-name">Онлайн-школа английского языка</h3>
+        <p class="case-story">Запуск с нуля в конкурентной нише. Построили воронку: поиск + ретаргетинг + квиз. За первый месяц — 47 заявок. К третьему — стабильный поток 120+/мес.</p>
+        <div class="case-context">Старт: <span>0 заявок, нет истории</span> · Период: <span>4 месяца</span> · Каналы: <span>Google + Яндекс</span></div>
+        <div class="case-pills"><span class="case-pill">Яндекс Директ</span><span class="case-pill">Ретаргетинг</span><span class="case-pill">Квиз-воронка</span></div>
+      </div>
+      <div class="case-metric">
+        <div class="case-big">120+</div>
+        <div class="case-meta">заявок в месяц</div>
+        <div class="case-period">0 → 120+ за 4 месяца</div>
+      </div>
+    </div>
+    <div class="case-row reveal">
+      <div class="case-idx">003</div>
+      <div>
+        <div class="case-niche">E-commerce · Товарный бизнес</div>
+        <h3 class="case-name">Интернет-магазин косметики</h3>
+        <p class="case-story">ROAS был 1.8 — на грани окупаемости. Переструктурировали кампании по маржинальности товаров, отключили 40% SKU из рекламы, усилили топ-конвертеры.</p>
+        <div class="case-context">Старт: <span>ROAS 1.8</span> · Период: <span>2 месяца</span> · Задача: <span>прибыльность, не охват</span></div>
+        <div class="case-pills"><span class="case-pill">Google Shopping</span><span class="case-pill">Маржинальность</span><span class="case-pill">ROAS</span></div>
+      </div>
+      <div class="case-metric">
+        <div class="case-big">×2.4</div>
+        <div class="case-meta">рост ROAS</div>
+        <div class="case-period">1.8 → 4.3 ROAS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="problems-wrap" id="problems">
   <div class="problems-head">
     <div><div class="s-tag reveal" data-ru="Знакомо?" data-en="Sound familiar?">Знакомо?</div><h2 class="s-title reveal" data-ru-html="С чем обычно <em>приходят</em>" data-en-html="What clients <em>come with</em>">С чем обычно <em>приходят</em></h2></div>
@@ -376,6 +500,31 @@ footer{padding:64px 64px 40px;background:var(--glass-bg);backdrop-filter:blur(12
     <div class="prob-card reveal"><div class="prob-num">04</div><h3 data-ru="Не знаю какой канал выбрать" data-en="Which channel to pick?">Не знаю какой канал выбрать</h3><p data-ru="Google, Яндекс, Meta — каждый требует своей стратегии. Без анализа ниши это лотерея." data-en="Google, Yandex, Meta — each needs its strategy. Without niche analysis, it's a lottery.">Google, Яндекс, Meta — каждый требует своей стратегии. Без анализа ниши это лотерея.</p></div>
     <div class="prob-card reveal"><div class="prob-num">05</div><h3 data-ru="Нет прозрачности в рекламе" data-en="No transparency">Нет прозрачности в рекламе</h3><p data-ru="Агентство присылает отчёты — но непонятно что за цифры и куда уходят деньги." data-en="Agency sends reports — but unclear what the numbers mean and where money goes.">Агентство присылает отчёты — но непонятно что за цифры и куда уходят деньги.</p></div>
     <div class="prob-card reveal"><div class="prob-num">06</div><h3 data-ru="Непонятно с чего начать" data-en="Where to start?">Непонятно с чего начать</h3><p data-ru="Рынок, конкуренты, бюджет — слишком много переменных. Нужна ясная стратегия входа." data-en="Market, competitors, budget — too many variables. Need clear entry strategy.">Рынок, конкуренты, бюджет — слишком много переменных. Нужна ясная стратегия входа.</p></div>
+  </div>
+</section>
+
+<section class="opinion-wrap" id="approach">
+  <div class="s-tag reveal" data-ru="Непопулярные мнения" data-en="Unpopular opinions">Непопулярные мнения</div>
+  <h2 class="s-title reveal" data-ru-html="То что <em>не скажут</em> другие агентства" data-en-html="What other agencies <em>won't tell</em> you">То что <em>не скажут</em> другие агентства</h2>
+  <div class="opinion-grid">
+    <div class="opinion-card reveal">
+      <span class="opinion-icon">💰</span>
+      <h3 class="opinion-claim" data-ru="90% рекламных бюджетов сливаются из-за лени" data-en="90% of ad budgets are wasted due to laziness">90% рекламных бюджетов сливаются из-за лени</h3>
+      <p class="opinion-text" data-ru="Агентство настроило кампанию и забыло. Оптимизация раз в месяц — это не оптимизация. Я смотрю в кампании каждый день первые 4 недели. Потому что первые данные — самые ценные." data-en="Agency set up a campaign and forgot. Monthly optimization isn't optimization. I check campaigns daily for the first 4 weeks. Because first data is the most valuable.">Агентство настроило кампанию и забыло. Оптимизация раз в месяц — это не оптимизация. Я смотрю в кампании каждый день первые 4 недели. Потому что первые данные — самые ценные.</p>
+      <span class="opinion-verdict">Позиция Дмитрия</span>
+    </div>
+    <div class="opinion-card reveal">
+      <span class="opinion-icon">📊</span>
+      <h3 class="opinion-claim" data-ru="CTR и клики — мусорные метрики" data-en="CTR and clicks are vanity metrics">CTR и клики — мусорные метрики</h3>
+      <p class="opinion-text" data-ru="Красивый CTR при плохом оффере = дорогие клики без конверсий. Я оптимизирую под CPA и ROAS — метрики которые показывают, зарабатываете вы или теряете деньги." data-en="Great CTR with bad offer = expensive clicks without conversions. I optimize for CPA and ROAS — metrics that show if you're making or losing money.">Красивый CTR при плохом оффере = дорогие клики без конверсий. Я оптимизирую под CPA и ROAS — метрики которые показывают, зарабатываете вы или теряете деньги.</p>
+      <span class="opinion-verdict">Позиция Дмитрия</span>
+    </div>
+    <div class="opinion-card reveal">
+      <span class="opinion-icon">🔄</span>
+      <h3 class="opinion-claim" data-ru="Реклама без аналитики — это казино" data-en="Ads without analytics is gambling">Реклама без аналитики — это казино</h3>
+      <p class="opinion-text" data-ru="Без сквозной аналитики вы не знаете, какой канал реально приносит деньги. Результат: бюджет размазан, ROI отрицательный, а агентство отчитывается кликами." data-en="Without end-to-end analytics you don't know which channel actually brings money. Result: budget spread thin, negative ROI, and agency reports clicks.">Без сквозной аналитики вы не знаете, какой канал реально приносит деньги. Результат: бюджет размазан, ROI отрицательный, а агентство отчитывается кликами.</p>
+      <span class="opinion-verdict">Позиция Дмитрия</span>
+    </div>
   </div>
 </section>
 
@@ -393,6 +542,75 @@ footer{padding:64px 64px 40px;background:var(--glass-bg);backdrop-filter:blur(12
     <div class="step reveal"><div class="step-dot">04</div><div class="step-body"><div class="step-phase" data-ru="Запуск и тест" data-en="Launch & test">Запуск и тест</div><h3 class="step-title" data-ru="A/B тестирование" data-en="A/B testing">A/B тестирование</h3><p class="step-text" data-ru="Запуск кампаний, тестирование креативов и аудиторий. Сбор данных для принятия решений на основе метрик." data-en="Campaign launch, creative and audience testing. Data-driven decisions.">Запуск кампаний, тестирование креативов и аудиторий. Сбор данных для принятия решений на основе метрик.</p><span class="step-dur">2–4 недели</span></div></div>
     <div class="step reveal"><div class="step-dot">05</div><div class="step-body"><div class="step-phase" data-ru="Масштабирование" data-en="Scale">Масштабирование</div><h3 class="step-title" data-ru="Рост и оптимизация" data-en="Growth & optimization">Рост и оптимизация</h3><p class="step-text" data-ru="Усиление рабочих связок, отключение неэффективного. Снижение CPA, увеличение объёма заявок." data-en="Amplify what works, cut what doesn't. Lower CPA, increase lead volume.">Усиление рабочих связок, отключение неэффективного. Снижение CPA, увеличение объёма заявок.</p><span class="step-dur">Месяц 2+</span></div></div>
     <div class="step reveal"><div class="step-dot">06</div><div class="step-body"><div class="step-phase" data-ru="Независимость" data-en="Independence">Независимость</div><h3 class="step-title" data-ru="Система которая работает сама" data-en="A system that runs itself">Система которая работает сама</h3><p class="step-text" data-ru="Цель не в том чтобы вы зависели от меня вечно. Цель — построить рекламную систему которая генерирует заявки предсказуемо. Когда это произойдёт — вы сами решаете продолжать или нет." data-en="The goal isn't to make you depend on me forever. The goal is to build an ad system that generates leads predictably. When that happens — you decide whether to continue or not.">Цель не в том чтобы вы зависели от меня вечно. Цель — построить рекламную систему которая генерирует заявки предсказуемо. Когда это произойдёт — вы сами решаете продолжать или нет.</p><span class="step-dur">Ваш выбор</span></div></div>
+  </div>
+</section>
+
+<section class="services-wrap" id="services">
+  <div class="services-head">
+    <div>
+      <div class="s-tag reveal" data-ru="Форматы работы" data-en="Services">Форматы работы</div>
+      <h2 class="s-title reveal" data-ru-html="Как мы можем <em>работать вместе</em>" data-en-html="How we can <em>work together</em>">Как мы можем <em>работать вместе</em></h2>
+    </div>
+    <p class="s-body reveal" data-ru="Работаю максимум с 6 клиентами одновременно. Не агентство — партнёр. У каждого проекта есть моё личное время и внимание." data-en="Maximum 6 clients at a time. Not an agency — a partner. Every project gets my personal time and attention.">Работаю максимум с 6 клиентами одновременно. Не агентство — партнёр. У каждого проекта есть моё личное время и внимание.</p>
+  </div>
+  <div class="services-grid">
+    <div class="svc reveal">
+      <div class="svc-badge">Популярный</div>
+      <div class="svc-label">Полный цикл</div>
+      <h3 class="svc-name" data-ru="Performance-маркетинг под ключ" data-en="Full-cycle performance marketing">Performance-маркетинг под ключ</h3>
+      <p class="svc-desc" data-ru="Беру полную ответственность за привлечение заявок. От аудита до масштабирования. Вы занимаетесь бизнесом — я занимаюсь рекламой." data-en="Full responsibility for lead generation. From audit to scaling. You run the business — I run the ads.">Беру полную ответственность за привлечение заявок. От аудита до масштабирования. Вы занимаетесь бизнесом — я занимаюсь рекламой.</p>
+      <ul class="svc-list"><li>Аудит текущих кампаний и аналитики</li><li>Стратегия и медиаплан с прогнозом CPA</li><li>Настройка и запуск кампаний</li><li>Ежедневная оптимизация первые 4 недели</li><li>Еженедельный отчёт с CPL и ROAS</li><li>Прямой доступ ко мне — не к менеджеру</li></ul>
+      <div class="svc-slots" data-ru="Сейчас открыто: <strong>2 места</strong>" data-en="Currently open: <strong>2 spots</strong>">Сейчас открыто: <strong>2 места</strong></div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-label">Стратегия</div>
+      <h3 class="svc-name" data-ru="Консалтинг для команд" data-en="Consulting for teams">Консалтинг для команд</h3>
+      <p class="svc-desc" data-ru="У вас есть маркетолог — нет системы. Разрабатываю стратегию, обучаю команду, контролирую качество. Вы делаете — я направляю." data-en="You have a marketer — no system. I develop strategy, train the team, control quality. You execute — I guide.">У вас есть маркетолог — нет системы. Разрабатываю стратегию, обучаю команду, контролирую качество. Вы делаете — я направляю.</p>
+      <ul class="svc-list"><li>Аудит и дорожная карта на 6 месяцев</li><li>Еженедельные стратегические сессии</li><li>Ревью кампаний и креативов</li><li>Обучение специалистов под ваши задачи</li></ul>
+      <div class="svc-slots" data-ru="Сейчас открыто: <strong>1 место</strong>" data-en="Currently open: <strong>1 spot</strong>">Сейчас открыто: <strong>1 место</strong></div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-label">Разовая задача</div>
+      <h3 class="svc-name" data-ru="Аудит рекламных кампаний" data-en="Ad campaign audit">Аудит рекламных кампаний</h3>
+      <p class="svc-desc" data-ru="Не шаблонный чеклист — анализ конкретно ваших кампаний с приоритизацией по влиянию на CPA и конверсию." data-en="Not a template checklist — analysis of your specific campaigns prioritized by CPA and conversion impact.">Не шаблонный чеклист — анализ конкретно ваших кампаний с приоритизацией по влиянию на CPA и конверсию.</p>
+      <ul class="svc-list"><li>Структура кампаний и ключевые слова</li><li>Качество объявлений и релевантность</li><li>Аналитика и отслеживание конверсий</li><li>Приоритизация задач по ROI</li></ul>
+      <div class="svc-slots" data-ru="Срок: <strong>5 рабочих дней</strong>" data-en="Timeline: <strong>5 business days</strong>">Срок: <strong>5 рабочих дней</strong></div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-label">Быстрый старт</div>
+      <h3 class="svc-name" data-ru="Запуск рекламы с нуля" data-en="Ads launch from scratch">Запуск рекламы с нуля</h3>
+      <p class="svc-desc" data-ru="Для тех кто ещё не запускал платную рекламу. Минимальный жизнеспособный запуск: одна кампания, точные ключи, тестовый бюджет." data-en="For those who haven't run paid ads yet. Minimum viable launch: one campaign, exact keywords, test budget.">Для тех кто ещё не запускал платную рекламу. Минимальный жизнеспособный запуск: одна кампания, точные ключи, тестовый бюджет.</p>
+      <ul class="svc-list"><li>Анализ ниши и конкурентов</li><li>Сбор семантики и минус-слов</li><li>Настройка аналитики и целей</li><li>Запуск и A/B тест объявлений</li></ul>
+      <div class="svc-slots" data-ru="Срок: <strong>7 рабочих дней</strong>" data-en="Timeline: <strong>7 business days</strong>">Срок: <strong>7 рабочих дней</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews-wrap">
+  <div class="s-tag reveal" data-ru="Отзывы" data-en="Reviews">Отзывы</div>
+  <h2 class="s-title reveal" data-ru-html="Что говорят люди <em>на самом деле</em>" data-en-html="What people <em>actually say</em>">Что говорят люди <em>на самом деле</em></h2>
+  <div class="reviews-grid">
+    <div class="review reveal">
+      <div class="review-result">CPA −62%</div>
+      <div class="review-q">"</div>
+      <p class="review-text" data-ru="Работали с двумя агентствами до Дмитрия. Везде одна история: красивые отчёты, непонятные клики, потом «нужно больше бюджета». Здесь по-другому — он объясняет каждое решение и его влияние на деньги." data-en="Worked with two agencies before Dmitry. Same story everywhere: pretty reports, unclear clicks, then 'need more budget'. Here it's different — he explains every decision and its impact on money.">Работали с двумя агентствами до Дмитрия. Везде одна история: красивые отчёты, непонятные клики, потом «нужно больше бюджета». Здесь по-другому — он объясняет каждое решение и его влияние на деньги.</p>
+      <div class="review-moment" data-ru="«Он первый кто показал связь между рекламой и реальной прибылью»" data-en="'He's the first to show the link between ads and actual profit'">«Он первый кто показал связь между рекламой и реальной прибылью»</div>
+      <div class="review-author"><div class="review-ava">А</div><div><div class="review-name">Анна К.</div><div class="review-role">CEO · Юридические услуги · Тель-Авив</div></div></div>
+    </div>
+    <div class="review reveal">
+      <div class="review-result">120+ лидов/мес</div>
+      <div class="review-q">"</div>
+      <p class="review-text" data-ru="Когда Дмитрий сказал что за месяц будут первые заявки — я не верила. Через 3 недели пошли звонки. Через 3 месяца мы не успевали обрабатывать. Пришлось нанимать второго менеджера." data-en="When Dmitry said there'd be first leads within a month — I didn't believe it. After 3 weeks calls started. After 3 months we couldn't keep up. Had to hire a second manager.">Когда Дмитрий сказал что за месяц будут первые заявки — я не верила. Через 3 недели пошли звонки. Через 3 месяца мы не успевали обрабатывать. Пришлось нанимать второго менеджера.</p>
+      <div class="review-moment" data-ru="«Пришлось нанимать второго менеджера — не ожидали такого потока»" data-en="'Had to hire a second manager — didn't expect such flow'">«Пришлось нанимать второго менеджера — не ожидали такого потока»</div>
+      <div class="review-author"><div class="review-ava">М</div><div><div class="review-name">Мария Б.</div><div class="review-role">Основатель · Онлайн-школа · Москва</div></div></div>
+    </div>
+    <div class="review reveal">
+      <div class="review-result">ROAS ×2.4</div>
+      <div class="review-q">"</div>
+      <p class="review-text" data-ru="Финансовый директор спрашивал зачем платить за консультанта если есть маркетолог. Теперь он сам спрашивает можем ли мы увеличить бюджет на рекламу — потому что видит возврат." data-en="CFO asked why pay for a consultant when we have a marketer. Now he asks if we can increase the ad budget — because he sees the return.">Финансовый директор спрашивал зачем платить за консультанта если есть маркетолог. Теперь он сам спрашивает можем ли мы увеличить бюджет на рекламу — потому что видит возврат.</p>
+      <div class="review-moment" data-ru="«Финдир который был против — теперь главный адвокат рекламного бюджета»" data-en="'The CFO who was against it is now the biggest advocate for the ad budget'">«Финдир который был против — теперь главный адвокат рекламного бюджета»</div>
+      <div class="review-author"><div class="review-ava">П</div><div><div class="review-name">Павел С.</div><div class="review-role">CMO · E-commerce · Израиль</div></div></div>
+    </div>
   </div>
 </section>
 
@@ -498,9 +716,9 @@ footer{padding:64px 64px 40px;background:var(--glass-bg);backdrop-filter:blur(12
     <div class="foot-col">
       <div class="foot-col-h" data-ru="Навигация" data-en="Navigation">Навигация</div>
       <ul>
-        <li><a href="#problems" data-ru="Ситуации" data-en="Problems">Ситуации</a></li>
+        <li><a href="#cases" data-ru="Кейсы" data-en="Cases">Кейсы</a></li>
+        <li><a href="#services" data-ru="Услуги" data-en="Services">Услуги</a></li>
         <li><a href="#process" data-ru="Процесс" data-en="Process">Процесс</a></li>
-        <li><a href="#about" data-ru="О себе" data-en="About">О себе</a></li>
         <li><a href="#blog" data-ru="Блог" data-en="Blog">Блог</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -527,7 +745,7 @@ const cur=document.getElementById('cur'),ring=document.getElementById('ring');
 let mx=innerWidth/2,my=innerHeight/2,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'},{passive:true});
 (function cl(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(cl)})();
-document.querySelectorAll('a,button,input,.prob-card,.hero-metric,.faq-item,.step,.blog-card').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('lh'));el.addEventListener('mouseleave',()=>document.body.classList.remove('lh'))});
+document.querySelectorAll('a,button,input,.prob-card,.hero-metric,.faq-item,.step,.blog-card,.case-row,.svc,.opinion-card,.review').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('lh'));el.addEventListener('mouseleave',()=>document.body.classList.remove('lh'))});
 
 /* Magnetic */
 document.querySelectorAll('.btn-main,.nav-pill,.tg-btn,.btn-gold,.wa-btn').forEach(btn=>{btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.22}px,${(e.clientY-r.top-r.height/2)*.22}px)`;btn.style.transition='transform .1s'});btn.addEventListener('mouseleave',()=>{btn.style.transform='';btn.style.transition='transform .5s cubic-bezier(.22,1,.36,1)'})});
