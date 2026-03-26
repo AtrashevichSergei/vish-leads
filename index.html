@@ -272,7 +272,7 @@ nav.stuck{padding:16px 64px;background:rgba(10,10,12,.92);backdrop-filter:blur(3
 /* BLOG — light section */
 .blog-wrap{padding:120px 64px;background:#d7d7e3;position:relative;overflow:hidden}
 .blog-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(0,0,0,.05) 1px,transparent 1px);background-size:18px 18px;z-index:0;pointer-events:none}
-#blogLiquidCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.25;mix-blend-mode:multiply}
+#blogLiquidCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.5}
 .blog-noise{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.6;mix-blend-mode:multiply}
 .blog-wrap .s-tag,.blog-wrap .s-title,.blog-grid{position:relative;z-index:1}
 .blog-wrap .s-tag{color:#2a5cb8}
@@ -1097,23 +1097,23 @@ if(langToggle)langToggle.textContent=currentLang==='ru'?'EN':'RU';
     const cam=new THREE.PerspectiveCamera(45,wrap.offsetWidth/wrap.offsetHeight,0.1,100);
     cam.position.set(0,2,3.5);
 
-    const ren=new THREE.WebGLRenderer({canvas,antialias:false,alpha:true});
+    const ren=new THREE.WebGLRenderer({canvas,antialias:false,alpha:false});
     ren.setPixelRatio(Math.min(devicePixelRatio,1.5));
-    ren.setClearColor(0x000000,0);
+    ren.setClearColor(0xd7d7e3);
 
     function sync(){const w=wrap.offsetWidth,h=wrap.offsetHeight;ren.setSize(w,h);cam.aspect=w/h;cam.updateProjectionMatrix()}
     sync();
 
-    const geo=new THREE.PlaneGeometry(10,10,150,150);
+    const geo=new THREE.PlaneGeometry(12,12,150,150);
     const mat=new THREE.ShaderMaterial({
       transparent:true,
       uniforms:{
         uTime:{value:0},
-        uColor1:{value:new THREE.Color('#a0a0b0')},
-        uColor2:{value:new THREE.Color('#b0b0c0')},
-        uColor3:{value:new THREE.Color('#c0c0d0')},
-        uColor4:{value:new THREE.Color('#d0d0e0')},
-        uColor5:{value:new THREE.Color('#e0e0ee')}
+        uColor1:{value:new THREE.Color('#707088')},
+        uColor2:{value:new THREE.Color('#8585a0')},
+        uColor3:{value:new THREE.Color('#9a9ab8')},
+        uColor4:{value:new THREE.Color('#b5b5d0')},
+        uColor5:{value:new THREE.Color('#d0d0e8')}
       },
       vertexShader:`
         uniform float uTime;
@@ -1139,8 +1139,7 @@ if(langToggle)langToggle.textContent=currentLang==='ru'?'EN':'RU';
           c=mix(c,uColor4,smoothstep(0.5,0.8,t));
           c=mix(c,uColor5,smoothstep(0.75,1.0,t));
           float spec=pow(max(t,0.0),14.0)*0.15;c+=spec;
-          float edge=smoothstep(0.0,0.15,vUv.x)*smoothstep(0.0,0.15,1.0-vUv.x)*smoothstep(0.0,0.2,vUv.y)*smoothstep(0.0,0.15,1.0-vUv.y);
-          gl_FragColor=vec4(c,edge*0.8);}`
+          gl_FragColor=vec4(c,1.0);}`
     });
     const mesh=new THREE.Mesh(geo,mat);
     mesh.rotation.x=-0.55;
