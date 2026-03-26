@@ -243,23 +243,27 @@ nav.stuck{padding:16px 64px;background:rgba(10,10,12,.92);backdrop-filter:blur(3
 
 /* ABOUT */
 .about-wrap{padding:120px 64px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
-.about-wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 50%,rgba(59,125,232,0.06),transparent 70%),radial-gradient(ellipse 60% 80% at 80% 30%,rgba(59,125,232,0.04),transparent 60%);pointer-events:none}
-.about-grid{display:grid;grid-template-columns:auto 1fr;gap:80px;align-items:start;margin-top:32px}
-.about-photo-wrap{position:relative;width:100%;max-width:340px;aspect-ratio:auto}
-.about-photo-wrap::before{content:'';position:absolute;inset:-12px;background:linear-gradient(135deg,rgba(59,125,232,0.2),transparent 50%,rgba(59,125,232,0.1));z-index:-1;filter:blur(2px)}
-.about-photo-wrap::after{content:'';position:absolute;bottom:-20px;left:10%;right:10%;height:40px;background:radial-gradient(ellipse,rgba(59,125,232,0.15),transparent);filter:blur(12px);z-index:-1}
-.about-photo{display:block;width:300px;height:auto;border-radius:0;filter:drop-shadow(0 20px 50px rgba(0,0,0,.5));transition:transform .6s cubic-bezier(.22,1,.36,1),filter .6s}
-.about-photo:hover{transform:translateY(-4px) scale(1.02);filter:drop-shadow(0 28px 60px rgba(59,125,232,.15))}
-.about-role{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:20px;display:flex;align-items:center;gap:12px}
-.about-role::before{content:'';display:block;width:24px;height:1px;background:var(--gold);box-shadow:0 0 8px rgba(59,125,232,0.4)}
-.about-bio{font-size:17px;font-weight:300;color:var(--light);line-height:1.8;margin-bottom:24px;max-width:520px}
+.about-top{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:40px;margin-bottom:64px}
+.about-photos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.about-photos img{width:100%;height:280px;object-fit:cover;object-position:top;filter:drop-shadow(0 12px 32px rgba(0,0,0,.4));transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.about-photos img:hover{transform:translateY(-4px)}
+.about-info{display:flex;flex-direction:column}
+.about-role{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.about-role::before{content:'';display:block;width:24px;height:1px;background:var(--gold)}
+.about-bio{font-size:17px;font-weight:300;color:var(--light);line-height:1.8;margin-bottom:20px;max-width:520px}
 .about-bio strong{color:var(--white);font-weight:600}
-.about-socials{display:flex;gap:10px;margin-bottom:28px}
-.about-socials a{width:40px;height:40px;border:1px solid var(--border-mid);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--mid);text-decoration:none;transition:all .3s;background:rgba(21,21,21,0.4);backdrop-filter:blur(8px)}
-.about-socials a:hover{border-color:var(--gold-bright);color:var(--gold-bright);transform:translateY(-2px);box-shadow:0 4px 16px rgba(59,125,232,0.15)}
-.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
-.tool{padding:6px 16px;border:1px solid var(--border-mid);border-radius:4px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:all .3s;background:rgba(21,21,21,0.3)}
-.tool:hover{border-color:rgba(59,125,232,0.3);color:var(--gold-bright);background:rgba(59,125,232,0.05)}
+.about-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);margin-bottom:24px}
+.about-stat{background:var(--deep);padding:20px 16px}
+.about-stat-val{font-family:var(--serif);font-size:28px;font-weight:900;color:var(--white);margin-bottom:4px}
+.about-stat-label{font-family:var(--mono);font-size:9px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.about-socials{display:flex;gap:10px;margin-bottom:24px}
+.about-socials a{width:40px;height:40px;border:1px solid var(--border-mid);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--mid);text-decoration:none;transition:all .3s;background:rgba(21,21,21,0.4)}
+.about-socials a:hover{border-color:var(--gold-bright);color:var(--gold-bright);transform:translateY(-2px)}
+.about-bottom{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.about-bottom .tools{display:flex;gap:8px;flex-wrap:wrap}
+.tool{padding:6px 16px;border:1px solid var(--border-mid);border-radius:var(--radius);font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:all .3s;background:rgba(21,21,21,0.3)}
+.tool:hover{border-color:rgba(5,48,140,0.3);color:var(--gold-bright);background:rgba(5,48,140,0.05)}
+@media(max-width:960px){.about-wrap{padding:80px 24px}.about-top{grid-template-columns:1fr;gap:32px}.about-photos{grid-template-columns:1fr 1fr}.about-photos img{height:200px}.about-bottom{grid-template-columns:1fr}.about-stats{grid-template-columns:1fr 1fr 1fr}}
 .price-box{background:rgba(15,15,18,0.7);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(59,125,232,0.1);border-radius:var(--radius);padding:40px;position:relative;overflow:hidden;transition:border-color .4s,box-shadow .4s}
 .price-box:hover{border-color:rgba(59,125,232,0.2);box-shadow:0 8px 40px rgba(59,125,232,0.08)}
 .price-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),#6ba3f7,var(--gold),transparent);background-size:200% 100%;animation:shimmer 3s ease-in-out infinite}
@@ -406,6 +410,7 @@ footer{padding:64px 64px 40px;background:var(--glass-bg);backdrop-filter:blur(12
     <li><a href="#cases" data-ru="Кейсы" data-en="Cases">Кейсы</a></li>
     <li><a href="#services" data-ru="Услуги" data-en="Services">Услуги</a></li>
     <li><a href="#process" data-ru="Процесс" data-en="Process">Процесс</a></li>
+    <li><a href="#about" data-ru="О себе" data-en="About">О себе</a></li>
     <li><a href="#blog" data-ru="Блог" data-en="Blog">Блог</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
@@ -416,6 +421,7 @@ footer{padding:64px 64px 40px;background:var(--glass-bg);backdrop-filter:blur(12
   <a href="#cases" onclick="closeMob()" data-ru="Кейсы" data-en="Cases">Кейсы</a>
   <a href="#services" onclick="closeMob()" data-ru="Услуги" data-en="Services">Услуги</a>
   <a href="#process" onclick="closeMob()" data-ru="Процесс" data-en="Process">Процесс</a>
+  <a href="#about" onclick="closeMob()" data-ru="О себе" data-en="About">О себе</a>
   <a href="#blog" onclick="closeMob()" data-ru="Блог" data-en="Blog">Блог</a>
   <a href="#faq" onclick="closeMob()">FAQ</a>
   <a href="#contact" onclick="closeMob()" data-ru="Обсудить" data-en="Discuss">Обсудить</a>
@@ -667,24 +673,36 @@ footer{padding:64px 64px 40px;background:var(--glass-bg);backdrop-filter:blur(12
 <section class="about-wrap" id="about">
   <div class="s-tag reveal" data-ru="О себе" data-en="About">О себе</div>
   <h2 class="s-title reveal">Дмитрий Вишневский</h2>
-  <div class="about-grid">
-    <div class="about-photo-wrap reveal"><img src="about-photo.png" alt="Дмитрий Вишневский" class="about-photo"></div>
-    <div>
+  <div class="about-top">
+    <div class="about-photos reveal">
+      <img src="hero-photo-laptop.png" alt="Дмитрий Вишневский за работой">
+      <img src="about-photo-2.webp" alt="Дмитрий Вишневский">
+    </div>
+    <div class="about-info">
       <p class="about-role reveal" data-ru="Performance-маркетолог · с 2020 года" data-en="Performance marketer · since 2020">Performance-маркетолог · с 2020 года</p>
-      <p class="about-bio reveal" data-ru-html="Специализируюсь на performance-маркетинге. Работаю <strong>напрямую</strong> с каждым проектом — без делегирования и посредников. Погружаюсь в юнит-экономику бизнеса, чтобы реклама была <strong>инвестицией с измеримым ROI</strong>, а не статьёй расходов." data-en-html="I specialize in performance marketing. Work <strong>directly</strong> on every project — no delegation. I dive into unit economics so advertising is an <strong>investment with measurable ROI</strong>.">Специализируюсь на performance-маркетинге. Работаю <strong>напрямую</strong> с каждым проектом — без делегирования и посредников. Погружаюсь в юнит-экономику бизнеса, чтобы реклама была <strong>инвестицией с измеримым ROI</strong>, а не статьёй расходов.</p>
+      <p class="about-bio reveal" data-ru-html="Работаю <strong>напрямую</strong> с каждым проектом — без делегирования и посредников. Погружаюсь в юнит-экономику бизнеса, чтобы реклама была <strong>инвестицией с измеримым ROI</strong>, а не статьёй расходов. Максимум 6 клиентов одновременно." data-en-html="I work <strong>directly</strong> on every project — no delegation. I dive into unit economics so advertising is an <strong>investment with measurable ROI</strong>. Max 6 clients at a time.">Работаю <strong>напрямую</strong> с каждым проектом — без делегирования и посредников. Погружаюсь в юнит-экономику бизнеса, чтобы реклама была <strong>инвестицией с измеримым ROI</strong>, а не статьёй расходов. Максимум 6 клиентов одновременно.</p>
+      <div class="about-stats reveal">
+        <div class="about-stat"><div class="about-stat-val">4+</div><div class="about-stat-label">лет опыта</div></div>
+        <div class="about-stat"><div class="about-stat-val">50+</div><div class="about-stat-label">проектов</div></div>
+        <div class="about-stat"><div class="about-stat-val">6</div><div class="about-stat-label">макс. клиентов</div></div>
+      </div>
       <div class="about-socials reveal">
         <a href="https://t.me/vishnevsky" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
         <a href="https://www.youtube.com/@vishnevsky" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
         <a href="https://www.linkedin.com/in/vishnevsky" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.064 2.064 0 1 1 0-4.128 2.064 2.064 0 0 1 0 4.128zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"/></svg></a>
       </div>
-      <div class="tools reveal"><span class="tool">Google Ads</span><span class="tool">Яндекс Директ</span><span class="tool">Analytics</span><span class="tool">Метрика</span><span class="tool">A/B тесты</span></div>
-      <div class="price-box reveal">
-        <div class="price-label" data-ru="Стоимость" data-en="Pricing">Стоимость</div>
-        <div class="price-val" data-ru="от $300" data-en="from $300">от $300</div>
-        <p class="price-note" data-ru="Рекламный бюджет — отдельно" data-en="Ad budget separate">Рекламный бюджет — отдельно</p>
-        <ul class="price-list"><li data-ru="Анализ и стратегия" data-en="Analysis & strategy">Анализ и стратегия</li><li data-ru="Подготовка инфраструктуры" data-en="Infrastructure">Подготовка инфраструктуры</li><li data-ru="Запуск кампаний" data-en="Launch">Запуск кампаний</li><li data-ru="Оптимизация и масштабирование" data-en="Optimization & scaling">Оптимизация и масштабирование</li></ul>
-        <a href="#contact" class="btn-gold" data-ru="Обсудить →" data-en="Discuss →">Обсудить →</a>
-      </div>
+    </div>
+  </div>
+  <div class="about-bottom reveal">
+    <div>
+      <div class="tools"><span class="tool">Google Ads</span><span class="tool">Яндекс Директ</span><span class="tool">Analytics</span><span class="tool">Метрика</span><span class="tool">A/B тесты</span><span class="tool">GTM</span><span class="tool">SEMrush</span><span class="tool">Ahrefs</span></div>
+    </div>
+    <div class="price-box">
+      <div class="price-label" data-ru="Стоимость" data-en="Pricing">Стоимость</div>
+      <div class="price-val" data-ru="от $300" data-en="from $300">от $300</div>
+      <p class="price-note" data-ru="Рекламный бюджет — отдельно" data-en="Ad budget separate">Рекламный бюджет — отдельно</p>
+      <ul class="price-list"><li>Анализ и стратегия</li><li>Подготовка инфраструктуры</li><li>Запуск кампаний</li><li>Оптимизация и масштабирование</li></ul>
+      <a href="#contact" class="btn-gold" data-ru="Обсудить →" data-en="Discuss →">Обсудить →</a>
     </div>
   </div>
 </section>
