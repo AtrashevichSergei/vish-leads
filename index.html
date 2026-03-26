@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"VISH-LEADS","provider":{"@type":"Person","name":"Дмитрий Вишневский","sameAs":["https://t.me/vishnevsky","https://www.youtube.com/@vishnevsky","https://www.linkedin.com/in/vishnevsky"]},"serviceType":"Контекстная реклама","priceRange":"от $300"}</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -38,20 +39,8 @@ body.lh #ring{width:52px;height:52px;border-color:rgba(59,125,232,.5)}
 #prog{position:fixed;top:0;left:0;height:1px;background:var(--gold);z-index:200;width:0;transition:width .1s linear}
 /* Particle trail canvas */
 #trail-canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9997}
-/* Hero animated background */
-.hero::after{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(59,125,232,.12) 1px,transparent 1px);background-size:24px 24px;pointer-events:none;z-index:0;opacity:0;animation:dotsIn 1.2s ease .4s forwards}
-@keyframes dotsIn{0%{opacity:0;background-size:32px 32px}100%{opacity:.35;background-size:24px 24px}}
-.hero-glitch{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.hero-glitch::before,.hero-glitch::after{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(59,125,232,.15) 1px,transparent 1px);background-size:24px 24px;opacity:.2}
-.hero-glitch::before{animation:glitch1 8s ease-in-out infinite}
-.hero-glitch::after{animation:glitch2 6s ease-in-out infinite;background-image:radial-gradient(circle,rgba(107,163,247,.1) 1px,transparent 1px);background-size:20px 20px}
-@keyframes glitch1{0%,92%,100%{transform:translate(0,0);opacity:.2}93%{transform:translate(-3px,1px);opacity:.4}95%{transform:translate(2px,-1px);opacity:.1}97%{transform:translate(-1px,2px);opacity:.35}}
-@keyframes glitch2{0%,88%,100%{transform:translate(0,0);opacity:.15}89%{transform:translate(4px,-2px);opacity:.3;background-size:22px 22px}91%{transform:translate(-2px,1px);opacity:.1}93%{transform:translate(1px,3px);opacity:.25;background-size:18px 18px}}
-.hero-glow{position:absolute;border-radius:50%;pointer-events:none;filter:blur(100px);will-change:transform;animation:heroFloat 20s ease-in-out infinite}
-.hero-glow-1{width:60vw;height:60vw;top:-20%;left:-15%;background:radial-gradient(circle,rgba(59,125,232,.14),transparent 70%)}
-.hero-glow-2{width:40vw;height:40vw;bottom:-10%;right:-10%;background:radial-gradient(circle,rgba(59,125,232,.10),transparent 70%);animation-delay:-8s;animation-duration:16s}
-.hero-glow-3{width:30vw;height:30vw;top:30%;left:40%;background:radial-gradient(circle,rgba(107,163,247,.08),transparent 70%);animation-delay:-14s;animation-duration:24s}
-@keyframes heroFloat{0%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,25px) scale(.95)}100%{transform:translate(0,0) scale(1)}}
+/* Hero liquid background */
+#heroLiquidCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 64px;transition:padding .4s,background .4s,border-color .4s,backdrop-filter .4s;border-bottom:1px solid transparent}
@@ -334,10 +323,7 @@ footer{padding:64px 64px 40px;background:var(--glass-bg);backdrop-filter:blur(12
 <canvas id="trail-canvas"></canvas>
 
 <section class="hero" id="hero">
-  <div class="hero-glitch"></div>
-  <div class="hero-glow hero-glow-1"></div>
-  <div class="hero-glow hero-glow-2"></div>
-  <div class="hero-glow hero-glow-3"></div>
+  <canvas id="heroLiquidCanvas"></canvas>
   <div class="hero-left">
     <div class="hero-status"><span class="hs-dot"></span> <span data-ru="Принимаю проекты" data-en="Accepting projects">Принимаю проекты</span></div>
     <h1 class="hero-h1" data-ru-html="Пока вы платите<br>за клики —<br><em>ваши конкуренты</em><br><span class='dim'>строят систему навсегда</span>" data-en-html="While you pay<br>for clicks —<br><em>your competitors</em><br><span class='dim'>build systems forever</span>">Пока вы платите<br>за клики —<br><em>ваши конкуренты</em><br><span class="dim">строят систему навсегда</span></h1>
@@ -670,8 +656,159 @@ if(langToggle)langToggle.textContent=currentLang==='ru'?'EN':'RU';
     });
   },200);
 })();
+</script>
 
+<script>
+/* ===== Hero Liquid Shader (MIT — original code) ===== */
+(function(){
+  if(typeof THREE==='undefined'){
+    const w=setInterval(()=>{if(typeof THREE!=='undefined'){clearInterval(w);init()}},150);
+    setTimeout(()=>clearInterval(w),8000);return;
+  }
+  init();
 
+  function init(){
+    const hero=document.getElementById('hero');
+    const canvas=document.getElementById('heroLiquidCanvas');
+    if(!hero||!canvas)return;
+
+    const scene=new THREE.Scene();
+    const cam=new THREE.PerspectiveCamera(45,hero.offsetWidth/hero.offsetHeight,0.1,100);
+    cam.position.set(0,0,4);
+
+    const ren=new THREE.WebGLRenderer({canvas,antialias:false,alpha:false});
+    ren.setPixelRatio(Math.min(devicePixelRatio,1.5));
+    ren.setClearColor(0x090909);
+
+    function sync(){
+      const w=hero.offsetWidth,h=hero.offsetHeight;
+      ren.setSize(w,h);cam.aspect=w/h;cam.updateProjectionMatrix();
+    }
+    sync();
+
+    /* Mouse tracking */
+    let mx=0,my=0,tmx=0,tmy=0;
+    hero.addEventListener('mousemove',e=>{
+      const r=hero.getBoundingClientRect();
+      tmx=(e.clientX-r.left)/r.width*2-1;
+      tmy=-((e.clientY-r.top)/r.height*2-1);
+    },{passive:true});
+
+    /* Liquid plane */
+    const geo=new THREE.PlaneGeometry(6,6,128,128);
+    const mat=new THREE.ShaderMaterial({
+      uniforms:{
+        uTime:{value:0},
+        uMouse:{value:new THREE.Vector2(0,0)},
+        uColor1:{value:new THREE.Color('#050508')},
+        uColor2:{value:new THREE.Color('#0a1a3a')},
+        uColor3:{value:new THREE.Color('#1a3a6e')},
+        uColor4:{value:new THREE.Color('#3b7de8')},
+        uColor5:{value:new THREE.Color('#6ba3f7')}
+      },
+      vertexShader:`
+        uniform float uTime;
+        uniform vec2 uMouse;
+        varying vec2 vUv;
+        varying float vDisp;
+
+        vec3 mod289(vec3 x){return x-floor(x/289.0)*289.0;}
+        vec4 mod289(vec4 x){return x-floor(x/289.0)*289.0;}
+        vec4 permute(vec4 x){return mod289(((x*34.0)+1.0)*x);}
+        vec4 taylorInvSqrt(vec4 r){return 1.79284291400159-0.85373472095314*r;}
+        float snoise(vec3 v){
+          const vec2 C=vec2(1.0/6.0,1.0/3.0);
+          vec3 i=floor(v+dot(v,C.yyy));vec3 x0=v-i+dot(i,C.xxx);
+          vec3 g=step(x0.yzx,x0.xyz);vec3 l=1.0-g;
+          vec3 i1=min(g,l.zxy);vec3 i2=max(g,l.zxy);
+          vec3 x1=x0-i1+C.xxx;vec3 x2=x0-i2+C.yyy;vec3 x3=x0-0.5;
+          i=mod289(i);
+          vec4 p=permute(permute(permute(i.z+vec4(0,i1.z,i2.z,1))+i.y+vec4(0,i1.y,i2.y,1))+i.x+vec4(0,i1.x,i2.x,1));
+          vec4 j=p-49.0*floor(p*(1.0/49.0));
+          vec4 x_=floor(j*(1.0/7.0));vec4 y_=floor(j-7.0*x_);
+          vec4 x=x_*(1.0/7.0)+(0.5/7.0)-0.5;
+          vec4 y=y_*(1.0/7.0)+(0.5/7.0)-0.5;
+          vec4 h=1.0-abs(x)-abs(y);
+          vec4 b0=vec4(x.xy,y.xy);vec4 b1=vec4(x.zw,y.zw);
+          vec4 s0=floor(b0)*2.0+1.0;vec4 s1=floor(b1)*2.0+1.0;
+          vec4 sh=-step(h,vec4(0));
+          vec4 a0=b0.xzyw+s0.xzyw*sh.xxyy;vec4 a1=b1.xzyw+s1.xzyw*sh.zzww;
+          vec3 p0=vec3(a0.xy,h.x);vec3 p1=vec3(a0.zw,h.y);
+          vec3 p2=vec3(a1.xy,h.z);vec3 p3=vec3(a1.zw,h.w);
+          vec4 norm=taylorInvSqrt(vec4(dot(p0,p0),dot(p1,p1),dot(p2,p2),dot(p3,p3)));
+          p0*=norm.x;p1*=norm.y;p2*=norm.z;p3*=norm.w;
+          vec4 m=max(0.5-vec4(dot(x0,x0),dot(x1,x1),dot(x2,x2),dot(x3,x3)),0.0);
+          m=m*m;return 105.0*dot(m*m,vec4(dot(p0,x0),dot(p1,x1),dot(p2,x2),dot(p3,x3)));
+        }
+
+        void main(){
+          vUv=uv;
+          vec3 p=position;
+          float t=uTime*0.4;
+          /* Multi-octave displacement */
+          float n=snoise(vec3(p.xy*0.8+uMouse*0.3,t))*1.2;
+          n+=snoise(vec3(p.xy*1.6-uMouse*0.2,t*1.3))*0.6;
+          n+=snoise(vec3(p.xy*3.2,t*0.7))*0.3;
+          p.z=n*0.5;
+          vDisp=n;
+
+          /* Subtle ripple near mouse */
+          float md=length(p.xy-uMouse*2.0);
+          p.z+=sin(md*4.0-uTime*2.0)*0.15*exp(-md*0.8);
+
+          gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.0);
+        }`,
+      fragmentShader:`
+        uniform float uTime;
+        uniform vec3 uColor1,uColor2,uColor3,uColor4,uColor5;
+        varying vec2 vUv;
+        varying float vDisp;
+
+        void main(){
+          /* Map displacement to color gradient */
+          float t=vDisp*0.5+0.5;
+          t=clamp(t,0.0,1.0);
+          t=t*t*(3.0-2.0*t); /* smoothstep */
+
+          vec3 c=mix(uColor1,uColor2,smoothstep(0.0,0.25,t));
+          c=mix(c,uColor3,smoothstep(0.2,0.5,t));
+          c=mix(c,uColor4,smoothstep(0.45,0.75,t));
+          c=mix(c,uColor5,smoothstep(0.7,1.0,t));
+
+          /* Subtle specular highlight */
+          float spec=pow(max(t,0.0),8.0)*0.3;
+          c+=spec*uColor5;
+
+          /* Film grain */
+          float grain=fract(sin(dot(vUv+uTime*0.01,vec2(12.9898,78.233)))*43758.5453);
+          c+=(grain-0.5)*0.025;
+
+          gl_FragColor=vec4(c,1.0);
+        }`
+    });
+
+    const mesh=new THREE.Mesh(geo,mat);
+    mesh.rotation.x=-0.6;
+    scene.add(mesh);
+
+    let vis=true;
+    const io=new IntersectionObserver(([e])=>{vis=e.isIntersecting},{threshold:0.01});
+    io.observe(hero);
+
+    const clock=new THREE.Clock();
+    (function tick(){
+      requestAnimationFrame(tick);
+      if(!vis)return;
+      mx+=(tmx-mx)*0.05;
+      my+=(tmy-my)*0.05;
+      mat.uniforms.uMouse.value.set(mx,my);
+      mat.uniforms.uTime.value=clock.getElapsedTime();
+      ren.render(scene,cam);
+    })();
+
+    window.addEventListener('resize',sync);
+  }
+})();
 </script>
 </body>
 </html>
