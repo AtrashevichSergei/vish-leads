@@ -245,8 +245,9 @@ nav.stuck{padding:16px 64px;background:rgba(10,10,12,.92);backdrop-filter:blur(3
 .about-wrap{padding:120px 64px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
 .about-top{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:40px;margin-bottom:64px}
 .about-photos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.about-photos img{width:100%;max-height:400px;object-fit:contain;object-position:center;filter:drop-shadow(0 12px 32px rgba(0,0,0,.4));transition:transform .5s cubic-bezier(.22,1,.36,1)}
-.about-photos img:hover{transform:translateY(-4px)}
+.about-photo-fade{position:relative;overflow:hidden}
+.about-photo-fade::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(transparent,var(--black));pointer-events:none}
+.about-photos img{width:100%;max-height:400px;object-fit:contain;object-position:center;display:block}
 .about-info{display:flex;flex-direction:column}
 .about-name{font-family:var(--serif);font-size:clamp(28px,3vw,42px);font-weight:900;color:transparent;margin-top:16px;grid-column:1/-1;background:var(--deep);-webkit-background-clip:text;background-clip:text;text-shadow:0 2px 3px rgba(255,255,255,.08);letter-spacing:-.01em}
 .about-role{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:16px;display:flex;align-items:center;gap:12px}
@@ -675,10 +676,10 @@ footer{padding:64px 64px 40px;background:var(--glass-bg);backdrop-filter:blur(12
   <div class="s-tag reveal" data-ru="О себе" data-en="About">О себе</div>
   <div class="about-top">
     <div class="about-photos reveal">
-      <img src="about-photo-main.webp" alt="Дмитрий Вишневский" style="grid-column:1/-1">
-      <h2 class="about-name">Дмитрий Вишневский</h2>
+      <div class="about-photo-fade"><img src="about-photo-main.webp" alt="Дмитрий Вишневский"></div>
     </div>
     <div class="about-info">
+      <h2 class="about-name reveal">Дмитрий Вишневский</h2>
       <p class="about-role reveal" data-ru="Performance-маркетолог · с 2020 года" data-en="Performance marketer · since 2020">Performance-маркетолог · с 2020 года</p>
       <p class="about-bio reveal" data-ru-html="Работаю <strong>напрямую</strong> с каждым проектом — без делегирования и посредников. Погружаюсь в юнит-экономику бизнеса, чтобы реклама была <strong>инвестицией с измеримым ROI</strong>, а не статьёй расходов. Максимум 6 клиентов одновременно." data-en-html="I work <strong>directly</strong> on every project — no delegation. I dive into unit economics so advertising is an <strong>investment with measurable ROI</strong>. Max 6 clients at a time.">Работаю <strong>напрямую</strong> с каждым проектом — без делегирования и посредников. Погружаюсь в юнит-экономику бизнеса, чтобы реклама была <strong>инвестицией с измеримым ROI</strong>, а не статьёй расходов. Максимум 6 клиентов одновременно.</p>
       <div class="about-stats reveal">
