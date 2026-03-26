@@ -40,7 +40,9 @@ body.lh #ring{width:52px;height:52px;border-color:rgba(59,125,232,.5)}
 /* Particle trail canvas */
 #trail-canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9997}
 /* Hero liquid background */
-#heroLiquidCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(59,125,232,.08) 1px,transparent 1px);background-size:20px 20px;z-index:0;pointer-events:none}
+#heroLiquidCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.55}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,9,9,.3) 0%,transparent 30%,transparent 70%,rgba(9,9,9,.5) 100%);z-index:0;pointer-events:none}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 64px;transition:padding .4s,background .4s,border-color .4s,backdrop-filter .4s;border-bottom:1px solid transparent}
@@ -892,9 +894,9 @@ if(langToggle)langToggle.textContent=currentLang==='ru'?'EN':'RU';
     const cam=new THREE.PerspectiveCamera(45,hero.offsetWidth/hero.offsetHeight,0.1,100);
     cam.position.set(0,2.5,3);
 
-    const ren=new THREE.WebGLRenderer({canvas,antialias:false,alpha:false});
+    const ren=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
     ren.setPixelRatio(Math.min(devicePixelRatio,1.5));
-    ren.setClearColor(0x090909);
+    ren.setClearColor(0x000000,0);
 
     function sync(){
       const w=hero.offsetWidth,h=hero.offsetHeight;
@@ -911,16 +913,17 @@ if(langToggle)langToggle.textContent=currentLang==='ru'?'EN':'RU';
     },{passive:true});
 
     /* Liquid plane */
-    const geo=new THREE.PlaneGeometry(8,8,128,128);
+    const geo=new THREE.PlaneGeometry(10,10,200,200);
     const mat=new THREE.ShaderMaterial({
+      transparent:true,
       uniforms:{
         uTime:{value:0},
         uMouse:{value:new THREE.Vector2(0,0)},
-        uColor1:{value:new THREE.Color('#050508')},
-        uColor2:{value:new THREE.Color('#0d2040')},
-        uColor3:{value:new THREE.Color('#1e4578')},
-        uColor4:{value:new THREE.Color('#3b7de8')},
-        uColor5:{value:new THREE.Color('#8ab4f7')}
+        uColor1:{value:new THREE.Color('#030308')},
+        uColor2:{value:new THREE.Color('#08142a')},
+        uColor3:{value:new THREE.Color('#122850')},
+        uColor4:{value:new THREE.Color('#2a5cb8')},
+        uColor5:{value:new THREE.Color('#5088d8')}
       },
       vertexShader:`
         uniform float uTime;
@@ -960,17 +963,19 @@ if(langToggle)langToggle.textContent=currentLang==='ru'?'EN':'RU';
         void main(){
           vUv=uv;
           vec3 p=position;
-          float t=uTime*0.4;
-          /* Multi-octave displacement */
-          float n=snoise(vec3(p.xy*0.8+uMouse*0.3,t))*1.2;
-          n+=snoise(vec3(p.xy*1.6-uMouse*0.2,t*1.3))*0.6;
-          n+=snoise(vec3(p.xy*3.2,t*0.7))*0.3;
-          p.z=n*0.8;
+          float t=uTime*0.25;
+          /* Multi-octave smooth displacement */
+          float n=snoise(vec3(p.xy*0.5+uMouse*0.2,t))*1.0;
+          n+=snoise(vec3(p.xy*1.0-uMouse*0.15,t*0.8))*0.5;
+          n+=snoise(vec3(p.xy*2.0,t*0.5))*0.2;
+          /* Smooth the displacement curve */
+          n=n*n*sign(n)*0.6;
+          p.z=n;
           vDisp=n;
 
-          /* Subtle ripple near mouse */
-          float md=length(p.xy-uMouse*2.0);
-          p.z+=sin(md*4.0-uTime*2.0)*0.15*exp(-md*0.8);
+          /* Soft ripple near mouse */
+          float md=length(p.xy-uMouse*2.5);
+          p.z+=sin(md*3.0-uTime*1.5)*0.1*exp(-md*0.6);
 
           gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.0);
         }`,
@@ -981,25 +986,31 @@ if(langToggle)langToggle.textContent=currentLang==='ru'?'EN':'RU';
         varying float vDisp;
 
         void main(){
-          /* Map displacement to color gradient */
-          float t=vDisp*0.5+0.5;
+          /* Map displacement to color gradient — wider, softer bands */
+          float t=vDisp*0.4+0.5;
           t=clamp(t,0.0,1.0);
-          t=t*t*(3.0-2.0*t); /* smoothstep */
+          /* Double smoothstep for extra-soft transitions */
+          t=t*t*(3.0-2.0*t);
+          t=t*t*(3.0-2.0*t);
 
-          vec3 c=mix(uColor1,uColor2,smoothstep(0.0,0.25,t));
-          c=mix(c,uColor3,smoothstep(0.2,0.5,t));
-          c=mix(c,uColor4,smoothstep(0.45,0.75,t));
-          c=mix(c,uColor5,smoothstep(0.7,1.0,t));
+          vec3 c=mix(uColor1,uColor2,smoothstep(0.0,0.3,t));
+          c=mix(c,uColor3,smoothstep(0.25,0.55,t));
+          c=mix(c,uColor4,smoothstep(0.5,0.8,t));
+          c=mix(c,uColor5,smoothstep(0.75,1.0,t));
 
-          /* Subtle specular highlight */
-          float spec=pow(max(t,0.0),8.0)*0.3;
+          /* Soft specular — less intense, more spread */
+          float spec=pow(max(t,0.0),12.0)*0.2;
           c+=spec*uColor5;
 
-          /* Film grain */
+          /* Subtle film grain */
           float grain=fract(sin(dot(vUv+uTime*0.01,vec2(12.9898,78.233)))*43758.5453);
-          c+=(grain-0.5)*0.025;
+          c+=(grain-0.5)*0.02;
 
-          gl_FragColor=vec4(c,1.0);
+          /* Fade edges to transparent */
+          float edge=smoothstep(0.0,0.15,vUv.x)*smoothstep(0.0,0.15,1.0-vUv.x);
+          edge*=smoothstep(0.0,0.2,vUv.y)*smoothstep(0.0,0.15,1.0-vUv.y);
+
+          gl_FragColor=vec4(c,edge*0.9);
         }`
     });
 
