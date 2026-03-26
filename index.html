@@ -248,6 +248,7 @@ nav.stuck{padding:16px 64px;background:rgba(10,10,12,.92);backdrop-filter:blur(3
 .about-photos img{width:100%;height:280px;object-fit:cover;object-position:top;filter:drop-shadow(0 12px 32px rgba(0,0,0,.4));transition:transform .5s cubic-bezier(.22,1,.36,1)}
 .about-photos img:hover{transform:translateY(-4px)}
 .about-info{display:flex;flex-direction:column}
+.about-name{font-family:var(--serif);font-size:clamp(24px,2.5vw,32px);font-weight:700;color:var(--white);margin-bottom:8px}
 .about-role{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:16px;display:flex;align-items:center;gap:12px}
 .about-role::before{content:'';display:block;width:24px;height:1px;background:var(--gold)}
 .about-bio{font-size:17px;font-weight:300;color:var(--light);line-height:1.8;margin-bottom:20px;max-width:520px}
@@ -672,12 +673,12 @@ footer{padding:64px 64px 40px;background:var(--glass-bg);backdrop-filter:blur(12
 
 <section class="about-wrap" id="about">
   <div class="s-tag reveal" data-ru="О себе" data-en="About">О себе</div>
-  <h2 class="s-title reveal">Дмитрий Вишневский</h2>
   <div class="about-top">
     <div class="about-photos reveal">
-      <img src="about-photo-main.webp" alt="Дмитрий Вишневский" style="grid-column:1/-1;height:auto;max-height:400px;object-fit:contain;object-position:center">
+      <img src="about-photo-main.webp" alt="Дмитрий Вишневский" style="grid-column:1/-1;height:auto;max-height:300px;object-fit:contain;object-position:center">
     </div>
     <div class="about-info">
+      <h2 class="about-name reveal">Дмитрий Вишневский</h2>
       <p class="about-role reveal" data-ru="Performance-маркетолог · с 2020 года" data-en="Performance marketer · since 2020">Performance-маркетолог · с 2020 года</p>
       <p class="about-bio reveal" data-ru-html="Работаю <strong>напрямую</strong> с каждым проектом — без делегирования и посредников. Погружаюсь в юнит-экономику бизнеса, чтобы реклама была <strong>инвестицией с измеримым ROI</strong>, а не статьёй расходов. Максимум 6 клиентов одновременно." data-en-html="I work <strong>directly</strong> on every project — no delegation. I dive into unit economics so advertising is an <strong>investment with measurable ROI</strong>. Max 6 clients at a time.">Работаю <strong>напрямую</strong> с каждым проектом — без делегирования и посредников. Погружаюсь в юнит-экономику бизнеса, чтобы реклама была <strong>инвестицией с измеримым ROI</strong>, а не статьёй расходов. Максимум 6 клиентов одновременно.</p>
       <div class="about-stats reveal">
