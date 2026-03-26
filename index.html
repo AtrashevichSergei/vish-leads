@@ -97,16 +97,10 @@ nav.stuck{padding:16px 64px;background:rgba(9,9,9,.92);backdrop-filter:blur(32px
 .hero-metric-unit{font-family:var(--mono);font-size:0.5em;color:var(--gold);font-weight:400;margin-left:2px}
 .hero-metric-label{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--mid);line-height:1.4;text-transform:uppercase}
 
-/* Hero tools marquee */
-.hero-tools{width:100%;max-width:420px;overflow:hidden;position:relative;opacity:0;animation:up .7s ease .8s forwards;margin-top:20px}
-.hero-tools::before,.hero-tools::after{content:'';position:absolute;top:0;bottom:0;width:40px;z-index:2;pointer-events:none}
-.hero-tools::before{left:0;background:linear-gradient(90deg,rgba(9,9,9,1),transparent)}
-.hero-tools::after{right:0;background:linear-gradient(90deg,transparent,rgba(9,9,9,1))}
-.hero-tools-track{display:flex;gap:0;width:max-content;animation:toolsScroll 25s linear infinite}
-.hero-tools-track:hover{animation-play-state:paused}
-.hero-tool{flex-shrink:0;padding:8px 16px;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap;border-right:1px solid var(--border);transition:color .3s}
-.hero-tool:hover{color:var(--gold)}
-@keyframes toolsScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* Hero tools tabs */
+.hero-tools{display:flex;flex-wrap:wrap;gap:6px;max-width:420px;opacity:0;animation:up .7s ease .8s forwards;margin-top:20px}
+.hero-tool{padding:5px 12px;font-family:var(--mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);background:rgba(255,255,255,.02);transition:color .3s,border-color .3s,background .3s}
+.hero-tool:hover{color:var(--gold);border-color:rgba(59,125,232,.2);background:rgba(59,125,232,.04)}
 
 .hero-scroll{position:absolute;bottom:40px;left:64px;display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);opacity:0;animation:up .7s ease .9s forwards}
 .hero-scroll-line{width:40px;height:1px;background:var(--muted);animation:scrollLine 2s ease infinite}
@@ -438,32 +432,18 @@ footer{padding:64px 64px 40px;background:var(--glass-bg);backdrop-filter:blur(12
       </div>
     </div>
     <div class="hero-tools">
-      <div class="hero-tools-track">
-        <span class="hero-tool">Google Ads</span>
-        <span class="hero-tool">Яндекс Директ</span>
-        <span class="hero-tool">Google Analytics 4</span>
-        <span class="hero-tool">Яндекс Метрика</span>
-        <span class="hero-tool">Google Tag Manager</span>
-        <span class="hero-tool">Meta Ads</span>
-        <span class="hero-tool">Ahrefs</span>
-        <span class="hero-tool">SEMrush</span>
-        <span class="hero-tool">Screaming Frog</span>
-        <span class="hero-tool">Google Search Console</span>
-        <span class="hero-tool">Looker Studio</span>
-        <span class="hero-tool">Hotjar</span>
-        <span class="hero-tool">Google Ads</span>
-        <span class="hero-tool">Яндекс Директ</span>
-        <span class="hero-tool">Google Analytics 4</span>
-        <span class="hero-tool">Яндекс Метрика</span>
-        <span class="hero-tool">Google Tag Manager</span>
-        <span class="hero-tool">Meta Ads</span>
-        <span class="hero-tool">Ahrefs</span>
-        <span class="hero-tool">SEMrush</span>
-        <span class="hero-tool">Screaming Frog</span>
-        <span class="hero-tool">Google Search Console</span>
-        <span class="hero-tool">Looker Studio</span>
-        <span class="hero-tool">Hotjar</span>
-      </div>
+      <span class="hero-tool">Google Ads</span>
+      <span class="hero-tool">Яндекс Директ</span>
+      <span class="hero-tool">GA4</span>
+      <span class="hero-tool">Метрика</span>
+      <span class="hero-tool">GTM</span>
+      <span class="hero-tool">Meta Ads</span>
+      <span class="hero-tool">Ahrefs</span>
+      <span class="hero-tool">SEMrush</span>
+      <span class="hero-tool">Screaming Frog</span>
+      <span class="hero-tool">Search Console</span>
+      <span class="hero-tool">Looker Studio</span>
+      <span class="hero-tool">Hotjar</span>
     </div>
   </div>
 </section>
