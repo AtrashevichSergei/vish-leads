@@ -606,7 +606,9 @@ details[open] summary::after{transform:rotate(45deg)}
 const LD=document.getElementById('loader');
 'VISH-LEADS'.split('').forEach((c,i)=>{const s=document.createElement('span');s.className='loader-letter';s.textContent=c;s.style.animationDelay=(.6+i*.06)+'s';document.getElementById('loaderWord').appendChild(s)});
 requestAnimationFrame(()=>LD.classList.add('go'));
-window.addEventListener('load',()=>setTimeout(()=>{LD.classList.add('out');setTimeout(initPage,600)},1800));
+/* Start init immediately, don't wait for loader */
+initPage();
+window.addEventListener('load',()=>setTimeout(()=>LD.classList.add('out'),1400));
 
 /* ═══ 2. CUSTOM CURSOR + MAGNETIC ═══ */
 const ring=document.getElementById('curRing'),dot=document.getElementById('curDot');
