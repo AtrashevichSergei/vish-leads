@@ -73,6 +73,9 @@ nav.stuck{padding:16px 64px;background:rgba(10,10,12,.92);backdrop-filter:blur(3
 .hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
 .hero-left{display:flex;flex-direction:column;justify-content:center;padding:160px 80px 100px 64px;border-right:1px solid var(--border);position:relative;z-index:1}
 .hero-right{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:160px 64px 100px 80px;position:relative;z-index:1}
+.hero-photo-wrap{margin-bottom:32px;opacity:0;animation:up .7s ease .5s forwards}
+.hero-photo-wrap img{width:280px;height:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.4));transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.hero-photo-wrap img:hover{transform:translateY(-4px) scale(1.02)}
 .hero-status{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border:1px solid rgba(61,143,95,.3);background:rgba(61,143,95,.07);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--green-light);margin-bottom:36px;width:fit-content;opacity:0;animation:up .7s ease .15s forwards}
 .hs-dot{width:5px;height:5px;background:var(--green-light);border-radius:50%;animation:blink 2s ease infinite}
 .hero-h1{font-family:var(--serif);font-size:clamp(40px,5vw,72px);font-weight:900;line-height:.95;letter-spacing:-.02em;margin-bottom:24px;opacity:0;animation:up .7s ease .3s forwards}
@@ -436,6 +439,7 @@ footer{padding:64px 64px 40px;background:var(--glass-bg);backdrop-filter:blur(12
     <div class="hero-scroll"><span class="hero-scroll-line"></span> Скролл</div>
   </div>
   <div class="hero-right">
+    <div class="hero-photo-wrap"><img src="hero-photo-laptop.png" alt="Дмитрий Вишневский"></div>
     <div class="hero-metrics">
       <div class="hero-metric reveal">
         <div class="hero-metric-val"><span class="cv" data-counter="4" data-suffix="+">0</span></div>
