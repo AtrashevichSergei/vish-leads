@@ -208,23 +208,32 @@ nav.stuck{padding:16px 64px;background:rgba(10,10,12,.92);backdrop-filter:blur(3
 .prob-card p{font-size:13px;font-weight:300;color:var(--mid);line-height:1.7}
 @media(max-width:960px){.problems-wrap{padding:80px 24px}.problems-head{grid-template-columns:1fr;gap:24px}.prob-grid{grid-template-columns:1fr}}
 
-/* PROCESS */
-.process-wrap{padding:120px 64px;background:var(--surface);border-bottom:1px solid var(--border);position:relative;overflow:hidden}
-.process-wrap>.noise-overlay{z-index:0}
+/* PROCESS — light section */
+.process-wrap{padding:120px 64px;background:#d7d7e3;border-bottom:none;position:relative;overflow:hidden}
+/* Dot pattern */
+.process-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(0,0,0,.06) 1px,transparent 1px);background-size:18px 18px;z-index:0;pointer-events:none}
+/* Noise overlay */
+.process-wrap>.noise-overlay{z-index:0;opacity:.35;mix-blend-mode:multiply}
 .process-wrap>.s-tag,.process-wrap>.s-title,.process-head,.process-steps{position:relative;z-index:1}
 .process-head{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-bottom:80px;align-items:end}
 .process-steps{position:relative}
-.process-spine{position:absolute;left:27px;top:0;bottom:0;width:1px;background:var(--border)}
-.spine-progress{position:absolute;left:27px;top:0;width:1px;height:0;background:var(--gold);transition:height .3s;z-index:1;box-shadow:0 0 8px rgba(59,125,232,0.3)}
+.process-spine{position:absolute;left:27px;top:0;bottom:0;width:1px;background:rgba(0,0,0,.1)}
+.spine-progress{position:absolute;left:27px;top:0;width:1px;height:0;background:#2a5cb8;transition:height .3s;z-index:1;box-shadow:0 0 8px rgba(42,92,184,0.3)}
 .step{display:grid;grid-template-columns:56px 1fr;gap:36px;padding-bottom:60px;position:relative}
 .step:last-child{padding-bottom:0}
-.step-dot{width:56px;height:56px;border-radius:50%;border:var(--glass-border);background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;color:var(--gold);flex-shrink:0;position:relative;z-index:1;transition:all .3s}
-.step:hover .step-dot{background:var(--gold);border-color:var(--gold);color:var(--black)}
+.step-dot{width:56px;height:56px;border-radius:50%;border:1px solid rgba(0,0,0,.08);background:rgba(255,255,255,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;color:#2a5cb8;flex-shrink:0;position:relative;z-index:1;transition:all .3s}
+.step:hover .step-dot{background:#2a5cb8;border-color:#2a5cb8;color:#fff}
 .step-body{padding-top:14px}
-.step-phase{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.step-title{font-family:var(--serif);font-size:21px;font-weight:700;color:var(--white);margin-bottom:10px}
-.step-text{font-size:13px;font-weight:300;color:var(--mid);line-height:1.7;max-width:520px;margin-bottom:14px}
-.step-dur{display:inline-flex;padding:5px 12px;border:1px solid var(--border);font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.step-phase{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#2a5cb8;margin-bottom:8px}
+.step-title{font-family:var(--serif);font-size:21px;font-weight:700;color:#1a1a2e;margin-bottom:10px}
+.step-text{font-size:13px;font-weight:300;color:#5a5a6e;line-height:1.7;max-width:520px;margin-bottom:14px}
+.step-dur{display:inline-flex;padding:5px 12px;border:1px solid rgba(0,0,0,.1);border-radius:var(--radius);font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:#6a6a7e;text-transform:uppercase;background:rgba(255,255,255,.3)}
+/* Override s-tag and s-title colors in light section */
+.process-wrap .s-tag{color:#2a5cb8}
+.process-wrap .s-tag::before{background:#2a5cb8}
+.process-wrap .s-title{color:#1a1a2e}
+.process-wrap .s-title em{color:#2a5cb8}
+.process-wrap .s-body{color:#5a5a6e}
 @media(max-width:960px){.process-wrap{padding:80px 24px}.process-head{grid-template-columns:1fr;gap:24px}}
 
 /* ABOUT */
