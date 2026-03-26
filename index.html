@@ -200,7 +200,7 @@ nav.stuck{padding:16px 64px;background:rgba(10,10,12,.92);backdrop-filter:blur(3
 .problems-head{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-bottom:72px;align-items:end}
 .prob-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border)}
 .prob-card{background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:var(--glass-border);padding:40px 32px;position:relative;overflow:hidden;transition:background .3s,transform .3s,box-shadow .3s}
-.prob-card canvas.tv-noise{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.08;image-rendering:pixelated}
+.prob-card canvas.tv-noise{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.15}
 .prob-card:hover{background:rgba(21,21,21,0.75);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.3)}
 .prob-card::before{content:'';position:absolute;top:0;left:0;width:0;height:2px;background:var(--gold);transition:width .4s}
 .prob-card:hover::before{width:100%}
@@ -928,24 +928,24 @@ if(langToggle)langToggle.textContent=currentLang==='ru'?'EN':'RU';
   cards.forEach(card=>{
     const c=document.createElement('canvas');
     c.className='tv-noise';
-    c.width=200;c.height=200;
     card.appendChild(c);
     const ctx=c.getContext('2d');
-    const img=ctx.createImageData(200,200);
-    function noise(){
-      const d=img.data;
-      for(let i=0;i<d.length;i+=4){
-        const v=Math.random()*255|0;
-        d[i]=d[i+1]=d[i+2]=v;d[i+3]=255;
-      }
-      ctx.putImageData(img,0,0);
-      requestAnimationFrame(noise);
-    }
-    /* Only animate when visible */
+    /* Size canvas to card */
+    function resize(){c.width=card.offsetWidth;c.height=card.offsetHeight}
+    resize();
     let vis=false,raf;
     const io=new IntersectionObserver(([e])=>{
       vis=e.isIntersecting;
-      if(vis&&!raf)raf=requestAnimationFrame(function loop(){ctx.putImageData(img,0,0);const d=img.data;for(let i=0;i<d.length;i+=4){const v=Math.random()*255|0;d[i]=d[i+1]=d[i+2]=v}if(vis)raf=requestAnimationFrame(loop);else raf=null});
+      if(vis&&!raf){
+        resize();
+        const w=c.width,h=c.height,img=ctx.createImageData(w,h);
+        raf=requestAnimationFrame(function loop(){
+          const d=img.data;
+          for(let i=0;i<d.length;i+=4){const v=Math.random()*255|0;d[i]=d[i+1]=d[i+2]=v;d[i+3]=255}
+          ctx.putImageData(img,0,0);
+          if(vis)raf=requestAnimationFrame(loop);else raf=null;
+        });
+      }
     },{threshold:0.01});
     io.observe(card);
   });
