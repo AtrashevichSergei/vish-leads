@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Как снизить CPA в 3 раза за месяц оптимизации — Вишневский</title>
+<meta name="description" content="Кейс: снижение стоимости заявки с $45 до $14 за месяц. Отключение нерелевантных ключей, переработка объявлений, минус-слова и A/B тесты лендинга.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.88em' font-size='85' fill='%233b7de8'>V</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0a0a0c;--deep:#121215;--surface:#18181c;--border:#252528;
+  --muted:#4a4a52;--mid:#8a8a95;--light:#c5c2bc;--white:#f0ece6;
+  --gold:#05308C;--gold-bright:#3366cc;--gold-dim:rgba(5,48,140,.10);
+  --green:#3d8f5f;--green-light:#5bb37a;
+  --serif:'Playfair Display',Georgia,serif;
+  --mono:'DM Mono',monospace;
+  --sans:'Manrope',system-ui,sans-serif;
+}
+html{font-size:16px}
+body{background:var(--black);color:var(--white);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(59,125,232,.2)}
+
+.article-wrap{max-width:720px;margin:0 auto;padding:80px 24px 100px}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .25s;margin-bottom:48px}
+.back-link:hover{color:var(--gold-bright)}
+
+.article-tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-bright);padding:5px 14px;border:1px solid rgba(51,102,204,.25);background:var(--gold-dim);margin-bottom:20px;border-radius:3px}
+.article-title{font-family:var(--serif);font-size:clamp(32px,5vw,48px);font-weight:900;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px}
+.article-meta{display:flex;gap:24px;font-family:var(--mono);font-size:12px;color:var(--mid);letter-spacing:.05em;margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--border)}
+
+.article-body h2{font-family:var(--serif);font-size:24px;font-weight:700;margin:40px 0 16px;color:var(--white)}
+.article-body p{color:var(--light);margin-bottom:20px;font-size:17px}
+.article-body strong{color:var(--white);font-weight:600}
+
+.result-bar{display:flex;gap:32px;padding:28px 32px;background:var(--surface);border:1px solid var(--border);border-radius:3px;margin:32px 0}
+.result-item{text-align:center;flex:1}
+.result-label{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:6px}
+.result-value{font-family:var(--serif);font-size:28px;font-weight:700}
+.result-value.before{color:var(--mid)}
+.result-value.after{color:var(--green-light)}
+.result-arrow{display:flex;align-items:center;justify-content:center;color:var(--gold-bright);font-size:24px;flex-shrink:0}
+
+.author-block{margin-top:64px;padding-top:32px;border-top:1px solid var(--border);display:flex;align-items:center;gap:20px}
+.author-avatar{width:48px;height:48px;border-radius:50%;background:var(--gold-dim);border:1px solid rgba(51,102,204,.25);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:16px;color:var(--gold-bright);flex-shrink:0}
+.author-name{font-weight:600;font-size:15px;color:var(--white)}
+.author-role{font-size:13px;color:var(--mid)}
+</style>
+</head>
+<body>
+
+<article class="article-wrap">
+  <a href="../index.html" class="back-link">&larr; Назад к сайту</a>
+
+  <span class="article-tag">Кейс</span>
+  <h1 class="article-title">Как снизить CPA в 3 раза за месяц оптимизации</h1>
+  <div class="article-meta">
+    <span>5 мин чтения</span>
+    <span>26 марта 2026</span>
+  </div>
+
+  <div class="article-body">
+    <p>Этот кейс — из ниши бытовых услуг. Клиент пришёл с действующей рекламной кампанией в Google Ads: бюджет $1500/мес, 33 заявки, CPA = $45. Для его среднего чека в $180 и маржи 40% это означало, что <strong>реклама работала практически в ноль</strong>. За один месяц системной оптимизации мы снизили стоимость заявки до $14 — без увеличения бюджета.</p>
+
+    <div class="result-bar">
+      <div class="result-item">
+        <div class="result-label">CPA до</div>
+        <div class="result-value before">$45</div>
+      </div>
+      <div class="result-arrow">&rarr;</div>
+      <div class="result-item">
+        <div class="result-label">CPA после</div>
+        <div class="result-value after">$14</div>
+      </div>
+      <div class="result-arrow">&rarr;</div>
+      <div class="result-item">
+        <div class="result-label">Заявок</div>
+        <div class="result-value after">107</div>
+      </div>
+    </div>
+
+    <h2>Неделя 1: Аудит и чистка семантики</h2>
+    <p>Первым делом мы скачали отчёт по поисковым запросам за последние 3 месяца. Картина была типичной: из 180 ключевых слов в кампании реально работали около 30. Остальные 150 либо не получали кликов, либо получали клики без конверсий. <strong>Мы отключили 60% ключевых слов</strong> — все фразы, которые получили больше 30 кликов и ни одной заявки. Одновременно добавили 87 минус-слов из отчёта по поисковым запросам: информационные запросы, запросы с «бесплатно», «своими руками», названия конкурентов без конверсий.</p>
+
+    <h2>Неделя 2: Переработка объявлений</h2>
+    <p>Старые объявления были написаны «про компанию»: «10 лет опыта», «команда профессионалов», «качественные материалы». Клиенту всё равно, сколько у вас лет опыта. Ему важно решить свою проблему. <strong>Мы переписали все объявления с фокусом на боли клиента</strong> и конкретные выгоды: «Выезд мастера за 2 часа», «Фиксированная цена — без доплат», «Гарантия 12 месяцев на все работы». В каждой группе объявлений запустили A/B-тест двух вариантов. Через неделю отключили проигравшие — CTR вырос с 4.2% до 7.8%, но главное — выросла конверсия в заявку.</p>
+
+    <h2>Неделя 3: A/B-тест лендинга</h2>
+    <p>Оригинальная посадочная страница конвертировала 3.1% посетителей. Мы создали альтернативную версию с тремя изменениями: заголовок повторял поисковый запрос пользователя (динамическая подстановка), форма была сокращена с 5 полей до 2 (имя + телефон), и добавлен блок «3 причины позвонить сейчас» прямо над формой. <strong>Новая версия показала CR 7.4%</strong> — рост конверсии в 2.4 раза. Это единственное изменение, которое дало наибольший эффект на CPA.</p>
+
+    <h2>Неделя 4: Точная настройка и масштабирование</h2>
+    <p>К четвёртой неделе данных было достаточно для финальной оптимизации. Мы скорректировали ставки по времени суток (заявки дешевле всего приходили с 10:00 до 14:00 и с 19:00 до 22:00), отключили показы на планшетах (0 конверсий за месяц), и увеличили ставки на мобильные устройства, которые давали 70% всех заявок. Итоговый результат: <strong>107 заявок при бюджете $1500, CPA = $14</strong>. При конверсии в клиента 25% это означало 27 продаж с выручкой $4860 и прибылью $1944 — ROAS 3.2:1.</p>
+
+    <p>Главный вывод из этого кейса: <strong>не нужен больший бюджет — нужна дисциплина оптимизации</strong>. Еженедельный анализ данных, отключение неработающего, усиление работающего. Никакой магии — только системный подход к цифрам.</p>
+  </div>
+
+  <div class="author-block">
+    <div class="author-avatar">DV</div>
+    <div>
+      <div class="author-name">Дмитрий Вишневский</div>
+      <div class="author-role">Performance-маркетолог</div>
+    </div>
+  </div>
+</article>
+
+</body>
+</html>

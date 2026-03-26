@@ -269,18 +269,26 @@ nav.stuck{padding:16px 64px;background:rgba(10,10,12,.92);backdrop-filter:blur(3
 .price-list li:hover{color:var(--white)}
 @media(max-width:960px){.about-wrap{padding:80px 24px}.about-grid{grid-template-columns:1fr;gap:48px}.about-photo-wrap{margin:0 auto;max-width:260px}.about-photo{max-height:360px}}
 
-/* BLOG */
-.blog-wrap{padding:120px 64px;border-bottom:1px solid var(--border)}
+/* BLOG — light section */
+.blog-wrap{padding:120px 64px;background:#d7d7e3;position:relative;overflow:hidden}
+.blog-wrap::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(0,0,0,.05) 1px,transparent 1px);background-size:18px 18px;z-index:0;pointer-events:none}
+.blog-wrap .s-tag,.blog-wrap .s-title,.blog-grid{position:relative;z-index:1}
+.blog-wrap .s-tag{color:#2a5cb8}
+.blog-wrap .s-tag::before{background:#2a5cb8}
+.blog-wrap .s-title{color:#1a1a2e}
+.blog-wrap .s-title em{color:#2a5cb8}
 .blog-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:60px}
-.blog-card{background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:var(--glass-border);padding:40px 36px;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s,background .3s,border-color .3s;display:flex;flex-direction:column}
-.blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.3);background:rgba(21,21,21,0.8);border-color:rgba(59,125,232,0.15)}
-.blog-card::before{content:'';position:absolute;top:0;left:0;width:0;height:2px;background:var(--gold);transition:width .5s}
+.blog-card{background:rgba(255,255,255,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(0,0,0,.06);padding:40px 36px;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s,background .3s;display:flex;flex-direction:column;text-decoration:none;cursor:pointer}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.1);background:rgba(255,255,255,.7)}
+.blog-card::before{content:'';position:absolute;top:0;left:0;width:0;height:2px;background:#2a5cb8;transition:width .5s}
 .blog-card:hover::before{width:100%}
-.blog-card-tag{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-bright);padding:4px 12px;border:1px solid rgba(59,125,232,0.15);background:rgba(59,125,232,0.06);width:fit-content;margin-bottom:20px;border-radius:2px}
-.blog-card-title{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--white);margin-bottom:16px;line-height:1.3}
-.blog-card-desc{font-size:14px;font-weight:300;color:var(--mid);line-height:1.75;flex:1}
-.blog-card-footer{margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}
-.blog-card-read{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.blog-card-tag{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#2a5cb8;padding:4px 12px;border:1px solid rgba(42,92,184,.15);background:rgba(42,92,184,.06);width:fit-content;margin-bottom:20px}
+.blog-card-title{font-family:var(--serif);font-size:20px;font-weight:700;color:#1a1a2e;margin-bottom:16px;line-height:1.3}
+.blog-card-desc{font-size:14px;font-weight:300;color:#5a5a6e;line-height:1.75;flex:1}
+.blog-card-footer{margin-top:20px;padding-top:16px;border-top:1px solid rgba(0,0,0,.08);display:flex;justify-content:space-between;align-items:center}
+.blog-card-read{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#6a6a7e}
+.blog-card-link{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#2a5cb8;transition:gap .3s;display:flex;align-items:center;gap:4px}
+.blog-card:hover .blog-card-link{gap:8px}
 @media(max-width:960px){.blog-wrap{padding:80px 24px}.blog-grid{grid-template-columns:1fr}}
 
 /* FAQ */
@@ -678,30 +686,30 @@ footer{padding:64px 64px 40px;background:var(--glass-bg);backdrop-filter:blur(12
   <div class="s-tag reveal" data-ru="Блог" data-en="Blog">Блог</div>
   <h2 class="s-title reveal" data-ru-html="Полезное в <em>открытом доступе</em>" data-en-html="Useful content <em>in open access</em>">Полезное в <em>открытом доступе</em></h2>
   <div class="blog-grid">
-    <article class="blog-card reveal">
-      <span class="blog-card-tag" data-ru="Стратегия" data-en="Strategy">Стратегия</span>
-      <h3 class="blog-card-title" data-ru="Почему 80% рекламных бюджетов сливаются впустую" data-en="Why 80% of ad budgets are wasted">Почему 80% рекламных бюджетов сливаются впустую</h3>
-      <p class="blog-card-desc" data-ru="Главная ошибка — запускать рекламу без аналитики. Без понимания юнит-экономики вы не знаете, какой CPA допустим. Без сквозной аналитики — не видите, какой канал реально приносит деньги. Результат: бюджет размазан по каналам, ROI отрицательный, а агентство отчитывается кликами." data-en="The main mistake is launching ads without analytics. Without unit economics you don't know acceptable CPA. Without end-to-end analytics you can't see which channel actually brings money. Result: budget spread thin, negative ROI, and agency reports clicks.">Главная ошибка — запускать рекламу без аналитики. Без понимания юнит-экономики вы не знаете, какой CPA допустим. Без сквозной аналитики — не видите, какой канал реально приносит деньги. Результат: бюджет размазан по каналам, ROI отрицательный, а агентство отчитывается кликами.</p>
-      <div class="blog-card-footer"><span class="blog-card-read" data-ru="4 мин чтения" data-en="4 min read">4 мин чтения</span></div>
-    </article>
-    <article class="blog-card reveal">
-      <span class="blog-card-tag" data-ru="Google Ads" data-en="Google Ads">Google Ads</span>
-      <h3 class="blog-card-title" data-ru="Первые заявки за $5: пошаговая настройка поисковой кампании" data-en="First leads for $5: search campaign setup guide">Первые заявки за $5: пошаговая настройка поисковой кампании</h3>
-      <p class="blog-card-desc" data-ru="Минимальный жизнеспособный запуск: одна кампания, 10–15 ключевых фраз, точное соответствие. Никаких широких ключей на старте — только конкретные запросы с намерением купить. Посадочная страница = одно предложение, одна форма. Тестируете 2 объявления, отключаете слабое через 100 показов." data-en="Minimum viable launch: one campaign, 10-15 keywords, exact match. No broad keywords at start — only specific queries with purchase intent. Landing page = one offer, one form. Test 2 ads, disable weaker after 100 impressions.">Минимальный жизнеспособный запуск: одна кампания, 10–15 ключевых фраз, точное соответствие. Никаких широких ключей на старте — только конкретные запросы с намерением купить. Посадочная страница = одно предложение, одна форма. Тестируете 2 объявления, отключаете слабое через 100 показов.</p>
-      <div class="blog-card-footer"><span class="blog-card-read" data-ru="6 мин чтения" data-en="6 min read">6 мин чтения</span></div>
-    </article>
-    <article class="blog-card reveal">
-      <span class="blog-card-tag" data-ru="Аналитика" data-en="Analytics">Аналитика</span>
-      <h3 class="blog-card-title" data-ru="3 метрики которые важнее CTR" data-en="3 metrics more important than CTR">3 метрики которые важнее CTR</h3>
-      <p class="blog-card-desc" data-ru="CTR — vanity-метрика. Высокий CTR при плохом оффере = дорогие клики без конверсий. Смотрите на: CPA (стоимость заявки), CR посадочной (конверсия сайта), ROAS (возврат на рекламные расходы). Только эти три показывают, зарабатываете вы или теряете." data-en="CTR is a vanity metric. High CTR with bad offer = expensive clicks without conversions. Watch: CPA (cost per lead), landing CR (site conversion), ROAS (return on ad spend). Only these three show if you're making or losing money.">CTR — vanity-метрика. Высокий CTR при плохом оффере = дорогие клики без конверсий. Смотрите на: CPA (стоимость заявки), CR посадочной (конверсия сайта), ROAS (возврат на рекламные расходы). Только эти три показывают, зарабатываете вы или теряете.</p>
-      <div class="blog-card-footer"><span class="blog-card-read" data-ru="3 мин чтения" data-en="3 min read">3 мин чтения</span></div>
-    </article>
-    <article class="blog-card reveal">
-      <span class="blog-card-tag" data-ru="Кейс" data-en="Case Study">Кейс</span>
-      <h3 class="blog-card-title" data-ru="Как снизить CPA в 3 раза за месяц оптимизации" data-en="How to cut CPA 3x in one month of optimization">Как снизить CPA в 3 раза за месяц оптимизации</h3>
-      <p class="blog-card-desc" data-ru="Проект в сфере услуг: CPA $45 → $14. Что сделали: отключили 60% ключевых слов (нецелевые), переписали объявления под конкретные боли, добавили минус-слова из поискового отчёта, запустили A/B тест двух посадочных. Весь процесс — данные, не интуиция." data-en="Service niche project: CPA $45 → $14. Actions: disabled 60% keywords (irrelevant), rewrote ads for specific pain points, added negative keywords from search report, A/B tested two landing pages. Entire process — data, not intuition.">Проект в сфере услуг: CPA $45 → $14. Что сделали: отключили 60% ключевых слов (нецелевые), переписали объявления под конкретные боли, добавили минус-слова из поискового отчёта, запустили A/B тест двух посадочных. Весь процесс — данные, не интуиция.</p>
-      <div class="blog-card-footer"><span class="blog-card-read" data-ru="5 мин чтения" data-en="5 min read">5 мин чтения</span></div>
-    </article>
+    <a href="blog/budget-waste.html" class="blog-card reveal">
+      <span class="blog-card-tag">Стратегия</span>
+      <h3 class="blog-card-title">Почему 80% рекламных бюджетов сливаются впустую</h3>
+      <p class="blog-card-desc">Главная ошибка — запускать рекламу без аналитики. Без понимания юнит-экономики вы не знаете, какой CPA допустим.</p>
+      <div class="blog-card-footer"><span class="blog-card-read">4 мин чтения</span><span class="blog-card-link">Читать →</span></div>
+    </a>
+    <a href="blog/first-leads.html" class="blog-card reveal">
+      <span class="blog-card-tag">Google Ads</span>
+      <h3 class="blog-card-title">Первые заявки за $5: пошаговая настройка поисковой кампании</h3>
+      <p class="blog-card-desc">Минимальный жизнеспособный запуск: одна кампания, 10–15 ключевых фраз, точное соответствие.</p>
+      <div class="blog-card-footer"><span class="blog-card-read">6 мин чтения</span><span class="blog-card-link">Читать →</span></div>
+    </a>
+    <a href="blog/metrics-vs-ctr.html" class="blog-card reveal">
+      <span class="blog-card-tag">Аналитика</span>
+      <h3 class="blog-card-title">3 метрики которые важнее CTR</h3>
+      <p class="blog-card-desc">CTR — vanity-метрика. Смотрите на CPA, CR посадочной и ROAS — только они показывают, зарабатываете вы или теряете.</p>
+      <div class="blog-card-footer"><span class="blog-card-read">3 мин чтения</span><span class="blog-card-link">Читать →</span></div>
+    </a>
+    <a href="blog/cpa-optimization.html" class="blog-card reveal">
+      <span class="blog-card-tag">Кейс</span>
+      <h3 class="blog-card-title">Как снизить CPA в 3 раза за месяц оптимизации</h3>
+      <p class="blog-card-desc">Проект в сфере услуг: CPA $45 → $14. Отключили 60% нецелевых ключей, переписали объявления, запустили A/B тест.</p>
+      <div class="blog-card-footer"><span class="blog-card-read">5 мин чтения</span><span class="blog-card-link">Читать →</span></div>
+    </a>
   </div>
 </section>
 

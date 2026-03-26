@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3 метрики которые важнее CTR — Вишневский</title>
+<meta name="description" content="CTR — метрика тщеславия. Разбираем три показателя, которые реально влияют на прибыль: CPA, конверсия лендинга и ROAS.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.88em' font-size='85' fill='%233b7de8'>V</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0a0a0c;--deep:#121215;--surface:#18181c;--border:#252528;
+  --muted:#4a4a52;--mid:#8a8a95;--light:#c5c2bc;--white:#f0ece6;
+  --gold:#05308C;--gold-bright:#3366cc;--gold-dim:rgba(5,48,140,.10);
+  --serif:'Playfair Display',Georgia,serif;
+  --mono:'DM Mono',monospace;
+  --sans:'Manrope',system-ui,sans-serif;
+}
+html{font-size:16px}
+body{background:var(--black);color:var(--white);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(59,125,232,.2)}
+
+.article-wrap{max-width:720px;margin:0 auto;padding:80px 24px 100px}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .25s;margin-bottom:48px}
+.back-link:hover{color:var(--gold-bright)}
+
+.article-tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-bright);padding:5px 14px;border:1px solid rgba(51,102,204,.25);background:var(--gold-dim);margin-bottom:20px;border-radius:3px}
+.article-title{font-family:var(--serif);font-size:clamp(32px,5vw,48px);font-weight:900;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px}
+.article-meta{display:flex;gap:24px;font-family:var(--mono);font-size:12px;color:var(--mid);letter-spacing:.05em;margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--border)}
+
+.article-body h2{font-family:var(--serif);font-size:24px;font-weight:700;margin:40px 0 16px;color:var(--white)}
+.article-body p{color:var(--light);margin-bottom:20px;font-size:17px}
+.article-body strong{color:var(--white);font-weight:600}
+
+.metric-card{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:24px 28px;margin:24px 0}
+.metric-card .metric-label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:8px}
+.metric-card .metric-value{font-family:var(--serif);font-size:28px;font-weight:700;color:var(--white)}
+
+.author-block{margin-top:64px;padding-top:32px;border-top:1px solid var(--border);display:flex;align-items:center;gap:20px}
+.author-avatar{width:48px;height:48px;border-radius:50%;background:var(--gold-dim);border:1px solid rgba(51,102,204,.25);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:16px;color:var(--gold-bright);flex-shrink:0}
+.author-name{font-weight:600;font-size:15px;color:var(--white)}
+.author-role{font-size:13px;color:var(--mid)}
+</style>
+</head>
+<body>
+
+<article class="article-wrap">
+  <a href="../index.html" class="back-link">&larr; Назад к сайту</a>
+
+  <span class="article-tag">Аналитика</span>
+  <h1 class="article-title">3 метрики которые важнее CTR</h1>
+  <div class="article-meta">
+    <span>3 мин чтения</span>
+    <span>26 марта 2026</span>
+  </div>
+
+  <div class="article-body">
+    <p>CTR (click-through rate) — самая популярная и одновременно самая переоценённая метрика в контекстной рекламе. Высокий CTR означает только одно: ваше объявление привлекает внимание. Но внимание не равно деньги. Можно иметь CTR 15% и при этом работать в убыток, если клики не превращаются в заявки, а заявки — в продажи. <strong>Вот три метрики, на которые действительно стоит смотреть.</strong></p>
+
+    <div class="metric-card">
+      <div class="metric-label">Метрика #1</div>
+      <div class="metric-value">CPA — Cost Per Acquisition</div>
+    </div>
+
+    <h2>CPA: сколько стоит один лид</h2>
+    <p>CPA показывает, сколько вы реально платите за одну заявку или звонок. Это ваша базовая единица измерения эффективности рекламы. Формула простая: общие расходы на рекламу делить на количество полученных заявок. Если вы потратили $1000 и получили 40 заявок — ваш CPA = $25. Эта цифра сразу показывает, вписываетесь ли вы в юнит-экономику. <strong>Если стоимость привлечения клиента выше его пожизненной ценности — бизнес теряет деньги с каждой продажи</strong>, как бы красиво ни выглядел CTR в отчёте.</p>
+
+    <div class="metric-card">
+      <div class="metric-label">Метрика #2</div>
+      <div class="metric-value">CR — Conversion Rate лендинга</div>
+    </div>
+
+    <h2>CR лендинга: превращает ли страница клики в заявки</h2>
+    <p>Conversion Rate лендинга — процент посетителей, которые оставляют заявку. Средний CR для хорошей посадочной страницы — 5-8%. Ниже 3% — это сигнал, что проблема не в рекламе, а в самой странице. Может быть нерелевантный заголовок, слишком много текста, медленная загрузка или неудобная форма. <strong>Повысив CR с 3% до 6%, вы снижаете стоимость заявки вдвое</strong> — без увеличения рекламного бюджета. Это самый недооценённый рычаг оптимизации: один тест заголовка может сэкономить тысячи долларов.</p>
+
+    <div class="metric-card">
+      <div class="metric-label">Метрика #3</div>
+      <div class="metric-value">ROAS — Return on Ad Spend</div>
+    </div>
+
+    <h2>ROAS: сколько зарабатывает каждый вложенный доллар</h2>
+    <p>ROAS — это финальный показатель здоровья рекламного канала. Он показывает, сколько выручки приносит каждый потраченный на рекламу доллар. ROAS 3:1 означает, что на каждый $1 рекламных расходов вы получаете $3 выручки. Для большинства бизнесов ROAS ниже 3:1 означает работу в ноль или минус (с учётом себестоимости, зарплат и операционных расходов). <strong>ROAS — единственная метрика, которая напрямую связана с прибылью.</strong> Все остальные показатели — CTR, показы, охват — это лишь промежуточные индикаторы. Если ваш ROAS растёт — бизнес растёт. Всё остальное вторично.</p>
+  </div>
+
+  <div class="author-block">
+    <div class="author-avatar">DV</div>
+    <div>
+      <div class="author-name">Дмитрий Вишневский</div>
+      <div class="author-role">Performance-маркетолог</div>
+    </div>
+  </div>
+</article>
+
+</body>
+</html>
